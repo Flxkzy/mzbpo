@@ -13,7 +13,7 @@ const BoxRevealDemo = () => {
 
       <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
         <h2 className="my-2 text-lg text-gray-500">
-          Connect with us via
+        Book a free consultation with our team.
           <Link href={"/meeting"} className="text-[#3b82f6]">
             {" "}
             meeting{" "}
@@ -26,7 +26,7 @@ const BoxRevealDemo = () => {
 
       <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
         <h2 className="my-2 text-lg text-gray-500">
-          Outline the scope of the project
+        We define the scope, processes, and systems that suit your business.
         </h2>
       </BoxReveal>
 
@@ -35,7 +35,7 @@ const BoxRevealDemo = () => {
       </BoxReveal>
 
       <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-        <h2 className="my-2 text-lg text-gray-500">Leave the rest to us</h2>
+        <h2 className="my-2 text-lg text-gray-500">Our experts handle the day-to-day — you get accuracy, insights, and results.</h2>
       </BoxReveal>
     </div>
   );

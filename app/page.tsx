@@ -21,71 +21,53 @@ import LetsMakeThingsHappenSection from "@/components/ui/lets-make-things-happen
 const services = [
   {
     icon: "/images/s_6.png",
-    title: "Web Design + Development",
+    title: "Bookkeeping & Accounting Outsourcing",
     description:
-      "Take your business to the next level with our web design and development services",
+      "Comprehensive bookkeeping services with accurate financial records and reporting",
   },
   {
     icon: "/images/s_1.png",
-    title: "Search Engine Optimization",
+    title: "Payroll Processing",
     description:
-      "Get your website to the top of search engine results with our SEO services",
-  },
-  {
-    icon: "/images/s_5.png",
-    title: "Content Creation",
-    description:
-      "Boost your brand's online presence with our social media marketing services",
+      "End-to-end payroll management with compliance and timely processing.",
   },
   {
     icon: "/images/s_3.png",
-    title: "Social Media Marketing",
+    title: "Audit Support & Financial Reporting",
     description:
-      "Interact with your customers and increase sales with our email marketing services",
+      "Expert assistance for audits and comprehensive financial reporting",
   },
   {
     icon: "/images/s_4.png",
-    title: "Email Marketing",
+    title: "ERP Implementation & Management",
     description:
-      "With our content creation services, we help businesses drive results",
-  },
-  {
-    icon: "/images/s_2.png",
-    title: "Pay-Per-Click Advertising",
-    description:
-      "Don't waste money on ineffective advertising. Our PPC services help you reach your target audience",
+      "Seamless ERP solutions to streamline your business operations and financial processes.",
   },
 ];
 
 export default function Home() {
   return (
-    <div
-      className="overflow-clip 
- inset-0 
- -z-10 h-full w-full bg-[#fafafa]
-  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]
-   bg-[size:14px_24px]"
-    >
+<div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#ffffff_40%,#93c5fd_100%)]">
       <Element
         name="top"
-        className="overflow-hidden rounded-[6px] top-5 sticky md:mx-auto z-50 
-   xl:w-4/5 2xl:w-[68%] bg-white flex items-center 
-   justify-between py-6 px-4 md:px-8 mx-6"
+        className="rounded-md top-3 sticky z-50 xl:w-4/5 2xl:w-[68%] 
+        mx-auto bg-[#fafafa] text-white flex items-center justify-between 
+        py-3 px-4 md:px-6"
       >
         <Link href={"/"}>
           <Image
-            src={"/logo/logo.webp"}
+            src={"/logo/mzbpo.png"}
             alt="Logo"
-            width={1000}
-            height={1000}
+            width={1500}
+            height={1500}
             className="w-28"
           />
         </Link>
 
         <div className="absolute right-1/2 translate-x-1/2 transform">
           <div className="hidden md:flex gap-x-10 items-center text-gray-700 font-medium text-lg cursor-pointer">
-            <Link href={"/showcase"} className="hover:text-blue-500">
-              Showcase
+            <Link href={"/case-studies"} className="hover:text-blue-500">
+              Case Studies
             </Link>
 
             <ScrollLink
@@ -144,17 +126,12 @@ export default function Home() {
 
       <main className="md:pb-10">
         <div className="md:px-0 mx-6 xl:w-4/5 2xl:w-[68%] md:mx-auto mt-14">
-          <AnimatedShinyTextDemo />
 
           <h1>
             <CoverDemo />
           </h1>
-          <p
-            className="md:text-center
-           text-xl md:text-2xl my-6 md:my-10 md:w-4/5 mx-auto text-gray-500"
-          >
-            Schedule a call with us to discuss your project and get a quote in
-            minutes
+          <p className="md:text-center text-xl md:text-2xl my-6 md:my-10 md:w-4/5 mx-auto text-gray-500">
+          MZBPO | The Outsourcing Arm of Muniff Ziauddin & Co. — Pakistan's Top QCR-Rated Audit Firm
           </p>
 
           <div
@@ -185,7 +162,7 @@ export default function Home() {
               Book a Call
             </Link>
             <Link
-              href={"/showcase"}
+              href={"/case-studies"}
               className="
               bg-white
    py-3 
@@ -197,49 +174,49 @@ export default function Home() {
         rounded-[6px]
         hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]"
             >
-              Showcase
+              Case Studies
             </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-center text-left md:justify-items-center md:mx-auto mt-10 md:mt-16">
             <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-              <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
+              <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center text-grey-700">
                 <PiCheckBold className="text-xl text-blue-500" />
-                Design
+                Bookkeeping
               </p>
             </BoxReveal>
             <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-              <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
+              <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center text-grey-700">
                 <PiCheckBold className="text-xl text-blue-500" />
-                Development
+                Payroll
               </p>
             </BoxReveal>
             <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-              <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
+              <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center text-grey-700">
                 <PiCheckBold className="text-xl text-blue-500" />
-                Marketing
+                Audit
               </p>
             </BoxReveal>
             <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-              <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center">
+              <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center text-grey-700">
                 <PiCheckBold className="text-xl text-blue-500" />
-                Strategy
+                ERP
               </p>
             </BoxReveal>
           </div>
 
           <div className="md:flex items-center justify-between gap-y-4 my-10 gap-x-28 mx-auto">
             <div className="md:w-2/5">
-              <h1 className="text-2xl font-medium text-gray-600 w-4/5">
-                Trusted by fast moving brands worldwide
+            <h1 className="text-2xl font-medium text-grey-600 w-4/5">
+                Trusted by clients worldwide
               </h1>
 
               <div className="flex my-6 gap-x-5 w-full">
                 <div>
-                  <h1 className="text-blue-500 text-3xl md:text-5xl">
-                    <NumberTicker value={1000} /> +
-                    <p className="text-gray-500 text-sm md:text-md">
-                      Happy Clients
+                  <h1 className="text-[#FA7268] text-3xl md:text-5xl">
+                    <NumberTicker value={300} /> +
+                    <p className="text-grey-500 text-sm md:text-md">
+                      Clients
                     </p>
                   </h1>
                 </div>
@@ -247,10 +224,10 @@ export default function Home() {
                 <div className="w-px bg-gray-300 self-stretch"></div>
 
                 <div className="flex-1 min-w-0">
-                  <h1 className="text-blue-500 text-3xl md:text-5xl whitespace-nowrap overflow-hidden">
-                    <NumberTicker value={100} /> +
-                    <p className="text-gray-500 text-sm md:text-md">
-                      Projects Completed
+                  <h1 className="text-[#FA7268] text-3xl md:text-5xl whitespace-nowrap overflow-hidden">
+                    <NumberTicker value={92} /> %
+                    <p className="text-grey-500 text-sm md:text-md">
+                      Satisfaction Rate
                     </p>
                   </h1>
                 </div>
@@ -263,12 +240,20 @@ export default function Home() {
                 direction="left"
                 items={[
                   {
-                    logo: "/logo/logo.webp",
-                    name: "Logo",
+                    logo: "/logo/d.png",
+                    name: "dunkin",
                   },
                   {
-                    logo: "/logo/logo.webp",
-                    name: "Logo",
+                    logo: "/logo/k.png",
+                    name: "kfc",
+                  },
+                  {
+                    logo: "/logo/kh.png",
+                    name: "khaadi",
+                  },
+                  {
+                    logo: "/logo/wwf.png",
+                    name: "wwf",
                   },
                 ]}
               />
@@ -283,7 +268,7 @@ export default function Home() {
           <WordPullUpDemo />
         </h1>
         <p className="md:text-center py-4 md:w-1/2 mx-auto text-xl md:text-2xl text-gray-500">
-        All of our services are designed to help your business stand out 
+        Every service we offer is built to reduce costs, improve compliance, and give you peace of mind. 
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
@@ -324,7 +309,7 @@ export default function Home() {
                 className="w-6"
                 alt="image"
               />
-              Creative
+              Proven
               <Image
                 src={"/icons/star.svg"}
                 width={10000}
@@ -339,8 +324,7 @@ export default function Home() {
           <p className="text-center 
           py-4 md:w-1/2 mx-auto 
           text-xl md:text-2xl text-gray-500">
-            All of our services are designed to help your business to get
-            noticed.
+            Every service we offer is built to reduce costs, improve compliance, and give you peace of mind.
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center w-full md:w-1/2 mx-auto">
@@ -359,31 +343,16 @@ export default function Home() {
       <section>
         <main className="md:flex items-center justify-center space-y-6 md:space-y-0 md:gap-x-20 xl:w-4/5 2xl:w-[68%] mx-auto px-6 md:px-0">
           <Image
-            src={"/logo/logo.webp"}
+            src={"/logo/bkrr.png"}
             width={10000}
             height={10000}
-            className=" md:w-1/3 rounded-md"
+            className="w-36 md:w-44 h-auto rounded-md"
             alt="image"
           />
           <div className="flex flex-col gap-y-5 md:w-1/2">
             <h1 className="text-lg md:text-2xl ">
-              &quot;We&apos;ve been working with Bird for over 2 years and
-              they&apos;ve been amazing to work with. They&apos;ve helped us
-              grow our business and we couldn&apos;t be happier with the
-              results. &quot;
+            MZBPO is the outsourcing division of Muniff Ziauddin & Co. a top-rated audit firm in Pakistan. As an independent member of BKR International, we deliver globally aligned bookkeeping, ERP, payroll, and audit support with local expertise and precision.
             </h1>
-            <div className="flex items-center gap-x-1">
-              <IconStarFilled className="text-4xl text-yellow-500" />
-              <IconStarFilled className="text-4xl text-yellow-500" />
-              <IconStarFilled className="text-4xl text-yellow-500" />
-              <IconStarFilled className="text-4xl text-yellow-500" />
-              <IconStarFilled className="text-4xl text-yellow-500" />
-            </div>
-
-            <span className="text-xl font-medium">
-              Jordan, Brisson <br />
-              CEO, Atlas Massage
-            </span>
           </div>
         </main>
       </section>
@@ -400,7 +369,7 @@ export default function Home() {
         <div className="flex flex-col  justify-between gap-y-3 xl:w-4/5 2xl:w-[68%] mx-auto">
           <h1 className="text-3xl md:text-5xl font-medium ">
             <Image
-              src={"/logo/logo.webp"}
+              src={"/logo/mzbpo.png"}
               width={10000}
               height={10000}
               className="w-40"
@@ -414,7 +383,7 @@ export default function Home() {
         </div>
 
         <div className="flex md:justify-center gap-x-4 mt-10">
-          © 2025 Bird. All Rights Reserved.
+          © 2025 MZBPO. All Rights Reserved.
           <Link href="/" className="text-blue-500">
             Privacy Policy
           </Link>

@@ -10,12 +10,11 @@ function LetsMakeThingsHappenSection() {
     bg-accent rounded-[45px] p-[50px] md:p-[60px] relative">
       <div className="md:pr-[22rem]">
         <p className="text-3xl font-medium">
-          Let&apos;s make things happen
+          Let&apos;s Make It Work — Together
         </p>
 
         <p className="my-10 text-xl">
-          Contact us today to learn more about how our digital marketing
-          services can help your business grow and succeed online.
+        Contact us today to discover how our outsourced finance, ERP, and audit support can streamline your operations and reduce costs.
         </p>
 
         <Link

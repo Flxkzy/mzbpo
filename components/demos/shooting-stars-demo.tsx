@@ -6,55 +6,51 @@ import Image from "next/image";
 const features = [
   {
     icon: "/icons/fast.svg",
-    title: "Fast Delivery",
-    description:
-      "1-2 weeks delivery for most projects. Call us for more information.",
-  },
-  {
-    icon: "/icons/design.svg",
-    title: "Design & Development",
-    description:
-      "We design and develop your website with the latest technologies and trends.",
-  },
-  {
-    icon: "/icons/scalable.svg",
-    title: "Scalability + Maintenance ",
-    description: "We offer maintenance and scalability for all websites.",
+    title: "Fast Onboarding",
+    description: "We get your finance function up and running within days.",
   },
   {
     icon: "/icons/team.svg",
-    title: "Team of Experts",
-    description: "A team of experts ready to help you, at all times.",
+    title: "Qualified Team",
+    description: "Work with ICAP-qualified accountants and ERP experts.",
   },
   {
     icon: "/icons/safe.svg",
-    title: "Secure Building",
-    description:
-      "Safe and secure building practices. To ensure your data is safe.",
+    title: "Secure & Compliant",
+    description: "All data is managed with strict confidentiality and security protocols.",
+  },
+  {
+    icon: "/icons/design.svg",
+    title: "ERP Integration",
+    description: "We implement and manage SAP B1 and ERPNext to fit your workflow.",
   },
   {
     icon: "/icons/analytics.svg",
-    title: "Analytics Tracking",
-    description: "Track your progress with our built in analytics",
-  },
-
-  {
-    icon: "/icons/flexible.svg",
-    title: "Dynamic Websites",
-    description: "We build dynamic solutions that are easy to manage.",
-  },
-  {
-    icon: "/icons/support.svg",
-    title: "24/7 Support",
-    description:
-      "We offer 24/7 support for all our clients. Call us for more information.",
+    title: "Audit-Ready Reports",
+    description: "Comprehensive, accurate reports for internal or external audits.",
   },
   {
     icon: "/icons/money.svg",
-    title: "Affordable Pricing",
-    description: "Affordable pricing for all our clients.",
+    title: "Cost Savings",
+    description: "Outsource your finance function and cut costs by up to 50%.",
+  },
+  {
+    icon: "/icons/scalable.svg",
+    title: "Scalable Teams",
+    description: "Start with one resource or scale to a full finance team as you grow.",
+  },
+  {
+    icon: "/icons/support.svg",
+    title: "Ongoing Support",
+    description: "Our team is always available for reporting, queries, or escalations.",
+  },
+  {
+    icon: "/icons/flexible.svg",
+    title: "Tailored Solutions",
+    description: "We customize processes to match your industry, structure, and needs.",
   },
 ];
+
 
 export function ShootingStarsAndStarsBackgroundDemo() {
   return (
@@ -62,8 +58,7 @@ export function ShootingStarsAndStarsBackgroundDemo() {
       <h2 className="relative flex-col  z-10 text-3xl md:text-5xl md:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 via-white to-white flex items-center gap-2 ">
         Our guarantees to you.
         <p className="md:text-center   mx-auto  text-xl md:text-2xl text-gray-200">
-          We ensure the highest quality of work, with the fastest delivery
-          times.
+        Trusted processes. Transparent reporting. Proven outcomes.
         </p>
       </h2>
 

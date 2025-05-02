@@ -51,14 +51,14 @@ export function AnimatedBeamMultipleOutputDemo({
       <div className="flex size-full flex-row items-stretch justify-between gap-10 max-w-lg">
         <div className="flex flex-col justify-center gap-2">
           <Circle ref={div1Ref}>
-            <Icons.googleDrive />
+            <Icons.linkedin />
           </Circle>
           <Circle ref={div2Ref}>
-            <Icons.googleDocs />
+            <Icons.excel />
           </Circle>
           <Circle ref={div3Ref}>
           <Image
-              src={"/logo/figma.png"}
+              src={"/logo/quick.png"}
               width={10000}
               height={10000}
               className="w-6 h-6"
@@ -66,16 +66,16 @@ export function AnimatedBeamMultipleOutputDemo({
             />
           </Circle>
           <Circle ref={div4Ref}>
-            <Icons.messenger />
+            <Icons.oracle />
           </Circle>
           <Circle ref={div5Ref}>
-            <Icons.notion />
+            <Icons.odoo />
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
           <Circle ref={div6Ref} className="size-16 bg-white">
           <Image
-          src={'/logo/logo.webp'}
+          src={'/logo/mzbpo.png'}
           height={1000}
           width={1000}
           alt="logo"
@@ -124,7 +124,7 @@ export function AnimatedBeamMultipleOutputDemo({
 }
 
 const Icons = {
-  notion: () => (
+  odoo: () => (
     <svg
       width="100"
       height="100"
@@ -132,19 +132,44 @@ const Icons = {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <rect width="100" height="100" rx="20" fill="#ffffff" />
       <path
-        d="M6.017 4.313l55.333 -4.087c6.797 -0.583 8.543 -0.19 12.817 2.917l17.663 12.443c2.913 2.14 3.883 2.723 3.883 5.053v68.243c0 4.277 -1.553 6.807 -6.99 7.193L24.467 99.967c-4.08 0.193 -6.023 -0.39 -8.16 -3.113L3.3 79.94c-2.333 -3.113 -3.3 -5.443 -3.3 -8.167V11.113c0 -3.497 1.553 -6.413 6.017 -6.8z"
-        fill="#ffffff"
-      />
-      <path
-        d="M61.35 0.227l-55.333 4.087C1.553 4.7 0 7.617 0 11.113v60.66c0 2.723 0.967 5.053 3.3 8.167l13.007 16.913c2.137 2.723 4.08 3.307 8.16 3.113l64.257 -3.89c5.433 -0.387 6.99 -2.917 6.99 -7.193V20.64c0 -2.21 -0.873 -2.847 -3.443 -4.733L74.167 3.143c-4.273 -3.107 -6.02 -3.5 -12.817 -2.917zM25.92 19.523c-5.247 0.353 -6.437 0.433 -9.417 -1.99L8.927 11.507c-0.77 -0.78 -0.383 -1.753 1.557 -1.947l53.193 -3.887c4.467 -0.39 6.793 1.167 8.54 2.527l9.123 6.61c0.39 0.197 1.36 1.36 0.193 1.36l-54.933 3.307 -0.68 0.047zM19.803 88.3V30.367c0 -2.53 0.777 -3.697 3.103 -3.893L86 22.78c2.14 -0.193 3.107 1.167 3.107 3.693v57.547c0 2.53 -0.39 4.67 -3.883 4.863l-60.377 3.5c-3.493 0.193 -5.043 -0.97 -5.043 -4.083zm59.6 -54.827c0.387 1.75 0 3.5 -1.75 3.7l-2.91 0.577v42.773c-2.527 1.36 -4.853 2.137 -6.797 2.137 -3.107 0 -3.883 -0.973 -6.21 -3.887l-19.03 -29.94v28.967l6.02 1.363s0 3.5 -4.857 3.5l-13.39 0.777c-0.39 -0.78 0 -2.723 1.357 -3.11l3.497 -0.97v-38.3L30.48 40.667c-0.39 -1.75 0.58 -4.277 3.3 -4.473l14.367 -0.967 19.8 30.327v-26.83l-5.047 -0.58c-0.39 -2.143 1.163 -3.7 3.103 -3.89l13.4 -0.78z"
-        fill="#000000"
-        fillRule="evenodd"
-        clipRule="evenodd"
+        d="M50 10C28 10 10 28 10 50s18 40 40 40 40-18 40-40S72 10 50 10zm-9.7 42.5c0 5.3-3.9 9.4-9.1 9.4-5.1 0-9.1-4-9.1-9.4 0-5.4 4-9.4 9.1-9.4s9.1 4 9.1 9.4zm28.6 0c0 5.3-3.9 9.4-9.1 9.4s-9.1-4-9.1-9.4c0-5.4 4-9.4 9.1-9.4s9.1 4 9.1 9.4zm18.1 0c0 5.3-3.9 9.4-9.1 9.4-5.1 0-9.1-4-9.1-9.4 0-5.4 4-9.4 9.1-9.4 5.2 0 9.1 4 9.1 9.4z"
+        fill="#714B67"
       />
     </svg>
   ),
-
+  oracle: () => (
+    <svg
+      width="100"
+      height="100"
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="100" height="100" rx="20" fill="#ffffff" />
+      <path
+        d="M27.5 55.5c2.7 0 4.7-1.6 5.4-4h5.3c-0.8 5.3-5.1 8.9-10.7 8.9-6.5 0-11.1-4.6-11.1-10.8S21 38 27.2 38c5.7 0 10.1 3.7 10.7 9.4h-5.3c-0.7-2.6-2.7-4.2-5.4-4.2-3.1 0-5.4 2.5-5.4 5.8 0.1 3.4 2.4 5.7 5.7 5.7zm12.3 4.6v-21h5.5v21h-5.5zm9.6 0v-21h10.3c5.2 0 8.4 3.3 8.4 8s-3.3 8-8.4 8h-4.8v5h-5.5zm5.5-10.2h3.6c2.1 0 3.3-1.1 3.3-2.8s-1.1-2.8-3.3-2.8h-3.6v5.6zm14.3-10.8h5.5v8.1h8.3v-8.1h5.5v21h-5.5v-8.3h-8.3v8.3h-5.5v-21z"
+        fill="#E60000"
+      />
+    </svg>
+  ),  
+  linkedin: () => (
+    <svg
+      width="100"
+      height="100"
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="100" height="100" rx="20" fill="#ffffff" />
+      <path
+        d="M20 35h15v45H20V35zm7.5-15a8.75 8.75 0 1 1 0 17.5 8.75 8.75 0 0 1 0-17.5zM42.5 35h14.3v6.2h.2c2-3.8 6.8-7.8 14-7.8 15 0 17.8 9.8 17.8 22.6V80H73V58.3c0-5.2-.1-11.9-7.3-11.9-7.3 0-8.4 5.7-8.4 11.5V80H42.5V35z"
+        fill="#0A2E55"
+      />
+    </svg>
+  ),
+  
   googleDrive: () => (
     <svg
       width="100"
@@ -358,6 +383,36 @@ const Icons = {
             </g>
           </g>
         </g>
+      </g>
+    </svg>
+  ),
+  excel: () => (
+    <svg
+      width="47px"
+      height="65px"
+      viewBox="0 0 47 65"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <path
+          d="M29.375,0 L4.40625,0 C1.9828125,0 0,1.99431818 0,4.43181818 L0,60.5681818 C0,63.0056818 1.9828125,65 4.40625,65 L42.59375,65 C45.0171875,65 47,63.0056818 47,60.5681818 L47,17.7272727 L29.375,0 Z"
+          id="excel-path"
+        />
+      </defs>
+      <g fill="none" fillRule="evenodd">
+        <mask id="excel-mask" fill="white">
+          <use xlinkHref="#excel-path" />
+        </mask>
+        <path
+          d="M29.375,0 L4.40625,0 C1.9828125,0 0,1.99431818 0,4.43181818 L0,60.5681818 C0,63.0056818 1.9828125,65 4.40625,65 L42.59375,65 C45.0171875,65 47,63.0056818 47,60.5681818 L47,17.7272727 L36.71875,10.3409091 L29.375,0 Z"
+          fill="#21A366"
+          mask="url(#excel-mask)"
+        />
+        <path
+          d="M11.5,24 L16.5,33 L11.5,42 H15.5 L18.5,36 L21.5,42 H25.5 L20.5,33 L25.5,24 H21.5 L18.5,29.5 L15.5,24 H11.5 Z"
+          fill="#ffffff"
+          transform="translate(4, 10)"
+        />
       </g>
     </svg>
   ),
