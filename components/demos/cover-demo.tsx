@@ -13,7 +13,7 @@ export function CoverDemo() {
         dark:from-neutral-800 dark:via-white dark:to-white z-20 relative"
       >
         <Cover>
-          Bookkeeping, ERP, Payroll & Audit Support — Trusted by Leading Businesses
+          Bookkeeping, ERP, Payroll & Audit Support Trusted by Leading Businesses
         </Cover>
       </h1>
     </div>

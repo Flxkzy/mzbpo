@@ -28,25 +28,25 @@ import LetsMakeThingsHappenSection from "@/components/ui/lets-make-things-happen
 
 const services = [
   {
-    icon: "/images/s_6.png",
+    icon: "/images/book.svg",
     title: "Bookkeeping & Accounting Outsourcing",
     description:
       "Comprehensive bookkeeping services with accurate financial records and reporting",
   },
   {
-    icon: "/images/s_1.png",
+    icon: "/images/payroll.svg",
     title: "Payroll Processing",
     description:
       "End-to-end payroll management with compliance and timely processing.",
   },
   {
-    icon: "/images/s_3.png",
+    icon: "/images/audit.svg",
     title: "Audit Support & Financial Reporting",
     description:
       "Expert assistance for audits and comprehensive financial reporting",
   },
   {
-    icon: "/images/s_4.png",
+    icon: "/images/erp.avif",
     title: "ERP Implementation & Management",
     description:
       "Seamless ERP solutions to streamline your business operations and financial processes.",
@@ -193,16 +193,9 @@ export default function Home() {
               smooth={true}
               className="hover:text-blue-500"
             >
-              Process
+              About us
             </ScrollLink>
 
-            <ScrollLink
-              to="guarentees"
-              smooth={true}
-              className="hover:text-blue-500"
-            >
-              Guarentees
-            </ScrollLink>
           </div>
         </div>
 

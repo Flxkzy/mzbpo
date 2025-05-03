@@ -39,6 +39,11 @@ const Meeting = () => {
                 "Cut costs, eliminate in-house headaches, and get audit-ready financials delivered monthly.",
             },
             {
+              title: "Payroll Processing",
+              description:
+                "Fully managed payroll with tax deductions, payslips, and compliance — delivered on time, every time.",
+            },
+            {
               title: "ERP Implementation & Workflow Automation",
               description:
                 "Move off Excel and into real-time reporting. We handle setup, data migration, training, and support.",
