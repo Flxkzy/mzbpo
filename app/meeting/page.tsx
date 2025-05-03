@@ -20,28 +20,33 @@ const Meeting = () => {
       bg-[size:14px_24px]"
     >
       <ShowcaseNavbar />
-      <div className="md:px-0 px-6 xl:w-4/5 2xl:w-[68%] justify-between md:mt-14 md:flex mx-auto">
-        <div className="md:w-2/5">
-          <h1 className="text-4xl font-semibold pt-10">Book a Meeting</h1>
-          <p className="text-lg text-gray-500 py-4">
-            At MZBPO, we help businesses worldwide reduce costs and streamline operations through professional bookkeeping, payroll, ERP, and audit services.
+
+      <div className="md:px-0 px-6 xl:w-4/5 2xl:w-[68%] md:mt-14 mx-auto flex flex-col md:flex-row gap-y-10 md:gap-y-0 md:justify-between">
+        
+        {/* Text Section */}
+        <div className="md:w-2/5 w-full">
+          <h1 className="text-3xl md:text-4xl font-semibold pt-10 md:pt-0 leading-tight">
+            Let’s Talk About Scaling Your Finance Function
+          </h1>
+          <p className="text-base md:text-lg text-gray-500 py-4 leading-relaxed">
+            At <strong>MZBPO</strong>, we help growth-focused businesses slash finance overheads by up to 50% with expert bookkeeping, ERP implementation, payroll processing, and audit support — all powered by a top-rated audit firm.
           </p>
 
           {[
             {
-              title: "Outsourced Accounting & Bookkeeping",
+              title: "Bookkeeping & Accounting Outsourcing",
               description:
-                "Discuss how we can take over your books and monthly financials while cutting your cost by up to 50%.",
+                "Cut costs, eliminate in-house headaches, and get audit-ready financials delivered monthly.",
             },
             {
-              title: "ERP Implementation & Automation",
+              title: "ERP Implementation & Workflow Automation",
               description:
-                "Explore how we can digitize your finance and inventory workflows using SAP B1, Zoho, QuickBooks & more.",
+                "Move off Excel and into real-time reporting. We handle setup, data migration, training, and support.",
             },
             {
-              title: "Audit Support & Compliance",
+              title: "Audit Support & Regulatory Compliance",
               description:
-                "Need support with internal audits, documentation, or statutory reporting? Let’s talk.",
+                "Get help with IFRS reporting, audit prep, and statutory filings — whether internal or external.",
             },
           ].map((item, index) => (
             <motion.div
@@ -49,21 +54,24 @@ const Meeting = () => {
               variants={checkItemVariants}
               initial="hidden"
               animate="visible"
-              transition={{ delay: index * 1.8 }}
-              className="flex gap-x-4 py-4"
+              transition={{ delay: index * 0.2 }}
+              className="flex gap-x-3 md:gap-x-4 py-3"
             >
-              <PiCheckCircle className="text-[#3d80d7] text-2xl flex-shrink-0" />
-              <ul>
-                <h3 className="text-lg font-bold text-gray-700">
+              <PiCheckCircle className="text-[#3d80d7] text-xl md:text-2xl flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-base md:text-lg font-bold text-gray-700">
                   {item.title}
                 </h3>
-                <div className="text-gray-400">{item.description}</div>
-              </ul>
+                <p className="text-sm md:text-base text-gray-400">
+                  {item.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="md:w-1/2">
+        {/* Calendly */}
+        <div className="md:w-1/2 w-full">
           <Calendly />
         </div>
       </div>

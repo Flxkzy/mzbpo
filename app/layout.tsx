@@ -6,19 +6,22 @@ import { Analytics } from "@vercel/analytics/react";
 const font = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bird | Design & Development Studio",
-  description: "Grow your business with Bird, a design & development studio.",
+  title: "MZBPO | Bookkeeping, Payroll, ERP & Audit Support Outsourcing",
+  description: "Cut your accounting costs by 50% with MZBPO — Pakistan's top-rated outsourcing firm trusted by global brands like KFC, WWF & Dunkin. Get expert help with bookkeeping, payroll, audit support & ERP implementation.",
   openGraph: {
+    title: "MZBPO | Trusted Outsourcing by a Top QCR-Rated Audit Firm",
+    description: "MZBPO helps global businesses streamline finances through expert bookkeeping, payroll, ERP & audit services — backed by Muniff Ziauddin & Co.",
     images: [
       {
-        url: 'https://www.google.com/maps/uv?viewerState=lb&pb=!1s0x11ae81c94242f451:0x2a6b0cac40414137!5sGlobstand+technologies&imagekey=!1e10!2sAF1QipPrTTNGxsOszQTXFD3b68e40o0V_LiVsTWwh-H6&cr=rp_35',
+        url: "https://mzbpo.vercel.app/og-image.jpg", // Replace with your real OG image URL
         width: 1200,
         height: 630,
-        alt: 'Bird Logo',
+        alt: "MZBPO Outsourcing Banner",
       },
     ],
   },
 };
+
 
 export default function RootLayout({
   children,

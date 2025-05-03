@@ -14,14 +14,14 @@ const Footer = () => {
             alt="mzbpo"
           />{" "}
         </h1>
-        <p className="text-left  text-xl  text-gray-500">519-319-1562</p>
+        <p className="text-left  text-xl  text-gray-500"></p>
         <p className="text-left  text-xl  text-gray-500">
-          admin@birdsoftware.ca
+          mzcopakistan@gmail.com
         </p>
       </div>
 
       <div className="flex md:justify-center gap-x-4 mt-10">
-        © 2024 Bird. All Rights Reserved.
+        © 2025 MZBPO. All Rights Reserved.
         <Link href="/" className="text-blue-500">
           Privacy Policy
         </Link>

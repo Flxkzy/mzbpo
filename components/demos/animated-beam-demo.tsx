@@ -61,15 +61,27 @@ export function AnimatedBeamMultipleOutputDemo({
               src={"/logo/quick.png"}
               width={10000}
               height={10000}
-              className="w-6 h-6"
+              className="w-4 h-4"
               alt="image"
             />
           </Circle>
           <Circle ref={div4Ref}>
-            <Icons.oracle />
+          <Image
+              src={"/logo/oracle.png"}
+              width={6000}
+              height={6000}
+              className="w-7 h-2"
+              alt="oracle"
+            />
           </Circle>
           <Circle ref={div5Ref}>
-            <Icons.odoo />
+          <Image
+              src={"/logo/odoo_logo.png"}
+              width={6000}
+              height={6000}
+              className="w-7 h-2"
+              alt="odoo"
+            />
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
