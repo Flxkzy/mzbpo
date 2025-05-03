@@ -7,11 +7,11 @@ const Footer = () => {
       <div className="flex flex-col  justify-between gap-y-3 xl:w-4/5 2xl:w-[68%] mx-auto">
         <h1 className="text-3xl md:text-5xl font-medium ">
           <Image
-            src={"/logo/logo.webp"}
+            src={"/logo/mzbpo.png"}
             width={10000}
             height={10000}
             className="w-40"
-            alt="image"
+            alt="mzbpo"
           />{" "}
         </h1>
         <p className="text-left  text-xl  text-gray-500">519-319-1562</p>

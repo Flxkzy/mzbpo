@@ -1,5 +1,12 @@
 "use client";
-
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/demos/animated-beam-demo";
 import { AnimatedShinyTextDemo } from "@/components/demos/animated-shiny-text-demo";
 import BoxRevealDemo from "@/components/demos/box-reveal-demo";
@@ -44,6 +51,108 @@ const services = [
       "Seamless ERP solutions to streamline your business operations and financial processes.",
   },
 ];
+
+const getServiceDetails = (title: string): JSX.Element => {
+  switch (title) {
+    case "Bookkeeping & Accounting Outsourcing":
+      return (
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">What’s Included</h3>
+            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+              <li>General ledger & double-entry bookkeeping</li>
+              <li>Bank & credit card reconciliations</li>
+              <li>Accounts payable & receivable tracking</li>
+              <li>Monthly management reports</li>
+              <li>Sales tax/VAT return support</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">Tools We Use</h3>
+            <p className="text-gray-700 mt-2">QuickBooks Online, Xero, Excel, custom dashboards</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">Why It Works</h3>
+            <p className="text-gray-700 mt-2">
+              Outsourcing bookkeeping can reduce costs by over 50% while ensuring accuracy,
+              timeliness, and audit-readiness.
+            </p>
+          </div>
+        </div>
+      );
+
+    case "Payroll Processing":
+      return (
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">What’s Included</h3>
+            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+              <li>Salary calculations & payslip generation</li>
+              <li>Tax & EOBI/social security deductions</li>
+              <li>Direct deposit processing</li>
+              <li>Compliance with Pakistan payroll regulations</li>
+              <li>Employee onboarding/offboarding records</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">Peace of Mind</h3>
+            <p className="text-gray-700 mt-2">
+              We take care of every aspect of payroll — so you can focus on your team, not tax rules.
+            </p>
+          </div>
+        </div>
+      );
+
+    case "Audit Support & Financial Reporting":
+      return (
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">Audit Assistance</h3>
+            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+              <li>Preparation of audit working papers</li>
+              <li>IFRS/IAS-compliant financial statements</li>
+              <li>Supporting schedules & breakdowns</li>
+              <li>Responding to auditor queries</li>
+              <li>Liaison with statutory auditors</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">Why It Matters</h3>
+            <p className="text-gray-700 mt-2">
+              Proper audit support ensures clean opinions, investor confidence, and regulatory compliance.
+            </p>
+          </div>
+        </div>
+      );
+
+    case "ERP Implementation & Management":
+      return (
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">What We Deliver</h3>
+            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+              <li>ERP system selection (SAP B1, Odoo, QuickBooks Desktop)</li>
+              <li>Business process mapping & data migration</li>
+              <li>Chart of accounts & cost center setup</li>
+              <li>User training & role-based access control</li>
+              <li>Ongoing support, backups, and change requests</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-blue-600">Our Edge</h3>
+            <p className="text-gray-700 mt-2">
+              As accountants first, we implement ERP with financial accuracy and real-world workflows in mind.
+            </p>
+          </div>
+        </div>
+      );
+
+    default:
+      return <p className="text-gray-600">More details will be available soon.</p>;
+  }
+};
+
+
 
 export default function Home() {
   return (
@@ -255,6 +364,23 @@ export default function Home() {
                     logo: "/logo/wwf.png",
                     name: "wwf",
                   },
+                  {
+                    logo: "/logo/r.png",
+                    name: "red creasent",
+                  },
+                  {
+                    logo: "/logo/uni.png",
+                    name: "uniliver",
+                  },
+                  {
+                    logo: "/logo/penny.png",
+                    name: "penny appeal",
+                  },
+                  {
+                    logo: "/logo/faw.png",
+                    name: "faw",
+                  },
+
                 ]}
               />
             </section>
@@ -263,34 +389,88 @@ export default function Home() {
       </main>
 
       <Element name="services">
-        <div className="md:px-0 mx-6 xl:w-4/5 2xl:w-[68%] md:mx-auto ">
-        <h1>
-          <WordPullUpDemo />
-        </h1>
-        <p className="md:text-center py-4 md:w-1/2 mx-auto text-xl md:text-2xl text-gray-500">
-        Every service we offer is built to reduce costs, improve compliance, and give you peace of mind. 
-        </p>
+  <div className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <div className="md:px-0 mx-6 xl:w-4/5 2xl:w-[68%] md:mx-auto">
+      <h1 className="mb-4">
+        <WordPullUpDemo />
+      </h1>
+      <p className="md:text-center py-4 md:w-1/2 mx-auto text-xl md:text-2xl text-gray-500 font-light leading-relaxed">
+        Every service we offer is built to reduce costs, improve compliance, and give you peace of mind.
+      </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="flex flex-col justify-between h-full space-y-4 text-center bg-gray-100 p-4 cursor-pointer hover:scale-105 transition-transform rounded-md"
-              >
-                <Image
-                  src={service.icon}
-                  width={10000}
-                  height={10000}
-                  className="object-contain bg-gray-100 p-4 w-full h-40 rounded-md"
-                  alt="image"
-                />
-                <h1 className="text-xl font-medium">{service.title}</h1>
-                <p className="text-gray-500">{service.description}</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-14">
+        {services.map((service) => (
+          <Dialog key={service.title}>
+            <DialogTrigger asChild>
+              <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-gray-100 cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                <div className="flex flex-col items-center text-center space-y-6">
+                  <div className="relative">
+                    <div className="absolute inset-0 rounded-full bg-blue-100 opacity-30 scale-105 group-hover:scale-110 transition-transform duration-300"></div>
+                    <Image
+                      src={service.icon || "/placeholder.svg"}
+                      width={72}
+                      height={72}
+                      className="relative z-10 w-16 h-16 object-contain"
+                      alt={service.title}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="text-blue-600 font-medium text-sm tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Learn More →
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </Element>
+            </DialogTrigger>
+
+            <DialogContent className="max-w-2xl bg-white border-none shadow-2xl rounded-xl p-6">
+              <BoxReveal boxColor="#3b82f6" duration={0.6}>
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-800">{service.title}</h2>
+
+                  <div className="mt-6 space-y-6">
+                    {getServiceDetails(service.title)}
+                  </div>
+
+                  <div className="pt-6 mt-8 border-t text-center">
+                    <Link
+                      href="/meeting"
+                      className="inline-block
+                        py-2 
+                        px-6
+                        text-sm
+                        font-medium
+                        hover:bg-[#abcbff] 
+                        rounded-[6px]
+                        border-2 
+                        border-black 
+                        dark:border-white 
+                        bg-[#121212] 
+                        text-white 
+                        transition 
+                        duration-200 
+                        hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] 
+                        dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]"
+                    >
+                      Book a Free Consultation
+                    </Link>
+                  </div>
+                </div>
+              </BoxReveal>
+            </DialogContent>
+          </Dialog>
+        ))}
+      </div>
+    </div>
+  </div>
+</Element>
+
 
       <section className="py-20">
         <ScrollBasedVelocityDemo />
