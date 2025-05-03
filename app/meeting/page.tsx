@@ -57,7 +57,7 @@ const Meeting = () => {
               transition={{ delay: index * 0.2 }}
               className="flex gap-x-3 md:gap-x-4 py-3"
             >
-              <PiCheckCircle className="text-[#3d80d7] text-xl md:text-2xl flex-shrink-0 mt-1" />
+              <PiCheckCircle className="text-[#FA7268] text-xl md:text-2xl flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-base md:text-lg font-bold text-gray-700">
                   {item.title}

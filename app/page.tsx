@@ -55,96 +55,98 @@ const services = [
 
 const getServiceDetails = (title: string): JSX.Element => {
   switch (title) {
+
     case "Bookkeeping & Accounting Outsourcing":
       return (
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">What’s Included</h3>
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-              <li>General ledger & double-entry bookkeeping</li>
-              <li>Bank & credit card reconciliations</li>
-              <li>Accounts payable & receivable tracking</li>
-              <li>Monthly management reports</li>
-              <li>Sales tax/VAT return support</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">Tools We Use</h3>
-            <p className="text-gray-700 mt-2">QuickBooks Online, Xero, Excel, custom dashboards</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">Why It Works</h3>
-            <p className="text-gray-700 mt-2">
-              Outsourcing bookkeeping can reduce costs by over 50% while ensuring accuracy,
-              timeliness, and audit-readiness.
-            </p>
-          </div>
+        <div className="space-y-6 text-gray-700">
+          <h3 className="text-lg font-semibold text-[#FA7268]">Focus on growth—we’ll handle the numbers.</h3>
+          <p>
+            Our outsourced bookkeeping and accounting services give you accurate, timely, and audit-ready financials without the overhead of an in-house team.
+          </p>
+          <p>
+            We work as an extension of your business, managing everything from daily entries and reconciliations to financial reporting and month-end closings. Whether you’re a startup, scaling company, or multi-entity operation, our team adapts to your needs using industry-standard tools and custom workflows.
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>✅ Real-time reporting</li>
+            <li>✅ Seamless integration with existing systems</li>
+            <li>✅ Scalable support from 1 to 1000+ hours/month</li>
+          </ul>
+          <p>
+            Get full financial clarity—without full-time cost.
+          </p>
         </div>
       );
 
     case "Payroll Processing":
       return (
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">What’s Included</h3>
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-              <li>Salary calculations & payslip generation</li>
-              <li>Tax & EOBI/social security deductions</li>
-              <li>Direct deposit processing</li>
-              <li>Compliance with Pakistan payroll regulations</li>
-              <li>Employee onboarding/offboarding records</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">Peace of Mind</h3>
-            <p className="text-gray-700 mt-2">
-              We take care of every aspect of payroll — so you can focus on your team, not tax rules.
-            </p>
-          </div>
+        <div className="space-y-6 text-gray-700">
+          <h3 className="text-lg font-semibold text-[#FA7268]">Accurate, compliant, and stress-free payroll—every single cycle.</h3>
+          <p>
+            We take the complexity out of payroll by managing everything from salary calculations and tax deductions to payslip generation and compliance filings. Our payroll solutions are tailored to your structure, whether you run a lean team or a large workforce.
+          </p>
+          <p>
+            You get reliable, confidential payroll support—on time, every time—without needing an in-house HR or finance department.
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>✅ Monthly & biweekly payroll cycles</li>
+            <li>✅ Customized reports & employee summaries</li>
+            <li>✅ Secure employee payslip distribution</li>
+            <li>✅ Integration with your accounting systems</li>
+          </ul>
+          <p>
+            Let us handle the backend, so you can focus on your people.
+          </p>
         </div>
       );
 
     case "Audit Support & Financial Reporting":
       return (
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">Audit Assistance</h3>
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-              <li>Preparation of audit working papers</li>
-              <li>IFRS/IAS-compliant financial statements</li>
-              <li>Supporting schedules & breakdowns</li>
-              <li>Responding to auditor queries</li>
-              <li>Liaison with statutory auditors</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">Why It Matters</h3>
-            <p className="text-gray-700 mt-2">
-              Proper audit support ensures clean opinions, investor confidence, and regulatory compliance.
-            </p>
-          </div>
+        <div className="space-y-6 text-gray-700">
+          <h3 className="text-lg font-semibold text-[#FA7268]">
+            Ongoing financial clarity—built for accuracy, trust, and control.
+          </h3>
+          <p>
+            We help businesses stay audit-ready year-round with structured monthly internal reviews and clean, compliant financial reporting. Whether you’re preparing for an external audit, reporting to investors, or simply want stronger control over your books, we ensure your financials are accurate, organized, and insightful.
+          </p>
+          <p>
+            Our team works as an extension of yours—identifying red flags, tightening controls, and supporting you through every stage of the audit cycle.
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>✅ Monthly internal audits to detect errors, risks, and fraud early</li>
+            <li>✅ Full audit support and file preparation</li>
+            <li>✅ Liaison with external auditors or investors</li>
+            <li>✅ Financial statements (P&L, balance sheet, cash flow)</li>
+            <li>✅ IFRS/local GAAP-compliant reporting</li>
+            <li>✅ Actionable recommendations to strengthen controls</li>
+          </ul>
+          <p>
+            Don’t wait for year-end surprises—stay ahead with proactive audits and clear financial visibility.
+          </p>
         </div>
       );
 
     case "ERP Implementation & Management":
       return (
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">What We Deliver</h3>
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-              <li>ERP system selection (SAP B1, Odoo, QuickBooks Desktop)</li>
-              <li>Business process mapping & data migration</li>
-              <li>Chart of accounts & cost center setup</li>
-              <li>User training & role-based access control</li>
-              <li>Ongoing support, backups, and change requests</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-blue-600">Our Edge</h3>
-            <p className="text-gray-700 mt-2">
-              As accountants first, we implement ERP with financial accuracy and real-world workflows in mind.
-            </p>
-          </div>
+        <div className="space-y-6 text-gray-700">
+          <h3 className="text-lg font-semibold text-[#FA7268]">
+            Streamline your operations with the right systems—implemented the right way.
+          </h3>
+          <p>
+            We help growing businesses select, implement, and manage ERP systems that align with their workflows, financial structure, and long-term goals. Whether you’re moving from spreadsheets or upgrading a legacy setup, our team ensures a smooth, tailored transition with minimal disruption.
+          </p>
+          <p>
+            From SAP Business One to Zoho, Odoo, and beyond—we bring both technical and financial expertise to ensure your ERP drives efficiency, not complexity.
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>✅ End-to-end ERP setup & configuration</li>
+            <li>✅ Data migration & system integration</li>
+            <li>✅ Staff training & user onboarding</li>
+            <li>✅ Ongoing system management & support</li>
+            <li>✅ ERP platforms: SAP B1, SAP B/4 HANA, Odoo, Zoho, Oracle NetSuite & more</li>
+          </ul>
+          <p>
+            Build a system that grows with your business—without the usual ERP headaches.
+          </p>
         </div>
       );
 
@@ -152,8 +154,6 @@ const getServiceDetails = (title: string): JSX.Element => {
       return <p className="text-gray-600">More details will be available soon.</p>;
   }
 };
-
-
 
 export default function Home() {
   return (
@@ -224,12 +224,12 @@ export default function Home() {
   border-2
   border-black
   text-white
-  bg-[#121212]
+  bg-[#FA7268]
   transition
   duration-200
      hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] "
           >
-            Book a call
+            Book a Free Consultation
           </Link>
         </div>
       </Element>
@@ -263,13 +263,13 @@ export default function Home() {
       border-2 
       border-black 
       dark:border-white 
-       bg-[#121212] 
+       bg-[#FA7268] 
        text-white 
        transition 
        duration-200 
        hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] "
             >
-              Book a Call
+              Book a Free Consultation
             </Link>
             <Link
               href={"/case-studies"}
@@ -291,25 +291,25 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-center text-left md:justify-items-center md:mx-auto mt-10 md:mt-16">
             <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
               <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center text-grey-700">
-                <PiCheckBold className="text-xl text-blue-500" />
+                <PiCheckBold className="text-xl text-[#FA7268]" />
                 Bookkeeping
               </p>
             </BoxReveal>
             <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
               <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center text-grey-700">
-                <PiCheckBold className="text-xl text-blue-500" />
+                <PiCheckBold className="text-xl text-[#FA7268]" />
                 Payroll
               </p>
             </BoxReveal>
             <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
               <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center text-grey-700">
-                <PiCheckBold className="text-xl text-blue-500" />
+                <PiCheckBold className="text-xl text-[#FA7268]" />
                 Audit
               </p>
             </BoxReveal>
             <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
               <p className="md:text-xl font-semibold flex gap-x-2 md:gap-x-4 items-center text-grey-700">
-                <PiCheckBold className="text-xl text-blue-500" />
+                <PiCheckBold className="text-xl text-[#FA7268]" />
                 ERP
               </p>
             </BoxReveal>
@@ -416,14 +416,14 @@ export default function Home() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#FA7268] transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-gray-500 text-sm leading-relaxed">
                       {service.description}
                     </p>
                   </div>
-                  <div className="text-blue-600 font-medium text-sm tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-[#FA7268] font-medium text-sm tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Learn More →
                   </div>
                 </div>
@@ -452,7 +452,7 @@ export default function Home() {
                         border-2 
                         border-black 
                         dark:border-white 
-                        bg-[#121212] 
+                        bg-[#FA7268] 
                         text-white 
                         transition 
                         duration-200 
