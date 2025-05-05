@@ -157,8 +157,8 @@ const getServiceDetails = (title: string): JSX.Element => {
 
 export default function Home() {
   return (
-<div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#ffffff_40%,#93c5fd_100%)]">
-      <Element
+<div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#ffffff_40%,#93c5fd_100%)] sm:[background:radial-gradient(100%_100%_at_50%_20%,#ffffff_40%,#93c5fd_100%)] md:[background:radial-gradient(100%_100%_at_50%_30%,#ffffff_40%,#93c5fd_100%)]">
+<Element
         name="top"
         className="rounded-md top-3 sticky z-50 xl:w-4/5 2xl:w-[68%] 
         mx-auto bg-[#fafafa] text-white flex items-center justify-between 
@@ -207,23 +207,27 @@ export default function Home() {
           </a>
 
           <Link
-            href={"/meeting"}
-            className="
-  py-3 
-  px-6
-  text-lg 
-  hover:bg-[#abcbff]
-  rounded-[6px]
-  border-2
-  border-black
-  text-white
-  bg-[#FA7268]
-  transition
-  duration-200
-     hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] "
-          >
-            Book a Free Consultation
-          </Link>
+  href="/meeting"
+  className="
+    py-2
+    px-4
+    text-base
+    hover:bg-[#abcbff]
+    rounded-[6px]
+    border-2
+    border-black
+    text-white
+    bg-[#FA7268]
+    transition
+    duration-200
+    hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] 
+    dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]
+  "
+>
+  Book a Free Consultation
+</Link>
+
+
         </div>
       </Element>
 
@@ -245,40 +249,45 @@ export default function Home() {
                   gap-x-4
                    "
           >
-            <Link
-              href="/meeting"
-              className="py-3 
-            px-10
-            md:px-16
-      md:text-xl
-      hover:bg-[#abcbff] 
-      rounded-[6px]
-      border-2 
-      border-black 
-      dark:border-white 
-       bg-[#FA7268] 
-       text-white 
-       transition 
-       duration-200 
-       hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] "
-            >
-              Book a Free Consultation
-            </Link>
-            <Link
-              href={"/case-studies"}
-              className="
-              bg-white
-   py-3 
-   px-10
-   md:px-16
-      md:text-xl
-        border-4
-        border-black
-        rounded-[6px]
-        hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]"
-            >
-              Case Studies
-            </Link>
+<Link
+  href="/meeting"
+  className="
+    py-2.5
+    px-5
+    text-base
+    hover:bg-[#abcbff]
+    rounded-[6px]
+    border-2
+    border-black
+    text-white
+    bg-[#FA7268]
+    transition
+    duration-200
+    hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] 
+    dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]
+  "
+>
+  Book a Free Consultation
+</Link>
+
+
+<Link
+  href="/case-studies"
+  className="
+    bg-white
+    py-2.5
+    px-5
+    text-base
+    border-2
+    border-black
+    rounded-[6px]
+    hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] 
+    dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]
+  "
+>
+  Case Studies
+</Link>
+
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-center text-left md:justify-items-center md:mx-auto mt-10 md:mt-16">
@@ -423,7 +432,7 @@ export default function Home() {
               </div>
             </DialogTrigger>
 
-            <DialogContent className="max-w-2xl bg-white border-none shadow-2xl rounded-xl p-6">
+            <DialogContent className="w-[90vw] max-w-2xl bg-white border-none shadow-2xl rounded-xl p-4 sm:p-6 overflow-y-auto max-h-[90vh]">
               <BoxReveal boxColor="#3b82f6" duration={0.6}>
                 <div>
                   <h2 className="text-3xl font-bold text-gray-800">{service.title}</h2>
