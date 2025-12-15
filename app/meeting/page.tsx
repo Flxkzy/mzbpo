@@ -1,7 +1,6 @@
 "use client";
 
 import Calendly from "./calendly";
-import ShowcaseNavbar from "@/components/showcase-navbar";
 import { PiCheckCircle } from "react-icons/pi";
 import { motion } from "framer-motion";
 
@@ -12,23 +11,14 @@ const checkItemVariants = {
 
 const Meeting = () => {
   return (
-    <div
-      className="
-      flex flex-col w-full  
-      overflow-clip inset-0 -z-10 
-      bg-[#fafafa] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] 
-      bg-[size:14px_24px]"
-    >
-      <ShowcaseNavbar />
-
+    <div className="min-h-screen flex flex-col bg-brand-navy text-brand-white">
       <div className="md:px-0 px-6 xl:w-4/5 2xl:w-[68%] md:mt-14 mx-auto flex flex-col md:flex-row gap-y-10 md:gap-y-0 md:justify-between">
-        
         {/* Text Section */}
         <div className="md:w-2/5 w-full">
-          <h1 className="text-3xl md:text-4xl font-semibold pt-10 md:pt-0 leading-tight">
+          <h1 className="text-3xl md:text-4xl font-display font-semibold pt-10 md:pt-0 leading-tight">
             Let’s Talk About Scaling Your Finance Function
           </h1>
-          <p className="text-base md:text-lg text-gray-500 py-4 leading-relaxed">
+          <p className="text-base md:text-lg text-white/80 py-4 leading-relaxed">
             At <strong>MZBPO</strong>, we help growth-focused businesses slash finance overheads by up to 50% with expert bookkeeping, ERP implementation, payroll processing, and audit support — all powered by a top-rated audit firm.
           </p>
 
@@ -62,12 +52,12 @@ const Meeting = () => {
               transition={{ delay: index * 0.2 }}
               className="flex gap-x-3 md:gap-x-4 py-3"
             >
-              <PiCheckCircle className="text-[#FA7268] text-xl md:text-2xl flex-shrink-0 mt-1" />
+              <PiCheckCircle className="text-brand-teal text-xl md:text-2xl flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-base md:text-lg font-bold text-gray-700">
+                <h3 className="text-base md:text-lg font-bold text-brand-white">
                   {item.title}
                 </h3>
-                <p className="text-sm md:text-base text-gray-400">
+                <p className="text-sm md:text-base text-white/70">
                   {item.description}
                 </p>
               </div>
@@ -77,7 +67,9 @@ const Meeting = () => {
 
         {/* Calendly */}
         <div className="md:w-1/2 w-full">
-          <Calendly />
+          <div className="bg-brand-white text-brand-navy rounded-2xl shadow-soft p-4 md:p-6">
+            <Calendly />
+          </div>
         </div>
       </div>
     </div>

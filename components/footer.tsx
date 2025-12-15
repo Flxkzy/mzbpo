@@ -1,33 +1,48 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 const Footer = () => {
   return (
-    <footer className="bg-[#fafafa] py-10  px-6 md:px-0 md:mx-auto border-t">
-      <div className="flex flex-col  justify-between gap-y-3 xl:w-4/5 2xl:w-[68%] mx-auto">
-        <h1 className="text-3xl md:text-5xl font-medium ">
-          <Image
-            src={"/logo/mzbpo.png"}
-            width={10000}
-            height={10000}
-            className="w-40"
-            alt="mzbpo"
-          />{" "}
-        </h1>
-        <p className="text-left  text-xl  text-gray-500"></p>
-        <p className="text-left  text-xl  text-gray-500">
-          mzcopakistan@gmail.com
-        </p>
-      </div>
+    <footer className="bg-brand-navy border-t border-white/10 text-brand-white">
+      <div className="px-6 md:px-0 py-12 xl:w-4/5 2xl:w-[68%] mx-auto">
+        <Image
+          src="/logo/mzbp.png"
+          width={10000}
+          height={10000}
+          alt="MZBPO Logo"
+          className="w-40"
+        />
 
-      <div className="flex md:justify-center gap-x-4 mt-10">
-        © 2025 MZBPO. All Rights Reserved.
-        <Link href="/" className="text-blue-500">
-          Privacy Policy
-        </Link>
+        <div className="mt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-y-4 text-base">
+          <p className="text-muted">mzcopakistan@gmail.com</p>
+          <div className="flex items-center gap-x-6">
+            <Link
+              href="https://www.linkedin.com/in/hammafarid/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand-teal transition"
+            >
+              LinkedIn
+            </Link>
+            <Link
+              href="https://bkrpakistan.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand-teal transition"
+            >
+              Visit BKR Pakistan →
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center gap-4 text-sm text-muted">
+          <span>© 2025 MZBPO. All Rights Reserved.</span>
+          <Link href="/" className="text-brand-teal hover:opacity-80">
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}
+export default Footer

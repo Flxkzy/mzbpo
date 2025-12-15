@@ -3,32 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const works = [
-  {
-    background: "bg-gray-200",
-    imageUrl: "/images/business.webp",
-    title: "Rubbish Brothers",
-    link: "https://www.rubbishbrothers.com",
-  },
-  {
-    background: "bg-gray-200",
-    imageUrl: "/images/business.webp",
-    title: "Atlas Massage",
-    link: "https://www.atlasmassage.ca",
-  },
-  {
-    background: "bg-gray-200",
-    imageUrl: "/images/business.webp",
-    title: "Canadian Security Solutions",
-    link: "https://www.canadiansecuritysolutions.com",
-  },
-  {
-    background: "bg-gray-200",
-    imageUrl: "/images/business.webp",
-    title: "Flight 9",
-    link: "https://www.flight9.art",
-  },
-
-
+  { background: "bg-brand-grey", imageUrl: "/images/business.webp", title: "Rubbish Brothers",               link: "https://www.rubbishbrothers.com" },
+  { background: "bg-brand-grey", imageUrl: "/images/business.webp", title: "Atlas Massage",                   link: "https://www.atlasmassage.ca" },
+  { background: "bg-brand-grey", imageUrl: "/images/business.webp", title: "Canadian Security Solutions",     link: "https://www.canadiansecuritysolutions.com" },
+  { background: "bg-brand-grey", imageUrl: "/images/business.webp", title: "Flight 9",                        link: "https://www.flight9.art" },
 ];
 
 export function BlurFadeDemo() {
@@ -40,21 +18,19 @@ export function BlurFadeDemo() {
             key={title}
             delay={0.25 + idx * 0.05}
             inView
-            className={`rounded-lg ${works[idx].background} p-4`}
+            className={`rounded-2xl ${works[idx].background} p-4 text-brand-navy`}
           >
-            <Link href={link} target="_blank" rel="noreferrer">
+            <Link href={link} target="_blank" rel="noreferrer" className="block">
               <Image
-                height={10000}
-                width={10000}
-                className="
-                h-5/6 w-full object-cover rounded-lg"
-        
-              
-       
+                height={1200}
+                width={1600}
+                className="h-5/6 w-full object-cover rounded-xl"
                 src={imageUrl}
-                alt={`Random stock image ${idx + 1}`}
+                alt={title}
               />
-              <h3 className="text-lg font-semibold p-4">{title}</h3>
+              <h3 className="text-lg font-semibold p-4 hover:text-brand-teal transition-colors">
+                {title}
+              </h3>
             </Link>
           </BlurFade>
         ))}
