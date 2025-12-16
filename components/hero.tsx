@@ -79,11 +79,9 @@ export default function Hero() {
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            We handle your books, but that's just the start. Get{" "}
-            <span className="text-brand-white font-medium">intelligent dashboards</span> plus strategic guidance
-            from <span className="text-brand-teal font-medium">real CFOs</span> so you always know where to cut
-            costs and where to double down.
-          </p>
+            We handle your books, and{" "}
+            <span className="text-brand-white font-medium">everything around them</span> So your numbers are 
+            <span className="text-brand-teal font-medium"> clean, </span> your costs are low, and decisions are clear </p>
 
           {/* CTA Buttons */}
           <div

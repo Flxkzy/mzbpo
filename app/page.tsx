@@ -10,7 +10,8 @@ import { Testimonials } from "@/components/testimonials"
 import { AnimatedBeamMultipleOutputDemo } from "@/components/demos/animated-beam-demo"
 import BoxRevealDemo from "@/components/demos/box-reveal-demo"
 import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting-stars-demo"
-import LetsMakeThingsHappenSection from "@/components/ui/lets-make-things-happen"
+import Footer from "@/components/footer"
+import { CTASection } from "@/components/cta-section"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -53,27 +54,30 @@ export default function Home() {
           </Element>
         </section>
 
-        {/* PROCESS */}
-        <Element name="process">
-          <section id="process" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
-            <h2 className="text-3xl md:text-5xl text-center font-[var(--font-syne)] font-semibold">
-              Our <span className="text-brand-teal">Proven</span> Process
-            </h2>
+{/* PROCESS */}
+<Element name="process">
+  <section id="process" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
+    {/* Heading */}
+    <h2 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white text-center">
+      Our <span className="text-brand-teal">Proven</span> Process
+    </h2>
 
-            <p className="text-center py-4 md:w-1/2 mx-auto text-lg md:text-xl text-white/80 font-[var(--font-poppins)]">
-              Every service is built to reduce costs, improve compliance, and give you clarity.
-            </p>
+    {/* Subheading / body */}
+    <p className="text-center py-4 md:w-1/2 mx-auto text-base md:text-lg text-white/80 font-[var(--font-poppins)]">
+      Every service is built to reduce costs, improve compliance, and give you clarity.
+    </p>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
-              <div className="w-full md:w-1/2">
-                <AnimatedBeamMultipleOutputDemo />
-              </div>
-              <div className="w-full md:w-1/2">
-                <BoxRevealDemo />
-              </div>
-            </div>
-          </section>
-        </Element>
+    <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
+      <div className="w-full md:w-1/2">
+        <AnimatedBeamMultipleOutputDemo />
+      </div>
+      <div className="w-full md:w-1/2">
+        <BoxRevealDemo />
+      </div>
+    </div>
+  </section>
+</Element>
+
 
         {/* CASE STUDIES */}
         <section id="case-studies" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
@@ -104,16 +108,19 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Text Area */}
-                <div className="w-full md:w-2/3">
-                  <p className="text-xl md:text-2xl text-white font-syne font-medium mb-4">
-                    Backed by a legacy of financial excellence.
-                  </p>
-                  <p className="text-base md:text-lg text-gray-300 font-poppins leading-relaxed">
-                    We are the outsourcing arm of Muniff Ziauddin & Co. As an independent member of BKR International,
-                    we bring world-class audit standards to your back-office operations.
-                  </p>
-                </div>
+{/* Text Area */}
+<div className="w-full md:w-2/3 font-[var(--font-poppins)]">
+  {/* Heading: Syne (use required syntax, slightly reduced size) */}
+  <p className="mt-6 font-[family-name:var(--font-syne)] text-2xl sm:text-3xl md:text-4xl font-bold text-brand-white mb-4">
+    Backed by a legacy of financial excellence.
+  </p>
+
+  {/* Body: Poppins */}
+  <p className="text-base md:text-lg text-gray-300 font-[var(--font-poppins)] leading-relaxed">
+    We are the outsourcing arm of Muniff Ziauddin & Co. As an independent member of BKR International, we bring world class standards to you
+  </p>
+</div>
+
               </div>
             </div>
           </div>
@@ -127,35 +134,12 @@ export default function Home() {
         </Element>
 
         {/* FINAL CTA */}
-        <LetsMakeThingsHappenSection />
+        <CTASection />
 
         {/* FOOTER */}
-        <footer className="bg-brand-navy py-10 border-t border-white/10">
-          <div className="max-w-[1600px] mx-auto px-6 md:px-0">
-            <Image src="/logo/mzbp.png" width={400} height={200} alt="MZBPO" className="w-40" />
 
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-y-4 mt-6">
-              <p className="text-muted">mzcopakistan@gmail.com</p>
-              <div className="flex items-center gap-x-6">
-                <Link
-                  href="https://www.linkedin.com/in/hammafarid/"
-                  target="_blank"
-                  className="hover:text-brand-teal transition"
-                >
-                  <FaLinkedin className="inline mr-2" />
-                  LinkedIn
-                </Link>
-                <Link href="https://bkrpakistan.com/" target="_blank" className="hover:text-brand-teal transition">
-                  Visit BKR Pakistan →
-                </Link>
-              </div>
-            </div>
+         <Footer />
 
-            <div className="text-center mt-10 text-sm text-muted">
-              © 2025 MZBPO. All Rights Reserved.
-            </div>
-          </div>
-        </footer>
       </div>
     </main>
   )

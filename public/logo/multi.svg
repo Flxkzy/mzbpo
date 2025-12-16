@@ -1,0 +1,33 @@
+<svg width="420" height="120" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Multi Services Group - neutral mark 1">
+  <defs>
+    <style>
+      .ink { fill: #0F172A; }
+      .muted { fill: #0F172A; opacity: 0.72; }
+      .accent { fill: #22C55E; }
+    </style>
+  </defs>
+
+  <!-- Mark -->
+  <g transform="translate(18,18)">
+    <rect x="0" y="0" rx="18" ry="18" width="84" height="84" fill="#FFFFFF"/>
+    <rect x="0" y="0" rx="18" ry="18" width="84" height="84" fill="#0F172A" opacity="0.06"/>
+
+    <!-- stacked "ledger" bars -->
+    <rect x="18" y="22" width="48" height="8" rx="4" class="ink" opacity="0.9"/>
+    <rect x="18" y="38" width="40" height="8" rx="4" class="ink" opacity="0.65"/>
+    <rect x="18" y="54" width="34" height="8" rx="4" class="ink" opacity="0.45"/>
+
+    <!-- check dot -->
+    <circle cx="64" cy="60" r="6" class="accent"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(120,34)">
+    <text x="0" y="18" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="26" font-weight="700" class="ink">
+      Multi Services Group
+    </text>
+    <text x="0" y="44" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" font-weight="600" class="muted" letter-spacing="1">
+  
+    </text>
+  </g>
+</svg>

@@ -347,7 +347,7 @@ export default function ClientsShowcase() {
             </h2>
 
             <p className="mt-4 text-base sm:text-lg text-brand-white/60 max-w-2xl mx-auto font-sans">
-              Bookkeeping, payroll, ERP, and audit support for fast-growing businesses across the globe
+              Bookkeeping, payroll, ERP, and audit support for fast growing businesses across the globe
             </p>
           </div>
 

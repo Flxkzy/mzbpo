@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import { Star, ChevronRight } from "lucide-react"
 import { Card } from "@/components/ui/card"
 
 interface Testimonial {
@@ -18,45 +17,43 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "David Callahan",
-    role: "Marketing Director",
-    company: "Spotify",
-    image: "/professional-man.jpg",
+    name: "Operations Director",
+    role: "Operations Director",
+    company: "Mid-sized Services Company",
+    image: "/images/1.avif",
     quote:
-      "We needed a modern, high-converting website, and the Bravio team delivered beyond expectations. Their design and SEO expertise helped us increase conversion rate by 800% in just two weeks. Highly recommend!",
-    stat: "8X",
-    statDescription: "Increase in conversion rate",
-    companyLogo: "spotify",
+      "Replacing our in-house accounting team with MZBPO immediately reduced our overhead while improving accuracy and reporting. We finally have numbers we trust.",
+    stat: "50%",
+    statDescription: "Reduction in finance team cost",
   },
   {
     id: 2,
-    name: "Sarah Mitchell",
-    role: "Marketing Director",
-    company: "Google",
-    image: "/professional-woman-diverse.png",
+    name: "Finance Manager",
+    role: "Finance Manager",
+    company: "Multi-entity Business",
+    image: "/images/2.avif",
     quote:
-      "From branding to website design, every detail was meticulously handled. The team's expertise helped us launch faster, and the results have been phenomenal!",
+      "Our monthly close used to drag on for weeks. With MZBPO, reporting is structured, timely, and reliable. Management decisions are no longer delayed.",
     stat: "2X",
-    statDescription: "Increase in lead generation",
-    companyLogo: "google",
+    statDescription: "Faster month-end close",
   },
   {
     id: 3,
-    name: "Tom Becker",
+    name: "Founder",
     role: "Founder",
-    company: "PulseCare",
-    image: "/startup-founder.png",
+    company: "Growing Ecommerce Brand",
+    image: "/images/3.avif",
     quote:
-      "Their animation work took our product videos to the next level. The team truly understands user experience and storytelling.",
+      "We discovered payment discrepancies that would have gone unnoticed without their internal checks. That alone justified the engagement.",
   },
   {
     id: 4,
-    name: "Sarah Michel",
-    role: "Marketing Director",
-    company: "Google",
-    image: "/business-executive.png",
+    name: "CEO",
+    role: "CEO",
+    company: "Transaction-heavy Business",
+    image: "/images/4.avif",
     quote:
-      "The team nailed our MVP design with a fast turnaround and incredible attention to detail. The final product felt polished and professional.",
+      "MZBPO didn’t just post entries. They understood our workflows, payment gateways, and bank movements. Everything finally reconciles.",
   },
 ]
 
@@ -64,10 +61,10 @@ export function Testimonials() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   return (
-    <section className="py-20 px-4" style={{ backgroundColor: "hsl(0 0% 96%)" }}>
+    <section className="py-20 px-4 font-[var(--font-poppins)]" style={{ backgroundColor: "hsl(0 0% 96%)" }}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 mb-2">
+          <div className="inline-flex items-center gap-2 mb-2 font-[var(--font-poppins)]">
             <span className="text-lg font-semibold" style={{ color: "hsl(158 47% 58%)" }}>
               [
             </span>
@@ -78,33 +75,38 @@ export function Testimonials() {
               ]
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold font-sans leading-tight" style={{ color: "hsl(232 45% 19%)" }}>
-            Results that speaks volume
+
+          {/* Heading: Syne required syntax (smaller than your main hero style) */}
+          <h2 className="mt-6 font-[family-name:var(--font-syne)] text-2xl sm:text-3xl md:text-4xl font-bold text-brand-navy leading-tight">
+            Results that stand up to scrutiny
           </h2>
-          <p className="text-2xl font-medium" style={{ color: "hsl(158 47% 58%)" }}>
-            Read success stories
-          </p>
-          <p className="text-base max-w-xl mx-auto" style={{ color: "hsl(232 45% 19% / 0.7)" }}>
-            Find out how our happy clients are raving about us.
+
+          <p
+            className="text-base max-w-2xl mx-auto font-[var(--font-poppins)]"
+            style={{ color: "hsl(232 45% 19% / 0.7)" }}
+          >
+            Read real outcomes from businesses that needed clarity, control, and scale.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
-          {/* Left Large Card - 8X stat */}
+          {/* Left Large Card - metric led */}
           <Card
             className="group relative overflow-hidden border-0 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             style={{ backgroundColor: "hsl(232 45% 19%)" }}
             onMouseEnter={() => setHoveredCard(testimonials[0].id)}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <div className="p-8 space-y-6 min-h-[400px] flex flex-col justify-between">
+            <div className="p-8 space-y-6 min-h-[400px] flex flex-col justify-between font-[var(--font-poppins)]">
               <div className="space-y-3">
-                <div className="text-6xl font-bold font-sans text-white">{testimonials[0].stat}</div>
+                <div className="text-6xl font-bold text-white font-[family-name:var(--font-syne)]">
+                  {testimonials[0].stat}
+                </div>
                 <p className="text-base font-medium text-white/80">{testimonials[0].statDescription}</p>
               </div>
 
               <div className="space-y-4">
-                <div className="text-3xl font-serif leading-none" style={{ color: "hsl(158 47% 58%)" }}>
+                <div className="text-3xl leading-none" style={{ color: "hsl(158 47% 58%)" }}>
                   "
                 </div>
                 <p className="text-sm leading-relaxed" style={{ color: "hsl(158 47% 58%)" }}>
@@ -123,39 +125,32 @@ export function Testimonials() {
                   </div>
                   <div>
                     <p className="font-semibold text-sm text-white">{testimonials[0].name}</p>
-                    <p className="text-xs text-white/60">
-                      {testimonials[0].role}, {testimonials[0].company}
-                    </p>
+                    <p className="text-xs text-white/60">{testimonials[0].company}</p>
                   </div>
                 </div>
-                {testimonials[0].companyLogo && (
-                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                    <span className="text-xs font-bold" style={{ color: "hsl(232 45% 19%)" }}>
-                      S
-                    </span>
-                  </div>
-                )}
               </div>
             </div>
           </Card>
 
           {/* Right Column - Stacked Cards */}
           <div className="flex flex-col gap-4">
-            {/* Top Right - 2X stat card */}
+            {/* Top Right - metric card */}
             <Card
               className="group relative overflow-hidden border-0 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
               style={{ backgroundColor: "hsl(232 45% 19%)" }}
               onMouseEnter={() => setHoveredCard(testimonials[1].id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              <div className="p-6 space-y-4">
+              <div className="p-6 space-y-4 font-[var(--font-poppins)]">
                 <div className="flex items-baseline gap-3">
-                  <div className="text-4xl font-bold font-sans text-white">{testimonials[1].stat}</div>
+                  <div className="text-4xl font-bold text-white font-[family-name:var(--font-syne)]">
+                    {testimonials[1].stat}
+                  </div>
                   <p className="text-sm font-medium text-white/80">{testimonials[1].statDescription}</p>
                 </div>
 
                 <div className="space-y-3">
-                  <div className="text-2xl font-serif leading-none" style={{ color: "hsl(158 47% 58%)" }}>
+                  <div className="text-2xl leading-none" style={{ color: "hsl(158 47% 58%)" }}>
                     "
                   </div>
                   <p className="text-sm leading-relaxed text-white/90">{testimonials[1].quote}</p>
@@ -172,18 +167,9 @@ export function Testimonials() {
                     </div>
                     <div>
                       <p className="font-semibold text-sm text-white">{testimonials[1].name}</p>
-                      <p className="text-xs text-white/60">
-                        {testimonials[1].role}, {testimonials[1].company}
-                      </p>
+                      <p className="text-xs text-white/60">{testimonials[1].company}</p>
                     </div>
                   </div>
-                  {testimonials[1].companyLogo && (
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                      <span className="text-xs font-bold" style={{ color: "hsl(232 45% 19%)" }}>
-                        G
-                      </span>
-                    </div>
-                  )}
                 </div>
               </div>
             </Card>
@@ -197,9 +183,9 @@ export function Testimonials() {
                 onMouseEnter={() => setHoveredCard(testimonials[2].id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className="p-5 space-y-3 min-h-[220px] flex flex-col justify-between">
+                <div className="p-5 space-y-3 min-h-[220px] flex flex-col justify-between font-[var(--font-poppins)]">
                   <div className="space-y-2">
-                    <div className="text-2xl font-serif leading-none text-white">"</div>
+                    <div className="text-2xl leading-none text-white">"</div>
                     <p className="text-sm leading-relaxed text-white">{testimonials[2].quote}</p>
                   </div>
 
@@ -213,9 +199,7 @@ export function Testimonials() {
                     </div>
                     <div>
                       <p className="font-semibold text-xs text-white">{testimonials[2].name}</p>
-                      <p className="text-xs text-white/80">
-                        {testimonials[2].role}, {testimonials[2].company}
-                      </p>
+                      <p className="text-xs text-white/80">{testimonials[2].company}</p>
                     </div>
                   </div>
                 </div>
@@ -228,9 +212,9 @@ export function Testimonials() {
                 onMouseEnter={() => setHoveredCard(testimonials[3].id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className="p-5 space-y-3 min-h-[220px] flex flex-col justify-between">
+                <div className="p-5 space-y-3 min-h-[220px] flex flex-col justify-between font-[var(--font-poppins)]">
                   <div className="space-y-2">
-                    <div className="text-2xl font-serif leading-none" style={{ color: "hsl(158 47% 58%)" }}>
+                    <div className="text-2xl leading-none" style={{ color: "hsl(158 47% 58%)" }}>
                       "
                     </div>
                     <p className="text-sm leading-relaxed" style={{ color: "hsl(158 47% 58%)" }}>
@@ -248,9 +232,7 @@ export function Testimonials() {
                     </div>
                     <div>
                       <p className="font-semibold text-xs text-white">{testimonials[3].name}</p>
-                      <p className="text-xs text-white/60">
-                        {testimonials[3].role}, {testimonials[3].company}
-                      </p>
+                      <p className="text-xs text-white/60">{testimonials[3].company}</p>
                     </div>
                   </div>
                 </div>

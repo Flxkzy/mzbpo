@@ -26,7 +26,7 @@ function FeatureCard({ feature, index, isVisible }: { feature: typeof features[0
       style={{ transitionDelay: `${index * 60}ms` }}
     >
       {/* Background Number */}
-      <span className="absolute -bottom-4 -right-2 text-[120px] font-bold leading-none text-brand-navy/[0.04] font-display select-none pointer-events-none transition-all duration-500 group-hover:text-brand-teal/[0.08] group-hover:scale-110">
+      <span className="absolute -bottom-4 -right-2 text-[120px] font-bold leading-none text-brand-navy/[0.04] font-[var(--font-poppins)] select-none pointer-events-none transition-all duration-500 group-hover:text-brand-teal/[0.08] group-hover:scale-110">
         {feature.num}
       </span>
 
@@ -35,16 +35,15 @@ function FeatureCard({ feature, index, isVisible }: { feature: typeof features[0
 
       {/* Icon */}
       <div className="relative w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand-teal/25 to-brand-teal/5 mb-5 transition-all duration-300 group-hover:scale-110 group-hover:from-brand-teal/35 group-hover:to-brand-teal/15 z-10">
-        {/* Animated ring */}
         <div className="absolute inset-0 rounded-2xl border-2 border-brand-teal/0 group-hover:border-brand-teal/40 group-hover:scale-125 group-hover:opacity-0 transition-all duration-700" />
         <Image src={feature.icon} width={28} height={28} alt="" className="w-7 h-7 relative z-10" />
       </div>
 
       {/* Content */}
-      <h3 className="text-xl font-bold mb-2 text-brand-navy group-hover:text-brand-teal transition-colors duration-300 font-display z-10">
+      <h3 className="text-xl font-bold mb-2 text-brand-navy group-hover:text-brand-teal transition-colors duration-300 font-[family-name:var(--font-syne)] z-10">
         {feature.title}
       </h3>
-      <p className="text-brand-navy/70 leading-relaxed text-sm z-10">
+      <p className="text-brand-navy/70 leading-relaxed text-sm font-[var(--font-poppins)] z-10">
         {feature.description}
       </p>
 
@@ -65,7 +64,10 @@ export function ShootingStarsAndStarsBackgroundDemo() {
   }, [])
 
   return (
-    <div ref={ref} className="mt-20 py-16 md:py-24 rounded-[40px] bg-brand-navy relative flex flex-col items-center w-full px-6 md:px-8 overflow-hidden">
+    <div
+      ref={ref}
+      className="mt-20 py-16 md:py-24 rounded-[40px] bg-brand-navy relative flex flex-col items-center w-full px-6 md:px-8 overflow-hidden font-[var(--font-poppins)]"
+    >
       {/* Ambient Glows */}
       <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-brand-teal/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-brand-teal/5 rounded-full blur-[80px] pointer-events-none" />
@@ -73,28 +75,52 @@ export function ShootingStarsAndStarsBackgroundDemo() {
       {/* Header */}
       <div className="relative z-10 max-w-4xl mx-auto text-center mb-14">
         {/* Badge */}
-        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+        <div
+          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
           <svg className="w-4 h-4 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
-          <span className="text-sm font-medium text-white/90 tracking-wide uppercase">Why Choose Us</span>
+          <span className="text-sm font-medium text-white/90 tracking-wide uppercase font-[var(--font-poppins)]">
+            Why Choose Us
+          </span>
         </div>
 
-        {/* Headline */}
-        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-white mb-5 font-display transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+        {/* Headline (Syne required syntax, slightly reduced) */}
+        <h2
+          className={`mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white mb-5 transition-all duration-700 delay-100 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
           Why Businesses Trust{" "}
           <span className="relative inline-block">
             <span className="bg-gradient-to-r from-brand-teal to-brand-teal/70 bg-clip-text text-transparent">MZBPO</span>
             <svg className="absolute -bottom-1 left-0 w-full h-2" viewBox="0 0 100 8" preserveAspectRatio="none">
-              <path d="M0 6 Q50 0 100 6" stroke="hsl(var(--brand-teal))" strokeWidth="2" fill="none" strokeLinecap="round"
-                style={{ strokeDasharray: 110, strokeDashoffset: visible ? 0 : 110, transition: "stroke-dashoffset 0.8s ease-out 0.5s" }} />
+              <path
+                d="M0 6 Q50 0 100 6"
+                stroke="hsl(var(--brand-teal))"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+                style={{
+                  strokeDasharray: 110,
+                  strokeDashoffset: visible ? 0 : 110,
+                  transition: "stroke-dashoffset 0.8s ease-out 0.5s",
+                }}
+              />
             </svg>
           </span>
         </h2>
 
         {/* Subheadline */}
-        <p className={`text-lg md:text-xl text-white/80 font-light leading-relaxed max-w-2xl mx-auto transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-          Clear reports. Compliant systems. Massive savings — guaranteed.
+        <p
+          className={`text-base md:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto font-[var(--font-poppins)] transition-all duration-700 delay-200 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          Clear reports. Compliant systems. Massive savings, guaranteed.
         </p>
       </div>
 

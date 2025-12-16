@@ -61,8 +61,8 @@ export function AnimatedBeamMultipleOutputDemo({ className }: { className?: stri
         </div>
 
         <div className="flex flex-col justify-center">
-          <Circle ref={div6Ref} className="size-16 bg-white">
-            <Image src={"/logo/mzbpo.png"} height={64} width={64} alt="MZBPO" />
+          <Circle ref={div6Ref} className="size-16 bg-navy">
+            <Image src={"/logo/mzbp.png"} height={80} width={80} alt="MZBPO" />
           </Circle>
         </div>
 

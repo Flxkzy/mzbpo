@@ -5,13 +5,13 @@ import Image from "next/image"
 const scenarios = [
   {
     category: "Expanding Teams",
-    question: "We keep running out of cash. How do I know if we can afford three more hires?",
+    question: "We’re growing fast, but cash feels tight. Can we afford to hire without breaking cash flow?",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop",
     alt: "Expanding Teams",
   },
   {
     category: "Securing Capital",
-    question: "Investors want financial projections. How do I model different growth scenarios?",
+    question: "Investors want clean numbers. Are our books and reports strong enough to raise capital?",
     image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop",
     alt: "Securing Capital",
   },
@@ -23,7 +23,7 @@ const scenarios = [
   },
   {
     category: "Planning Your Exit",
-    question: "We want to sell in two years. What financial foundation do we need to build now?",
+    question: "We want to sell in two years. Are our books clean enough for due diligence?",
     image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop",
     alt: "Exit Strategy",
   },
@@ -31,31 +31,33 @@ const scenarios = [
 
 export function GrowthScenarios() {
   return (
-    <section className="w-full py-12 md:py-24 px-4 md:px-8">
+    <section className="w-full py-12 md:py-24 px-4 md:px-8 font-[var(--font-poppins)]">
       <div className="container mx-auto max-w-6xl">
-        {/* Main Header Section */}
+        {/* Main Header */}
         <div className="max-w-4xl mb-12 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 md:mb-6 text-white">
-            Whether you're scaling from 2 to 20 people or preparing for your exit—
-            <span style={{ color: "hsl(158 47% 58%)" }}> we work for growing businesses.</span>
+          <h2 className="mt-6 font-[family-name:var(--font-syne)] text-2xl sm:text-3xl md:text-4xl font-bold text-brand-white">
+            Whether you’re handling hundreds of transactions or thousands,
+            <span style={{ color: "hsl(158 47% 58%)" }}> we support scalable businesses.</span>
           </h2>
+
           <p
-            className="text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl font-light"
+            className="mt-4 text-base md:text-lg leading-relaxed max-w-2xl font-[var(--font-poppins)]"
             style={{ color: "hsl(0 0% 90%)" }}
           >
-            Your ambition to build something significant matters more than your current size. We work with growth-minded
-            businesses at every stage.
+            As volume increases, clarity shouldn’t disappear. We structure your finance so growth doesn’t break reporting,
+            controls, or visibility.
           </p>
         </div>
 
+        {/* Subheading */}
         <h3
-          className="text-xl md:text-2xl font-bold mb-8 md:mb-12 text-white border-b pb-4"
+          className="mt-6 font-[family-name:var(--font-syne)] text-xl md:text-2xl font-bold mb-8 md:mb-12 text-white border-b pb-4"
           style={{ borderColor: "rgba(255, 255, 255, 0.1)" }}
         >
-          Growth scenarios we support:
+          Growth scenarios we support
         </h3>
 
-        {/* Grid Layout */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-16 md:gap-y-24">
           {scenarios.map((scenario, index) => (
             <div
@@ -64,35 +66,35 @@ export function GrowthScenarios() {
               style={{ borderLeft: `2px solid hsl(158 47% 58%)` }}
             >
               <div>
-                <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "hsl(158 47% 58%)" }}>
+                <div
+                  className="text-xs font-bold uppercase tracking-widest mb-3 font-[var(--font-poppins)]"
+                  style={{ color: "hsl(158 47% 58%)" }}
+                >
                   {scenario.category}
                 </div>
-                <p className="text-lg md:text-xl font-medium leading-snug mb-6 md:mb-8 text-white">
+
+                <p className="text-lg md:text-xl font-medium leading-snug mb-6 md:mb-8 text-white font-[var(--font-poppins)]">
                   "{scenario.question}"
                 </p>
               </div>
 
-              {/* Image Area */}
+              {/* Image */}
               <div className="relative mt-4 self-end w-[85%] md:w-[75%] aspect-[4/3]">
-                {/* Curved Arc Decoration */}
                 <div
                   className="absolute -top-3 -left-3 w-full h-full pointer-events-none opacity-50 transition-all duration-500 group-hover:opacity-100 group-hover:-translate-x-1 group-hover:-translate-y-1"
                   style={{
                     borderTopLeftRadius: "80px",
                     borderTop: `12px solid hsl(158 47% 58%)`,
                     borderLeft: `12px solid hsl(158 47% 58%)`,
-                    zIndex: 0,
                   }}
                 />
 
-                {/* Image Container */}
                 <div
                   className="relative w-full h-full overflow-hidden shadow-2xl"
                   style={{
                     borderTopLeftRadius: "70px",
                     backgroundColor: "hsl(232 45% 19%)",
                     border: "1px solid rgba(255, 255, 255, 0.1)",
-                    zIndex: 10,
                   }}
                 >
                   <Image
@@ -107,19 +109,19 @@ export function GrowthScenarios() {
           ))}
         </div>
 
-        {/* Bottom Summary Section */}
+        {/* Bottom summary */}
         <div
-          className="mt-16 md:mt-24 max-w-3xl mx-auto text-center p-6 md:p-8 rounded-xl backdrop-blur-sm"
+          className="mt-16 md:mt-24 max-w-3xl mx-auto text-center p-6 md:p-8 rounded-xl backdrop-blur-sm font-[var(--font-poppins)]"
           style={{
             backgroundColor: "rgba(255, 255, 255, 0.05)",
             border: "1px solid rgba(255, 255, 255, 0.1)",
           }}
         >
-          <p className="text-base md:text-lg lg:text-xl font-medium text-white leading-relaxed">
-            These complex questions require expertise that the average bookkeeping firm can't provide. We've helped
-            companies navigate everything from raising capital to valuations to international expansion.
+          <p className="text-base md:text-lg font-medium text-white leading-relaxed">
+            These questions can’t be answered with basic bookkeeping. They require clean data, strong controls, and a
+            finance system that holds up as you grow. That’s exactly what we build for our clients.
           </p>
-          {/* Decorative underline */}
+
           <div className="mt-6 w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: "hsl(158 47% 58%)" }} />
         </div>
       </div>
