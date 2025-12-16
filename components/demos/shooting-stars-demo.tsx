@@ -7,11 +7,11 @@ import Image from "next/image"
 
 const features = [
   { icon: "/icons/fast.svg", title: "Fast Onboarding", description: "We get your finance function up and running within days.", num: "01" },
-  { icon: "/icons/team.svg", title: "Qualified Team", description: "Work with ICAP-qualified accountants and ERP experts.", num: "02" },
+  { icon: "/icons/team.svg", title: "Qualified Team", description: "Work with ICAP qualified accountants and ERP experts.", num: "02" },
   { icon: "/icons/safe.svg", title: "Secure & Compliant", description: "Strict confidentiality and robust security protocols.", num: "03" },
   { icon: "/icons/design.svg", title: "ERP Setup & Accuracy", description: "Clean ledgers, mapped workflows, and proper controls.", num: "04" },
-  { icon: "/icons/analytics.svg", title: "Audit-Ready. Always.", description: "IFRS-compliant and audit-prepped from Day 1.", num: "05" },
-  { icon: "/icons/money.svg", title: "Guaranteed Cost Savings", description: "Cut up to 50% of finance overhead — no compromise.", num: "06" },
+  { icon: "/icons/analytics.svg", title: "Audit Ready. Always.", description: "IFRS compliant and audit prepped from Day 1.", num: "05" },
+  { icon: "/icons/money.svg", title: "Guaranteed Cost Savings", description: "Cut up to 50% of finance overhead, no compromise.", num: "06" },
   { icon: "/icons/scalable.svg", title: "Scalable Teams", description: "Start with one resource or scale a full finance team.", num: "07" },
   { icon: "/icons/support.svg", title: "Ongoing Support", description: "Reporting, queries, and escalations handled quickly.", num: "08" },
   { icon: "/icons/flexible.svg", title: "Built Around You", description: "Custom workflows and reports for your industry.", num: "09" },

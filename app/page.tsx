@@ -12,6 +12,7 @@ import BoxRevealDemo from "@/components/demos/box-reveal-demo"
 import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting-stars-demo"
 import Footer from "@/components/footer"
 import { CTASection } from "@/components/cta-section"
+import SectionDivider from "@/components/SectionDivider"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -78,6 +79,7 @@ export default function Home() {
   </section>
 </Element>
 
+<SectionDivider />
 
         {/* CASE STUDIES */}
         <section id="case-studies" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
