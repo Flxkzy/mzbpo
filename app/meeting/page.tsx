@@ -29,8 +29,8 @@ const Meeting = () => {
 
             {/* Body – Poppins */}
             <p className="text-base md:text-lg text-white/80 py-4 leading-relaxed">
-              At <strong>MZBPO</strong>, we help growth-focused businesses reduce finance overhead by up to 50% with
-              structured bookkeeping, ERP implementation, payroll processing, and audit support backed by a top-rated
+              At <strong>MZBPO</strong>, we help growth focused businesses reduce finance overhead by up to 50% with
+              structured bookkeeping, ERP implementation, payroll processing, and audit support backed by a top rated
               audit firm.
             </p>
 
@@ -38,7 +38,7 @@ const Meeting = () => {
               {
                 title: "Bookkeeping & Accounting Outsourcing",
                 description:
-                  "Cut costs, eliminate in-house headaches, and receive audit-ready financials every month.",
+                  "Cut costs, eliminate in house headaches, and receive audit ready financials every month.",
               },
               {
                 title: "Payroll Processing",

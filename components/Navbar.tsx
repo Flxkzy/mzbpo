@@ -57,20 +57,41 @@ export default function Navbar() {
             ${isScrolled ? "py-3" : "py-5 sm:py-6"}
           `}
         >
-          {/* LOGO */}
-          <a href="/" className="relative z-10">
-            <Image
-              src="/logo/mzbpo.svg"
-              alt="MZBPO"
-              width={220}
-              height={48}
-              className={`
-                h-auto transition-all duration-500
-                ${isScrolled ? "w-24 sm:w-28" : "w-28 sm:w-32"}
-              `}
-              priority
-            />
-          </a>
+          {/* LOGO GROUP */}
+          <div className="relative z-10 flex items-center gap-3 sm:gap-5">
+            {/* Main Logo (MZBPO) */}
+            <a href="/" className="block">
+              <Image
+                src="/logo/mzbpo.svg"
+                alt="MZBPO"
+                width={220}
+                height={48}
+                className={`
+                  h-auto object-contain transition-all duration-500
+                  ${isScrolled ? "w-20 sm:w-24" : "w-24 sm:w-28"}
+                `}
+                priority
+              />
+            </a>
+
+            {/* Vertical Divider */}
+            <div className={`w-[1px] bg-white/20 transition-all duration-500 ${isScrolled ? "h-6" : "h-8"}`} />
+
+            {/* Affiliate Logo (BKR) */}
+            {/* Make sure to save your BKR image to public/logo/bkr.png (or .svg) */}
+            <div className="block">
+              <Image
+                src="/logo/bkr.png" 
+                alt="BKR International"
+                width={100}
+                height={40}
+                className={`
+                  h-auto object-contain transition-all duration-500
+                  ${isScrolled ? "w-12 sm:w-14" : "w-14 sm:w-16"}
+                `}
+              />
+            </div>
+          </div>
 
           {/* DESKTOP NAV */}
           <nav className="hidden lg:flex items-center gap-12">

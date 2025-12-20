@@ -13,6 +13,7 @@ import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting
 import Footer from "@/components/footer"
 import { CTASection } from "@/components/cta-section"
 import SectionDivider from "@/components/SectionDivider"
+import VslSection from "@/components/VSL"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -42,6 +43,8 @@ export default function Home() {
 
         {/* SOCIAL PROOF */}
         <ClientShowcase />
+
+        <VslSection/>
 
         {/* WHY US (GrowthScenarios) */}
         <section id="why-us" className="py-20">
