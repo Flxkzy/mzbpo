@@ -2,8 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-import { FaLinkedin, FaInstagram, FaFacebookF } from "react-icons/fa"
+import { ArrowUpRight, Linkedin, Instagram, Facebook } from "lucide-react"
 
 const footerNav = [
   { label: "Why Us", href: "#why-us" },
@@ -13,9 +12,9 @@ const footerNav = [
 ]
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/hammafarid/", icon: FaLinkedin },
-  { label: "Instagram", href: "https://instagram.com/", icon: FaInstagram },
-  { label: "Facebook", href: "https://facebook.com/", icon: FaFacebookF },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/hammafarid/", icon: Linkedin },
+  { label: "Instagram", href: "https://instagram.com/MZBPO", icon: Instagram },
+  { label: "Facebook", href: "https://www.facebook.com/mzcopakistan", icon: Facebook },
 ]
 
 export default function Footer() {
@@ -30,19 +29,37 @@ export default function Footer() {
       <div className="relative max-w-[1600px] mx-auto px-6 md:px-0 py-12">
         {/* Top row */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
-          {/* Brand */}
+          {/* Brand & Logos */}
           <div className="max-w-md">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <Image
-                src="/logo/mzbp.png"
-                width={400}
-                height={200}
-                alt="MZBPO Logo"
-                className="w-40 h-auto"
-              />
-            </Link>
+            {/* Logo Group */}
+            <div className="flex items-center gap-5">
+              {/* Main Logo */}
+              <Link href="/" className="block">
+                <Image
+                  src="/logo/mzbp.png"
+                  width={180}
+                  height={60}
+                  alt="MZBPO Logo"
+                  className="w-32 sm:w-40 h-auto object-contain"
+                />
+              </Link>
 
-            <p className="mt-4 text-sm text-brand-white/60 font-[var(--font-poppins)] leading-relaxed">
+              {/* Vertical Divider */}
+              <div className="h-8 w-[1px] bg-white/20" />
+
+              {/* Affiliate Logo (BKR) */}
+              <div className="block">
+                <Image
+                  src="/logo/bkr.png"
+                  alt="BKR International"
+                  width={140}
+                  height={55}
+                  className="w-20 sm:w-24 h-auto object-contain"
+                />
+              </div>
+            </div>
+
+            <p className="mt-6 text-sm text-brand-white/60 font-[var(--font-poppins)] leading-relaxed">
               Outsourced bookkeeping, payroll, ERP and audit support built for growing teams.
               Clear financials, tight controls, and dependable execution.
             </p>
@@ -67,7 +84,7 @@ export default function Footer() {
                     "
                     aria-label={s.label}
                   >
-                    <Icon className="text-brand-teal/80 group-hover:text-brand-teal transition-colors" />
+                    <Icon size={14} className="text-brand-teal/80 group-hover:text-brand-teal transition-colors" />
                     {s.label}
                   </a>
                 )
