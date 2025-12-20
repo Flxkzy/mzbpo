@@ -10,7 +10,7 @@ type VslSectionProps = {
 }
 
 export default function VslSection({
-  videoId = "dQw4w9WgXcQ",
+  videoId = "MKXORaRiSqo",
   ctaHref = "/meeting",
 }: VslSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false)
