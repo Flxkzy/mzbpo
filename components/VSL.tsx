@@ -39,7 +39,7 @@ export default function VslSection({
       >
         {/* Shine effect */}
         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
-        <span className="relative">Schedule my free consultation</span>
+        <span className="relative">Schedule Free Consultation</span>
         <svg
           className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
           fill="none"

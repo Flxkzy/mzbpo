@@ -33,6 +33,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+
+  verification: {
+    google: "PP1WN75nl2PNDCE7PsfouWofPe4th-zhQud5n__5CvI",
+  },
+
   openGraph: {
     type: "website",
     url: "https://www.mzbpo.com",
