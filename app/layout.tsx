@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
 import { Syne, Poppins } from "next/font/google"
+import Script from "next/script"
 
 const syne = Syne({
   subsets: ["latin"],
@@ -17,11 +18,6 @@ const poppins = Poppins({
   display: "swap",
 })
 
-/**
- * GLOBAL SEO METADATA
- * Applies to homepage by default.
- * /meeting will override its own metadata.
- */
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mzbpo.com"),
   title: {
@@ -33,11 +29,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-
   verification: {
     google: "PP1WN75nl2PNDCE7PsfouWofPe4th-zhQud5n__5CvI",
   },
-
   openGraph: {
     type: "website",
     url: "https://www.mzbpo.com",
@@ -54,9 +48,6 @@ export const metadata: Metadata = {
   },
 }
 
-/**
- * VIEWPORT + THEME
- */
 export const viewport: Viewport = {
   themeColor: "#232763",
   colorScheme: "dark light",
@@ -69,12 +60,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${syne.variable} ${poppins.variable}`}>
+      <head>
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "uoo3y364d3");
+            `,
+          }}
+        />
+      </head>
+
       <body className="bg-background text-foreground antialiased">
         {children}
 
-        {/* Organization Structured Data */}
-        <script
+        <Script
+          id="mzbpo-org-ldjson"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -83,9 +91,7 @@ export default function RootLayout({
               url: "https://www.mzbpo.com",
               description:
                 "Outsourced bookkeeping and accounting services for growing businesses.",
-              sameAs: [
-                "https://www.linkedin.com/company/mzbpo",
-              ],
+              sameAs: ["https://www.linkedin.com/company/mzbpo"],
             }),
           }}
         />
