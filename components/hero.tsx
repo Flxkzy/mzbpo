@@ -11,6 +11,12 @@ export default function Hero() {
     setIsLoaded(true)
   }, [])
 
+  const trackLead = (contentName: string) => {
+    window.fbq?.("track", "Lead", {
+      content_name: contentName,
+    })
+  }
+
   return (
     <section className="relative w-full min-h-screen overflow-hidden">
       {/* Main content */}
@@ -80,8 +86,9 @@ export default function Hero() {
             }`}
           >
             We handle your books, and{" "}
-            <span className="text-brand-white font-medium">everything around them</span> So your numbers are 
-            <span className="text-brand-teal font-medium"> clean, </span> your costs are low, and decisions are clear </p>
+            <span className="text-brand-white font-medium">everything around them</span> So your numbers are{" "}
+            <span className="text-brand-teal font-medium"> clean, </span> your costs are low, and decisions are clear{" "}
+          </p>
 
           {/* CTA Buttons */}
           <div
@@ -92,6 +99,7 @@ export default function Hero() {
             {/* Primary CTA */}
             <a
               href="/meeting"
+              onClick={() => trackLead("Hero CTA - Book a Free Discovery Call")}
               className="group relative inline-flex items-center gap-2.5 bg-brand-teal text-brand-navy font-sans font-semibold text-sm sm:text-base px-6 sm:px-8 py-3 rounded-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--brand-teal)/0.35)] hover:scale-[1.02]"
             >
               {/* Shine effect */}
@@ -111,6 +119,9 @@ export default function Hero() {
             {/* Secondary link */}
             <a
               href="#services"
+              onClick={() => {
+                window.fbq?.("trackCustom", "ServicesAnchorClick", { placement: "Hero" })
+              }}
               className="group inline-flex items-center gap-1 font-sans text-xs sm:text-sm font-semibold uppercase tracking-wide text-brand-teal hover:text-brand-teal/80 transition-colors duration-300"
             >
               <span className="relative border-b border-brand-teal pb-0.5 group-hover:border-brand-teal/80">

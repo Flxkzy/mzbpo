@@ -4,6 +4,7 @@ import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
 import { Syne, Poppins } from "next/font/google"
 import Script from "next/script"
+import MetaPageView from "@/components/MetaPageView"
 
 const syne = Syne({
   subsets: ["latin"],
@@ -110,6 +111,9 @@ export default function RootLayout({
             />
           </noscript>
         )}
+
+        {/* Track SPA route changes */}
+        <MetaPageView />
 
         {children}
 

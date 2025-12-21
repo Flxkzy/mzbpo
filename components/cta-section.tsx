@@ -3,6 +3,12 @@
 import Link from "next/link"
 
 export function CTASection() {
+  const trackLead = () => {
+    window.fbq?.("track", "Lead", {
+      content_name: "CTA Section - Schedule a conversation",
+    })
+  }
+
   return (
     <section
       className="relative w-full overflow-hidden py-20 md:py-28"
@@ -27,15 +33,15 @@ export function CTASection() {
 
         {/* Body – Poppins */}
         <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/80 font-[var(--font-poppins)]">
-          Whether you are growing fast, managing complexity, or preparing for audits,
-          we help you replace fragmented accounting with clean data, strong controls,
-          and reliable reporting.
+          Whether you are growing fast, managing complexity, or preparing for audits, we help you replace fragmented
+          accounting with clean data, strong controls, and reliable reporting.
         </p>
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
           <Link
             href="/meeting"
+            onClick={trackLead}
             className="
               inline-flex items-center justify-center
               rounded-full px-8 py-4

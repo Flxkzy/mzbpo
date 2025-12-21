@@ -16,7 +16,6 @@ export default function VslSection({
   const [isPlaying, setIsPlaying] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
 
-  // Trigger the entrance animation for the button after mount
   useEffect(() => {
     setIsLoaded(true)
   }, [])
@@ -25,19 +24,30 @@ export default function VslSection({
     return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`
   }, [videoId])
 
-  // Reusable CTA Component based on your snippet
+  const trackLead = (contentName: string) => {
+    window.fbq?.("track", "Lead", {
+      content_name: contentName,
+    })
+  }
+
+  const trackVslPlay = () => {
+    window.fbq?.("trackCustom", "VSL_Play", {
+      video_id: videoId,
+      placement: "VslSection",
+    })
+  }
+
   const CtaButton = () => (
     <div
       className={`flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all duration-700 delay-400 ${
         isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >
-      {/* Primary CTA */}
       <a
         href={ctaHref}
+        onClick={() => trackLead("VSL Section CTA - Schedule Free Consultation")}
         className="group relative inline-flex items-center gap-2.5 bg-brand-teal text-brand-navy font-sans font-semibold text-sm sm:text-base px-6 sm:px-8 py-3 rounded-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--brand-teal)/0.35)] hover:scale-[1.02]"
       >
-        {/* Shine effect */}
         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
         <span className="relative">Schedule Free Consultation</span>
         <svg
@@ -57,7 +67,6 @@ export default function VslSection({
     <section className="w-full py-10 lg:py-12 bg-brand-navy">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-          
           {/* LEFT COLUMN: Copy + Desktop CTA */}
           <div className="flex flex-col gap-4">
             <h2
@@ -108,7 +117,7 @@ export default function VslSection({
               </p>
             </div>
 
-            {/* DESKTOP CTA: Hidden on mobile, visible on large screens */}
+            {/* DESKTOP CTA */}
             <div className="pt-4 hidden lg:block">
               <CtaButton />
             </div>
@@ -120,7 +129,10 @@ export default function VslSection({
               {!isPlaying ? (
                 <button
                   type="button"
-                  onClick={() => setIsPlaying(true)}
+                  onClick={() => {
+                    trackVslPlay()
+                    setIsPlaying(true)
+                  }}
                   className="absolute inset-0 cursor-pointer group w-full h-full block"
                   aria-label="Play video"
                 >
@@ -132,64 +144,38 @@ export default function VslSection({
 
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors" />
 
-                  {/* --- ANIMATION LAYER --- */}
-                  
-                  {/* Icon 1: Calculator */}
-                  <motion.div 
+                  {/* Icon 1 */}
+                  <motion.div
                     className="absolute top-6 left-6 md:top-10 md:left-10 z-20"
-                    animate={{ 
-                      y: [0, -12, 0],
-                      rotate: [0, -5, 0]
-                    }}
-                    transition={{ 
-                      duration: 4, 
-                      repeat: Infinity,
-                      ease: "easeInOut" 
-                    }}
+                    animate={{ y: [0, -12, 0], rotate: [0, -5, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <div className="bg-white/90 backdrop-blur-sm p-2.5 md:p-3 rounded-xl shadow-lg border border-white/20">
                       <Calculator className="w-5 h-5 md:w-6 md:h-6 text-brand-navy" />
                     </div>
                   </motion.div>
 
-                  {/* Icon 2: Pie Chart */}
-                  <motion.div 
+                  {/* Icon 2 */}
+                  <motion.div
                     className="absolute top-8 right-8 md:top-12 md:right-12 z-20"
-                    animate={{ 
-                      y: [0, -15, 0],
-                      rotate: [0, 5, 0]
-                    }}
-                    transition={{ 
-                      duration: 5, 
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.5
-                    }}
+                    animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                   >
                     <div className="bg-white/90 backdrop-blur-sm p-2.5 md:p-3 rounded-full shadow-lg border border-white/20">
                       <PieChart className="w-5 h-5 md:w-6 md:h-6 text-brand-teal" />
                     </div>
                   </motion.div>
 
-                  {/* Icon 3: Trending Up */}
-                  <motion.div 
+                  {/* Icon 3 */}
+                  <motion.div
                     className="absolute bottom-16 left-8 md:bottom-20 md:left-12 z-20 hidden sm:block"
-                    animate={{ 
-                      y: [0, -8, 0],
-                    }}
-                    transition={{ 
-                      duration: 3.5, 
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1
-                    }}
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   >
                     <div className="bg-brand-teal/90 backdrop-blur-sm p-2 md:p-2.5 rounded-lg shadow-lg border border-white/20">
                       <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-white" />
                     </div>
                   </motion.div>
-
-                  {/* --- END ANIMATION LAYER --- */}
 
                   <div className="absolute inset-0 flex items-center justify-center z-30">
                     <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-teal flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,0.4)] group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none transition-all duration-200">
@@ -218,12 +204,11 @@ export default function VslSection({
               )}
             </div>
 
-            {/* MOBILE CTA: Visible on mobile, hidden on large screens. Placed strictly below video. */}
+            {/* MOBILE CTA */}
             <div className="flex justify-center lg:hidden w-full">
               <CtaButton />
             </div>
           </div>
-
         </div>
       </div>
     </section>

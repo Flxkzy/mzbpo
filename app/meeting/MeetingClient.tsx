@@ -1,6 +1,6 @@
-// app/meeting/MeetingClient.tsx
 "use client"
 
+import { useEffect } from "react"
 import Calendly from "./calendly"
 import { PiCheckCircle } from "react-icons/pi"
 import { motion } from "framer-motion"
@@ -13,6 +13,27 @@ const checkItemVariants = {
 }
 
 export default function MeetingClient() {
+  // Page view + booking tracking
+  useEffect(() => {
+    // ViewContent on page load
+    window.fbq?.("track", "ViewContent", {
+      content_name: "Meeting Page",
+    })
+
+    // Calendly booking listener
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data?.event === "calendly.event_scheduled") {
+        window.fbq?.("track", "Schedule", {
+          content_name: "Strategy Call",
+          content_category: "Calendly Booking",
+        })
+      }
+    }
+
+    window.addEventListener("message", handleMessage)
+    return () => window.removeEventListener("message", handleMessage)
+  }, [])
+
   return (
     <div className="min-h-screen flex flex-col bg-brand-navy text-brand-white font-[var(--font-poppins)]">
       <Navbar />
@@ -30,26 +51,25 @@ export default function MeetingClient() {
               <p className="text-base md:text-lg text-white/80 pt-4 leading-relaxed">
                 At <span className="font-semibold text-white">MZBPO</span>, we help growth focused businesses reduce
                 finance overhead by up to{" "}
-                <span className="text-brand-teal font-medium">50%</span> with structured bookkeeping, payroll, ERP
-                implementation, and audit support.
+                <span className="text-brand-teal font-medium">50%</span>.
               </p>
 
               {[
                 {
                   title: "Bookkeeping & Accounting Outsourcing",
-                  description: "Clean books, clear numbers, and audit ready reporting delivered monthly.",
+                  description: "Clean books, clear numbers, audit ready reporting.",
                 },
                 {
                   title: "Payroll Processing",
-                  description: "Managed payroll with deductions, payslips, and compliance delivered every cycle.",
+                  description: "Managed payroll with deductions and compliance.",
                 },
                 {
-                  title: "ERP Implementation & Workflow Automation",
-                  description: "Move off spreadsheets into structured systems. Setup, migration, and training included.",
+                  title: "ERP Implementation & Automation",
+                  description: "Move off spreadsheets into structured systems.",
                 },
                 {
-                  title: "Audit Support & Regulatory Compliance",
-                  description: "IFRS reporting, audit prep, and statutory compliance handled cleanly and calmly.",
+                  title: "Audit Support & Compliance",
+                  description: "IFRS reporting and statutory compliance.",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -57,37 +77,35 @@ export default function MeetingClient() {
                   variants={checkItemVariants}
                   initial="hidden"
                   animate="visible"
-                  transition={{ delay: index * 0.12, duration: 0.35, ease: "easeOut" }}
-                  className="flex gap-x-3 md:gap-x-4 py-3"
+                  transition={{ delay: index * 0.12, duration: 0.35 }}
+                  className="flex gap-x-3 py-3"
                 >
-                  <PiCheckCircle className="text-brand-teal text-xl md:text-2xl flex-shrink-0 mt-1" />
+                  <PiCheckCircle className="text-brand-teal text-xl flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-[family-name:var(--font-syne)] text-base md:text-lg font-semibold text-white">
+                    <h3 className="font-[family-name:var(--font-syne)] font-semibold text-white">
                       {item.title}
                     </h3>
-                    <p className="text-sm md:text-base text-white/70 leading-relaxed">{item.description}</p>
+                    <p className="text-white/70">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
             {/* RIGHT */}
-            <div className="w-full md:flex-1 pb-10 md:pb-0">
+            <div className="w-full md:flex-1 pb-10">
               <div className="bg-brand-white text-brand-navy rounded-2xl shadow-soft p-4 md:p-6">
                 <Calendly />
               </div>
 
-              <p className="text-xs text-white/55 mt-4 leading-relaxed">
-                By booking, you agree to be contacted by MZBPO regarding your finance and bookkeeping needs.
+              <p className="text-xs text-white/55 mt-4">
+                By booking, you agree to be contacted by MZBPO.
               </p>
             </div>
           </div>
         </div>
       </main>
 
-      <div className="mt-14 md:mt-20 lg:mt-24">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }
