@@ -4,6 +4,8 @@ import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
 import { Syne, Poppins } from "next/font/google"
 import Script from "next/script"
+import { Suspense } from "react"
+import MetaPageView from "@/components/MetaPageView"
 
 const syne = Syne({
   subsets: ["latin"],
@@ -26,12 +28,8 @@ export const metadata: Metadata = {
   },
   description:
     "Professional outsourced bookkeeping and accounting services for growing businesses. Clean books, clear numbers, and confident decisions with MZBPO.",
-  alternates: {
-    canonical: "/",
-  },
-  verification: {
-    google: "PP1WN75nl2PNDCE7PsfouWofPe4th-zhQud5n__5CvI",
-  },
+  alternates: { canonical: "/" },
+  verification: { google: "PP1WN75nl2PNDCE7PsfouWofPe4th-zhQud5n__5CvI" },
   openGraph: {
     type: "website",
     url: "https://www.mzbpo.com",
@@ -53,11 +51,7 @@ export const viewport: Viewport = {
   colorScheme: "dark light",
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID
 
   return (
@@ -78,39 +72,37 @@ export default function RootLayout({
           }}
         />
 
-        {/* Meta Pixel */}
+        {/* Meta Pixel: load + init only (NO PageView here) */}
         {pixelId && (
           <Script id="meta-pixel" strategy="afterInteractive">
             {`
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${pixelId}');
-              fbq('track', 'PageView');
+              (function() {
+                if (!window.fbq) {
+                  !function(f,b,e,v,n,t,s)
+                  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                  n.queue=[];t=b.createElement(e);t.async=!0;
+                  t.src=v;s=b.getElementsByTagName(e)[0];
+                  s.parentNode.insertBefore(t,s)}(window, document,'script',
+                  'https://connect.facebook.net/en_US/fbevents.js');
+                }
+
+                if (!window.__metaPixelInited) {
+                  fbq('init', '${pixelId}');
+                  window.__metaPixelInited = true;
+                }
+              })();
             `}
           </Script>
         )}
       </head>
 
       <body className="bg-background text-foreground antialiased">
-        {/* Meta Pixel noscript */}
-        {pixelId && (
-          <noscript>
-            <img
-              height="1"
-              width="1"
-              style={{ display: "none" }}
-              src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
-              alt=""
-            />
-          </noscript>
-        )}
-
+        {/* PageView once per route */}
+        <Suspense fallback={null}>
+          <MetaPageView />
+        </Suspense>
 
         {children}
 
