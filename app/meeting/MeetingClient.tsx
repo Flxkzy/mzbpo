@@ -13,25 +13,11 @@ const checkItemVariants = {
 }
 
 export default function MeetingClient() {
-  // Page view + booking tracking
+  // ViewContent ONLY (Schedule removed from browser)
   useEffect(() => {
-    // ViewContent on page load
     window.fbq?.("track", "ViewContent", {
       content_name: "Meeting Page",
     })
-
-    // Calendly booking listener
-    const handleMessage = (e: MessageEvent) => {
-      if (e.data?.event === "calendly.event_scheduled") {
-        window.fbq?.("track", "Schedule", {
-          content_name: "Strategy Call",
-          content_category: "Calendly Booking",
-        })
-      }
-    }
-
-    window.addEventListener("message", handleMessage)
-    return () => window.removeEventListener("message", handleMessage)
   }, [])
 
   return (
