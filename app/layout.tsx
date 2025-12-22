@@ -29,7 +29,14 @@ export const metadata: Metadata = {
   description:
     "Professional outsourced bookkeeping and accounting services for growing businesses. Clean books, clear numbers, and confident decisions with MZBPO.",
   alternates: { canonical: "/" },
-  verification: { google: "PP1WN75nl2PNDCE7PsfouWofPe4th-zhQud5n__5CvI" },
+
+  verification: {
+    google: "PP1WN75nl2PNDCE7PsfouWofPe4th-zhQud5n__5CvI",
+    other: {
+      "facebook-domain-verification": "4cxu065u97e24ftmru4mez0vz945ay",
+    },
+  },
+
   openGraph: {
     type: "website",
     url: "https://www.mzbpo.com",
@@ -64,15 +71,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
               })(window, document, "clarity", "script", "uoo3y364d3");
             `,
           }}
         />
 
-        {/* Meta Pixel: load + init only (NO PageView here) */}
+        {/* Meta Pixel loader (NO PageView here) */}
         {pixelId && (
           <Script id="meta-pixel" strategy="afterInteractive">
             {`
