@@ -1,14 +1,31 @@
-"use client";
+"use client"
 
-import { InlineWidget } from "react-calendly";
+import { InlineWidget } from "react-calendly"
 
-const Calendly = () => {
+type Props = {
+  eventId?: string | null
+  fbp?: string | null
+  fbc?: string | null
+}
+
+const Calendly = ({ eventId, fbp, fbc }: Props) => {
+  const baseUrl = "https://calendly.com/mzcopakistan/30min"
+
+  const params = new URLSearchParams()
+  if (eventId) params.set("fb_event_id", eventId)
+  if (fbp) params.set("fbp", fbp)
+  if (fbc) params.set("fbc", fbc)
+
+  const finalUrl = params.toString()
+    ? `${baseUrl}?${params.toString()}`
+    : baseUrl
+
   return (
     <div className="w-full">
       <InlineWidget
-        url="https://calendly.com/mzcopakistan/30min"
+        url={finalUrl}
         styles={{
-          height: "650px", // reduced height
+          height: "650px",
           width: "100%",
           backgroundColor: "white",
           borderRadius: "12px",
@@ -18,12 +35,12 @@ const Calendly = () => {
           backgroundColor: "ffffff",
           hideEventTypeDetails: false,
           hideLandingPageDetails: false,
-          primaryColor: "68C3AA", // brand teal
-          textColor: "232763", // brand navy
+          primaryColor: "68C3AA",
+          textColor: "232763",
         }}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Calendly;
+export default Calendly
