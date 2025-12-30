@@ -12,9 +12,11 @@ const Calendly = ({ eventId, fbp, fbc }: Props) => {
   const baseUrl = "https://calendly.com/mzcopakistan/30min"
 
   const params = new URLSearchParams()
-  if (eventId) params.set("fb_event_id", eventId)
-  if (fbp) params.set("fbp", fbp)
-  if (fbc) params.set("fbc", fbc)
+
+  // use UTM fields so Calendly exposes them to Zapier
+  if (eventId) params.set("utm_content", eventId)   // will become event_id
+  if (fbp) params.set("utm_term", fbp)             // will become fbp
+  if (fbc) params.set("utm_campaign", fbc)         // will become fbc
 
   const finalUrl = params.toString()
     ? `${baseUrl}?${params.toString()}`
