@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import { BookOpen, Users, FileCheck, Settings, Sparkles } from "lucide-react"
+import { BookOpen, Users, FileCheck, Settings, Sparkles, Briefcase } from "lucide-react"
 
 interface Service {
   icon: React.ReactNode
@@ -57,28 +57,50 @@ const services: Service[] = [
     },
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
   },
-  {
-    icon: <FileCheck className="w-6 h-6" />,
-    title: "Audit Support & Financial Reporting",
-    description: "Expert assistance for audits and comprehensive financial reporting",
-    details: {
-      tagline: "Ongoing financial clarity built for accuracy, trust, and control.",
-      paragraphs: [
-        "We help businesses stay audit ready year round with structured monthly internal reviews and clean, compliant financial reporting.",
-        "Our team works as an extension of yours, identifying red flags, tightening controls, and supporting you through every stage of the audit cycle.",
-      ],
-      bullets: [
-        "Ongoing internal reviews to detect errors, risks, and control gaps",
-        "Full audit support and file preparation",
-        "Liaison with external auditors or investors",
-        "Financial statements including P and L, balance sheet, and cash flow",
-        "IFRS or local GAAP compliant reporting",
-        "Actionable recommendations to strengthen controls",
-      ],
-      cta: "Stay ahead with proactive audits and clear financial visibility.",
-    },
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+{
+  icon: <FileCheck className="w-6 h-6" />,
+  title: "Internal Audit & Compliance",
+  description: "Continuous internal audit support to ensure accuracy, compliance, and control",
+  details: {
+    tagline: "Complete confidence in your numbers, controls, and compliance.",
+    paragraphs: [
+      "Our internal audit support ensures your books are accurate, compliant, and always ready for external audits and tax filings.",
+      "By reviewing transactions, controls, and processes on an ongoing basis, we help prevent leakages, detect irregularities early, and reduce fraud risk.",
+    ],
+    bullets: [
+      "Regulatory and statutory compliance assurance",
+      "External audit ready financial statements",
+      "Tax filing ready and reconciled financials",
+      "Detection and prevention of leakages and misstatements",
+      "Improved accuracy and reliability of books of accounts",
+      "Early identification of frauds, weaknesses, and control gaps",
+    ],
+    cta: "Gain full assurance over your books, controls, and compliance.",
   },
+  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+},
+{
+  icon: <Briefcase className="w-6 h-6" />,
+  title: "Back Office Support for Accounting Firms",
+  description: "Lower your payroll burden without compromising quality or control",
+  details: {
+    tagline: "Reduce payroll stress. Increase margins. Scale without overhead.",
+    paragraphs: [
+      "Running an accounting firm shouldn’t mean absorbing heavy payroll costs every month. In-house teams are expensive, rigid, and difficult to scale.",
+      "With our Pakistan-based back office, you get qualified accounting professionals at a fraction of local costs, allowing you to retain more profits while maintaining full control over delivery and quality.",
+    ],
+    bullets: [
+      "Dedicated offshore team aligned to your firm’s workflows",
+      "Significant reduction in monthly payroll and overhead costs",
+      "Scalable staffing without long term hiring commitments",
+      "Time zone coverage for faster turnaround and continuity",
+      "Work reviewed and supervised by qualified senior accountants",
+      "Secure processes with strict data confidentiality",
+    ],
+    cta: "Build a cost efficient back office and protect your margins.",
+  },
+  image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+},
   {
     icon: <Settings className="w-6 h-6" />,
     title: "ERP Implementation & Management",
@@ -101,6 +123,7 @@ const services: Service[] = [
     },
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
   },
+
 ]
 
 export function ServicesSection() {

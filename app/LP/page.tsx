@@ -45,12 +45,62 @@ export default function Home() {
         {/* SOCIAL PROOF */}
         <ClientShowcase />
 
-        {/* WHY US (GrowthScenarios) */}
-        <section id="why-us" className="py-20">
-          <GrowthScenarios />
+        <ServicesSection/>
+
+        {/* ABOUT / CREDIBILITY */}
+<section id="about" className="py-20 px-4 md:px-6">
+  <div className="max-w-5xl mx-auto">
+    <div className="relative rounded-3xl overflow-hidden bg-navy shadow-2xl">
+      {/* Decorative Gradient Bar */}
+      <div className="absolute top-0 left-0 w-2 h-full bg-teal"></div>
+
+      <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+        {/* Logo Area */}
+        <div className="w-full md:w-1/3 flex justify-center md:justify-start border-b md:border-b-0 md:border-r border-white/10 pb-8 md:pb-0 md:pr-10">
+          <Image
+            src="/logo/bkrr.png"
+            width={400}
+            height={200}
+            className="w-44 md:w-52 h-auto object-contain"
+            alt="BKR International"
+          />
+        </div>
+
+        {/* Text Area */}
+        <div className="w-full md:w-2/3 font-[var(--font-poppins)]">
+          {/* Heading: Syne */}
+          <p className="mt-6 font-[family-name:var(--font-syne)] text-2xl sm:text-3xl md:text-4xl font-bold text-brand-white mb-4">
+            Backed by global standards and proven credibility.
+          </p>
+
+          {/* Body: Poppins */}
+          <p className="text-base md:text-lg text-gray-300 font-[var(--font-poppins)] leading-relaxed">
+            We are the outsourcing arm of Muniff Ziauddin & Co., an independent member of BKR International.
+            <br /><br />
+            <span className="font-semibold text-brand-teal">
+              BKR International is ranked as the fifth largest global accounting association
+            </span>
+            , underscoring the scale, credibility, and global standards that back our work.
+            <br /><br />
+            Our clients benefit from internationally aligned processes, strong governance,
+            and professional standards trusted by leading firms worldwide.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+        {/* CASE STUDIES */}
+        <section id="case-studies" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
+          <CaseStudies />
         </section>
 
-{/* PROCESS */}
+     {/* TESTIMONIALS */}
+        <section className="py-20">
+          <Testimonials />
+        </section>
+
+        {/* PROCESS */}
 <Element name="process">
   <section id="process" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
     {/* Heading */}
@@ -76,51 +126,9 @@ export default function Home() {
 
 <SectionDivider />
 
-        {/* CASE STUDIES */}
-        <section id="case-studies" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
-          <CaseStudies />
-        </section>
-
-        {/* TESTIMONIALS */}
-        <section className="py-20">
-          <Testimonials />
-        </section>
-
-        {/* ABOUT / CREDIBILITY */}
-        <section id="about" className="py-20 px-4 md:px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden bg-navy shadow-2xl">
-              {/* Decorative Gradient Bar */}
-              <div className="absolute top-0 left-0 w-2 h-full bg-teal"></div>
-
-              <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
-                {/* Logo Area */}
-                <div className="w-full md:w-1/3 flex justify-center md:justify-start border-b md:border-b-0 md:border-r border-white/10 pb-8 md:pb-0 md:pr-10">
-                  <Image
-                    src="/logo/bkrr.png"
-                    width={400}
-                    height={200}
-                    className="w-44 md:w-52 h-auto object-contain"
-                    alt="BKR International"
-                  />
-                </div>
-
-{/* Text Area */}
-<div className="w-full md:w-2/3 font-[var(--font-poppins)]">
-  {/* Heading: Syne (use required syntax, slightly reduced size) */}
-  <p className="mt-6 font-[family-name:var(--font-syne)] text-2xl sm:text-3xl md:text-4xl font-bold text-brand-white mb-4">
-    Backed by a legacy of financial excellence.
-  </p>
-
-  {/* Body: Poppins */}
-  <p className="text-base md:text-lg text-gray-300 font-[var(--font-poppins)] leading-relaxed">
-    We are the outsourcing arm of Muniff Ziauddin & Co. As an independent member of BKR International, we bring world class standards to you
-  </p>
-</div>
-
-              </div>
-            </div>
-          </div>
+        {/* WHY US (GrowthScenarios) */}
+        <section id="why-us" className="py-20">
+          <GrowthScenarios />
         </section>
 
         {/* GUARANTEES / TRUST */}
