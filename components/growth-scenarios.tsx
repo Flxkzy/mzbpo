@@ -2,10 +2,40 @@
 
 import Image from "next/image"
 
-const scenarios = [
+// ============================================
+// TYPES
+// ============================================
+
+interface Scenario {
+  category: string
+  question: string
+  image: string
+  alt: string
+}
+
+interface GrowthScenariosProps {
+  // Header
+  headline?: React.ReactNode
+  subheadline?: string
+  
+  // Section subheading
+  sectionTitle?: string
+  
+  // Scenarios array
+  scenarios?: Scenario[]
+  
+  // Bottom summary
+  summaryText?: string
+}
+
+// ============================================
+// DEFAULT DATA - BOOKKEEPING
+// ============================================
+
+const DEFAULT_SCENARIOS: Scenario[] = [
   {
     category: "Expanding Teams",
-    question: "We’re growing fast, but cash feels tight. Can we afford to hire without breaking cash flow?",
+    question: "We're growing fast, but cash feels tight. Can we afford to hire without breaking cash flow?",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop",
     alt: "Expanding Teams",
   },
@@ -29,23 +59,43 @@ const scenarios = [
   },
 ]
 
-export function GrowthScenarios() {
+// ============================================
+// MAIN COMPONENT
+// ============================================
+
+export function GrowthScenarios({
+  // Header defaults (bookkeeping)
+  headline = (
+    <>
+      Whether you're handling hundreds of transactions or thousands,
+      <span style={{ color: "hsl(158 47% 58%)" }}> we support scalable businesses.</span>
+    </>
+  ),
+  subheadline = "As volume increases, clarity shouldn't disappear. We structure your finance so growth doesn't break reporting, controls, or visibility.",
+  
+  // Section title
+  sectionTitle = "Growth scenarios we support",
+  
+  // Scenarios
+  scenarios = DEFAULT_SCENARIOS,
+  
+  // Summary
+  summaryText = "These questions can't be answered with basic bookkeeping. They require clean data, strong controls, and a finance system that holds up as you grow. That's exactly what we build for our clients.",
+}: GrowthScenariosProps) {
   return (
     <section className="w-full py-12 md:py-24 px-4 md:px-8 font-[var(--font-poppins)]">
       <div className="container mx-auto max-w-6xl">
         {/* Main Header */}
         <div className="max-w-4xl mb-12 md:mb-20">
           <h2 className="mt-6 font-[family-name:var(--font-syne)] text-2xl sm:text-3xl md:text-4xl font-bold text-brand-white">
-            Whether you’re handling hundreds of transactions or thousands,
-            <span style={{ color: "hsl(158 47% 58%)" }}> we support scalable businesses.</span>
+            {headline}
           </h2>
 
           <p
             className="mt-4 text-base md:text-lg leading-relaxed max-w-2xl font-[var(--font-poppins)]"
             style={{ color: "hsl(0 0% 90%)" }}
           >
-            As volume increases, clarity shouldn’t disappear. We structure your finance so growth doesn’t break reporting,
-            controls, or visibility.
+            {subheadline}
           </p>
         </div>
 
@@ -54,7 +104,7 @@ export function GrowthScenarios() {
           className="mt-6 font-[family-name:var(--font-syne)] text-xl md:text-2xl font-bold mb-8 md:mb-12 text-white border-b pb-4"
           style={{ borderColor: "rgba(255, 255, 255, 0.1)" }}
         >
-          Growth scenarios we support
+          {sectionTitle}
         </h3>
 
         {/* Grid */}
@@ -118,8 +168,7 @@ export function GrowthScenarios() {
           }}
         >
           <p className="text-base md:text-lg font-medium text-white leading-relaxed">
-            These questions can’t be answered with basic bookkeeping. They require clean data, strong controls, and a
-            finance system that holds up as you grow. That’s exactly what we build for our clients.
+            {summaryText}
           </p>
 
           <div className="mt-6 w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: "hsl(158 47% 58%)" }} />

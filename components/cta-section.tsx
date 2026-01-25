@@ -2,11 +2,52 @@
 
 import Link from "next/link"
 
-export function CTASection() {
+// ============================================
+// TYPES
+// ============================================
+
+interface CTASectionProps {
+  // Headline (supports JSX for highlighting)
+  headline?: React.ReactNode
+  highlightedText?: string
+  
+  // Body text
+  bodyText?: string
+  
+  // CTA button
+  ctaText?: string
+  ctaLink?: string
+  
+  // Facebook tracking
+  trackingContentName?: string
+}
+
+// ============================================
+// MAIN COMPONENT
+// ============================================
+
+export function CTASection({
+  // Headline defaults (bookkeeping)
+  headline = "Get clarity, control, and a finance system",
+  highlightedText = "that scales with your business.",
+  
+  // Body text
+  bodyText = "Whether you are growing fast, managing complexity, or preparing for audits, we help you replace fragmented accounting with clean data, strong controls, and reliable reporting.",
+  
+  // CTA defaults
+  ctaText = "Schedule a conversation",
+  ctaLink = "/meeting",
+  
+  // Tracking
+  trackingContentName = "CTA Section - Schedule a conversation",
+}: CTASectionProps) {
+  
   const trackLead = () => {
-    window.fbq?.("track", "Lead", {
-      content_name: "CTA Section - Schedule a conversation",
-    })
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Lead", {
+        content_name: trackingContentName,
+      })
+    }
   }
 
   return (
@@ -27,20 +68,19 @@ export function CTASection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
         {/* Heading – Syne */}
         <h2 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white leading-tight">
-          Get clarity, control, and a finance system
-          <span className="block mt-2 text-brand-teal">that scales with your business.</span>
+          {headline}
+          <span className="block mt-2 text-brand-teal">{highlightedText}</span>
         </h2>
 
         {/* Body – Poppins */}
         <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/80 font-[var(--font-poppins)]">
-          Whether you are growing fast, managing complexity, or preparing for audits, we help you replace fragmented
-          accounting with clean data, strong controls, and reliable reporting.
+          {bodyText}
         </p>
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
           <Link
-            href="/meeting"
+            href={ctaLink}
             onClick={trackLead}
             className="
               inline-flex items-center justify-center
@@ -52,7 +92,7 @@ export function CTASection() {
               hover:bg-brand-teal/90 hover:-translate-y-0.5
             "
           >
-            Schedule a conversation
+            {ctaText}
           </Link>
         </div>
       </div>

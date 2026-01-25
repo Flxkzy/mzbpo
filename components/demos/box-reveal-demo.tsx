@@ -2,7 +2,24 @@
 
 import BoxReveal from "@/components/magicui/box-reveal"
 
-const steps = [
+// ============================================
+// TYPES
+// ============================================
+
+interface Step {
+  title: string
+  body: string
+}
+
+interface BoxRevealDemoProps {
+  steps?: Step[]
+}
+
+// ============================================
+// DEFAULT DATA - BOOKKEEPING
+// ============================================
+
+const DEFAULT_STEPS: Step[] = [
   {
     title: "1. Understand",
     body: "Review your existing bookkeeping setup.",
@@ -17,7 +34,11 @@ const steps = [
   },
 ]
 
-const BoxRevealDemo = () => {
+// ============================================
+// MAIN COMPONENT
+// ============================================
+
+const BoxRevealDemo = ({ steps = DEFAULT_STEPS }: BoxRevealDemoProps) => {
   return (
     <div className="w-full max-w-xl mx-auto px-4 sm:px-6 md:px-0 pt-6 sm:pt-8 space-y-8 text-brand-white overflow-hidden">
       {steps.map((s) => (

@@ -2,7 +2,11 @@
 
 import type React from "react"
 import { useState } from "react"
-import { BookOpen, Users, FileCheck, Settings, Sparkles, Briefcase } from "lucide-react"
+import { BookOpen, Users, FileCheck, Settings, Sparkles, Briefcase, Shield, ClipboardCheck, Search, FileText } from "lucide-react"
+
+// ============================================
+// TYPES
+// ============================================
 
 interface Service {
   icon: React.ReactNode
@@ -17,7 +21,21 @@ interface Service {
   image: string
 }
 
-const services: Service[] = [
+interface ServicesSectionProps {
+  // Header
+  badgeText?: string
+  headline?: React.ReactNode
+  subheadline?: string
+  
+  // Services array
+  services?: Service[]
+}
+
+// ============================================
+// DEFAULT DATA - BOOKKEEPING
+// ============================================
+
+const DEFAULT_SERVICES: Service[] = [
   {
     icon: <BookOpen className="w-6 h-6" />,
     title: "Bookkeeping & Accounting Outsourcing",
@@ -57,50 +75,50 @@ const services: Service[] = [
     },
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
   },
-{
-  icon: <FileCheck className="w-6 h-6" />,
-  title: "Internal Audit & Compliance",
-  description: "Continuous internal audit support to ensure accuracy, compliance, and control",
-  details: {
-    tagline: "Complete confidence in your numbers, controls, and compliance.",
-    paragraphs: [
-      "Our internal audit support ensures your books are accurate, compliant, and always ready for external audits and tax filings.",
-      "By reviewing transactions, controls, and processes on an ongoing basis, we help prevent leakages, detect irregularities early, and reduce fraud risk.",
-    ],
-    bullets: [
-      "Regulatory and statutory compliance assurance",
-      "External audit ready financial statements",
-      "Tax filing ready and reconciled financials",
-      "Detection and prevention of leakages and misstatements",
-      "Improved accuracy and reliability of books of accounts",
-      "Early identification of frauds, weaknesses, and control gaps",
-    ],
-    cta: "Gain full assurance over your books, controls, and compliance.",
+  {
+    icon: <FileCheck className="w-6 h-6" />,
+    title: "Internal Audit & Compliance",
+    description: "Continuous internal audit support to ensure accuracy, compliance, and control",
+    details: {
+      tagline: "Complete confidence in your numbers, controls, and compliance.",
+      paragraphs: [
+        "Our internal audit support ensures your books are accurate, compliant, and always ready for external audits and tax filings.",
+        "By reviewing transactions, controls, and processes on an ongoing basis, we help prevent leakages, detect irregularities early, and reduce fraud risk.",
+      ],
+      bullets: [
+        "Regulatory and statutory compliance assurance",
+        "External audit ready financial statements",
+        "Tax filing ready and reconciled financials",
+        "Detection and prevention of leakages and misstatements",
+        "Improved accuracy and reliability of books of accounts",
+        "Early identification of frauds, weaknesses, and control gaps",
+      ],
+      cta: "Gain full assurance over your books, controls, and compliance.",
+    },
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
   },
-  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-},
-{
-  icon: <Briefcase className="w-6 h-6" />,
-  title: "Back Office Support for Accounting Firms",
-  description: "Lower your payroll burden without compromising quality or control",
-  details: {
-    tagline: "Reduce payroll stress. Increase margins. Scale without overhead.",
-    paragraphs: [
-      "Running an accounting firm shouldn’t mean absorbing heavy payroll costs every month. In-house teams are expensive, rigid, and difficult to scale.",
-      "With our Pakistan-based back office, you get qualified accounting professionals at a fraction of local costs, allowing you to retain more profits while maintaining full control over delivery and quality.",
-    ],
-    bullets: [
-      "Dedicated offshore team aligned to your firm’s workflows",
-      "Significant reduction in monthly payroll and overhead costs",
-      "Scalable staffing without long term hiring commitments",
-      "Time zone coverage for faster turnaround and continuity",
-      "Work reviewed and supervised by qualified senior accountants",
-      "Secure processes with strict data confidentiality",
-    ],
-    cta: "Build a cost efficient back office and protect your margins.",
+  {
+    icon: <Briefcase className="w-6 h-6" />,
+    title: "Back Office Support for Accounting Firms",
+    description: "Lower your payroll burden without compromising quality or control",
+    details: {
+      tagline: "Reduce payroll stress. Increase margins. Scale without overhead.",
+      paragraphs: [
+        "Running an accounting firm shouldn't mean absorbing heavy payroll costs every month. In-house teams are expensive, rigid, and difficult to scale.",
+        "With our Pakistan-based back office, you get qualified accounting professionals at a fraction of local costs, allowing you to retain more profits while maintaining full control over delivery and quality.",
+      ],
+      bullets: [
+        "Dedicated offshore team aligned to your firm's workflows",
+        "Significant reduction in monthly payroll and overhead costs",
+        "Scalable staffing without long term hiring commitments",
+        "Time zone coverage for faster turnaround and continuity",
+        "Work reviewed and supervised by qualified senior accountants",
+        "Secure processes with strict data confidentiality",
+      ],
+      cta: "Build a cost efficient back office and protect your margins.",
+    },
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop",
   },
-  image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-},
   {
     icon: <Settings className="w-6 h-6" />,
     title: "ERP Implementation & Management",
@@ -123,40 +141,55 @@ const services: Service[] = [
     },
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
   },
-
 ]
 
-export function ServicesSection() {
+// ============================================
+// MAIN COMPONENT
+// ============================================
+
+export function ServicesSection({
+  // Header defaults
+  badgeText = "Services",
+  headline = (
+    <>
+      Clear finance services, built to scale with your business.
+    </>
+  ),
+  subheadline = "Bookkeeping and accounting outsourcing designed to keep your data clean, your close reliable, and your operations ready for growth.",
+  
+  // Services default
+  services = DEFAULT_SERVICES,
+}: ServicesSectionProps) {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    // Default body = Poppins
     <section className="py-16 px-4 bg-gray-50 font-[var(--font-poppins)]">
       <div className="max-w-7xl mx-auto">
         <div className="rounded-3xl p-6 md:p-12 lg:p-16 shadow-2xl" style={{ backgroundColor: "hsl(232 45% 19%)" }}>
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8 md:mb-12">
             <div className="space-y-4 lg:max-w-2xl">
+              {/* Badge */}
               <div
                 className="inline-flex items-center gap-2 text-sm font-medium font-[var(--font-poppins)]"
                 style={{ color: "hsl(158 47% 58%)" }}
               >
                 <Sparkles className="w-4 h-4" />
-                <span>Services</span>
+                <span>{badgeText}</span>
               </div>
 
-              {/* Heading = Syne */}
+              {/* Heading */}
               <h2 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white">
-                Clear finance services, built to scale with your business.
+                {headline}
               </h2>
 
-              {/* Body = Poppins */}
+              {/* Subheadline */}
               <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed uppercase tracking-wide font-[var(--font-poppins)]">
-                Bookkeeping and accounting outsourcing designed to keep your data clean, your close reliable, and your operations ready for growth.
+                {subheadline}
               </p>
             </div>
           </div>
 
-          {/* Tabs = Poppins */}
+          {/* Tabs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap gap-3 mb-8 md:mb-12 font-[var(--font-poppins)]">
             {services.map((service, index) => (
               <button
@@ -177,6 +210,7 @@ export function ServicesSection() {
             ))}
           </div>
 
+          {/* Active Service Content */}
           <div className="rounded-3xl p-6 md:p-8 lg:p-12 transition-all duration-500" style={{ backgroundColor: "hsl(232 45% 15%)" }}>
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               <div className="space-y-4 md:space-y-6">
@@ -184,12 +218,10 @@ export function ServicesSection() {
                   {services[activeTab].icon}
                 </div>
 
-                {/* Heading = Syne */}
                 <h3 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white">
                   {services[activeTab].title}
                 </h3>
 
-                {/* Body = Poppins */}
                 <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed uppercase tracking-wide font-[var(--font-poppins)]">
                   {services[activeTab].details.tagline}
                 </p>
@@ -241,3 +273,9 @@ export function ServicesSection() {
     </section>
   )
 }
+
+// ============================================
+// EXPORT ICON COMPONENTS FOR USE IN PAGES
+// ============================================
+
+export { BookOpen, Users, FileCheck, Settings, Sparkles, Briefcase, Shield, ClipboardCheck, Search, FileText }

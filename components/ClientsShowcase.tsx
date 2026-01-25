@@ -11,7 +11,11 @@ import NumberTicker from "@/components/magicui/number-ticker"
 // Dynamically import Lottie to avoid SSR issues
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false })
 
-const LOGOS = [
+// ============================================
+// DEFAULT DATA (used if no props passed)
+// ============================================
+
+const DEFAULT_LOGOS = [
   { name: "Dunkin", src: "/logo/d.png" },
   { name: "KFC", src: "/logo/k.png" },
   { name: "Khaadi", src: "/logo/kh.png" },
@@ -22,14 +26,17 @@ const LOGOS = [
   { name: "FAW", src: "/logo/faw.png" },
 ]
 
-const SERVICES = [
+const DEFAULT_SERVICES = [
   { label: "Bookkeeping" },
   { label: "Payroll" },
   { label: "Audit" },
   { label: "ERP" },
 ]
 
-// Simple checkmark Lottie animation data (lightweight)
+// ============================================
+// LOTTIE ANIMATION DATA
+// ============================================
+
 const checkmarkAnimation = {
   v: "5.7.4",
   fr: 30,
@@ -107,6 +114,10 @@ const checkmarkAnimation = {
     },
   ],
 }
+
+// ============================================
+// HELPER COMPONENTS
+// ============================================
 
 function LogoItem({ name, src }: { name: string; src: string }) {
   return (
@@ -221,7 +232,6 @@ function ServiceChip({ label, index }: { label: string; index: number }) {
   )
 }
 
-// World Map Background Component
 function WorldMapBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -247,7 +257,7 @@ function WorldMapBackground() {
         />
       </div>
       
-      {/* Animated glow dots representing global presence - larger on mobile */}
+      {/* Animated glow dots representing global presence */}
       <div className="absolute top-[30%] left-[20%] w-3 h-3 sm:w-2 sm:h-2 rounded-full bg-brand-teal/50 sm:bg-brand-teal/40 animate-pulse" style={{ animationDelay: '0s' }} />
       <div className="absolute top-[40%] left-[48%] w-3.5 h-3.5 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-teal/60 sm:bg-brand-teal/50 animate-pulse" style={{ animationDelay: '0.5s' }} />
       <div className="absolute top-[35%] left-[75%] w-3 h-3 sm:w-2 sm:h-2 rounded-full bg-brand-teal/50 sm:bg-brand-teal/40 animate-pulse" style={{ animationDelay: '1s' }} />
@@ -259,7 +269,58 @@ function WorldMapBackground() {
   )
 }
 
-export default function ClientsShowcase() {
+// ============================================
+// PROPS INTERFACE
+// ============================================
+
+interface ClientsShowcaseProps {
+  // Logo section
+  logoSectionLabel?: string
+  logoSectionTitle?: string
+  logos?: { name: string; src: string }[]
+  
+  // Stats section
+  badgeText?: string
+  headline?: string
+  highlightedText?: string
+  subheadline?: string
+  
+  // Stats
+  stats?: {
+    value: number
+    suffix: string
+    label: string
+  }[]
+  
+  // Services
+  services?: { label: string }[]
+}
+
+// ============================================
+// MAIN COMPONENT
+// ============================================
+
+export default function ClientsShowcase({
+  // Logo section defaults
+  logoSectionLabel = "Our Clients",
+  logoSectionTitle = "Companies we've worked with",
+  logos = DEFAULT_LOGOS,
+  
+  // Stats section defaults
+  badgeText = "Trusted Partners",
+  headline = "Trusted by",
+  highlightedText = "leading brands",
+  subheadline = "Bookkeeping, payroll, ERP, and audit support for fast growing businesses across the globe",
+  
+  // Stats defaults
+  stats = [
+    { value: 300, suffix: "+", label: "Happy Clients" },
+    { value: 92, suffix: "%", label: "Satisfaction Rate" },
+  ],
+  
+  // Services defaults
+  services = DEFAULT_SERVICES,
+}: ClientsShowcaseProps) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -281,10 +342,10 @@ export default function ClientsShowcase() {
             }`}
           >
             <p className="text-xs uppercase tracking-[0.25em] text-brand-navy/40 font-semibold mb-3">
-              Our Clients
+              {logoSectionLabel}
             </p>
             <h3 className="font-[family-name:var(--font-syne)] text-2xl sm:text-3xl font-bold text-brand-navy">
-              Companies we've worked with
+              {logoSectionTitle}
             </h3>
           </div>
 
@@ -299,10 +360,10 @@ export default function ClientsShowcase() {
               pauseOnHover
               className={cn("py-6 [--duration:35s] transform-gpu will-change-transform")}
             >
-              {LOGOS.map((item, i) => (
+              {logos.map((item, i) => (
                 <LogoItem key={`a-${i}-${item.name}`} {...item} />
               ))}
-              {LOGOS.map((item, i) => (
+              {logos.map((item, i) => (
                 <LogoItem key={`b-${i}-${item.name}`} {...item} />
               ))}
             </Marquee>
@@ -331,36 +392,43 @@ export default function ClientsShowcase() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-teal" />
               </span>
-              Trusted Partners
+              {badgeText}
             </span>
 
             <h2 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white">
-              Trusted by{" "}
+              {headline}{" "}
               <span
                 className="text-transparent bg-clip-text"
                 style={{
                   backgroundImage: "linear-gradient(135deg, hsl(var(--brand-teal)) 0%, #8DDBC8 100%)",
                 }}
               >
-                leading brands
+                {highlightedText}
               </span>
             </h2>
 
             <p className="mt-4 text-base sm:text-lg text-brand-white/60 max-w-2xl mx-auto font-sans">
-              Bookkeeping, payroll, ERP, and audit support for fast growing businesses across the globe
+              {subheadline}
             </p>
           </div>
 
           {/* Stats Grid */}
           <div className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
-            <StatCard value={300} suffix="+" label="Happy Clients" delay={200} />
-            <StatCard value={92} suffix="%" label="Satisfaction Rate" delay={400} />
+            {stats.map((stat, index) => (
+              <StatCard
+                key={stat.label}
+                value={stat.value}
+                suffix={stat.suffix}
+                label={stat.label}
+                delay={200 + index * 200}
+              />
+            ))}
           </div>
 
           {/* Service Chips */}
           <div className="mt-14 md:mt-20 flex justify-center">
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-              {SERVICES.map((service, i) => (
+              {services.map((service, i) => (
                 <ServiceChip key={service.label} label={service.label} index={i} />
               ))}
             </div>
