@@ -27,13 +27,13 @@ export default function Hero() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {/* Main headline - using Syne */}
+          {/* Main headline - H1 for SEO */}
           <h1
             className={`font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-semibold leading-tight mb-6 transition-all duration-700 delay-200 ${
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <span className="block text-brand-white">If you're buried in</span>
+            <span className="block text-brand-white">Outsourced Finance,</span>
             <span className="block mt-1">
               <span className="relative inline-block">
                 <span
@@ -45,7 +45,7 @@ export default function Hero() {
                     animation: "gradient-shift 4s ease infinite",
                   }}
                 >
-                  bookkeeping
+                  Accounting & Audit
                 </span>
                 {/* Animated underline */}
                 <svg
@@ -74,9 +74,8 @@ export default function Hero() {
                   </defs>
                 </svg>
               </span>
-              <span className="text-brand-white">,</span>
             </span>
-            <span className="block text-brand-white/90 mt-1">who's leading the company?</span>
+            <span className="block text-brand-white/90 mt-1">Services for Growing Businesses</span>
           </h1>
 
           {/* Description - using Poppins */}
@@ -85,9 +84,9 @@ export default function Hero() {
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            We handle your books, and{" "}
-            <span className="text-brand-white font-medium">everything around them</span> So your numbers are{" "}
-            <span className="text-brand-teal font-medium"> clean, </span> your costs are low, and decisions are clear{" "}
+            Professional bookkeeping, internal audit, and payroll outsourcing that scales with your business.{" "}
+            <span className="text-brand-white font-medium">Senior level expertise</span> from a BKR International partner,{" "}
+            <span className="text-brand-teal font-medium">without building an in house team.</span>
           </p>
 
           {/* CTA Buttons */}
@@ -99,12 +98,12 @@ export default function Hero() {
             {/* Primary CTA */}
             <a
               href="/meeting"
-              onClick={() => trackLead("Hero CTA - Book a Free Discovery Call")}
+              onClick={() => trackLead("Hero CTA - Get a Free Consultation")}
               className="group relative inline-flex items-center gap-2.5 bg-brand-teal text-brand-navy font-sans font-semibold text-sm sm:text-base px-6 sm:px-8 py-3 rounded-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--brand-teal)/0.35)] hover:scale-[1.02]"
             >
               {/* Shine effect */}
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
-              <span className="relative">Book a Free Discovery Call</span>
+              <span className="relative">Get a Free Consultation</span>
               <svg
                 className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
@@ -125,14 +124,14 @@ export default function Hero() {
               className="group inline-flex items-center gap-1 font-sans text-xs sm:text-sm font-semibold uppercase tracking-wide text-brand-teal hover:text-brand-teal/80 transition-colors duration-300"
             >
               <span className="relative border-b border-brand-teal pb-0.5 group-hover:border-brand-teal/80">
-                Explore What We Do
+                Explore Our Services
               </span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
         </div>
 
-        {/* RIGHT VISUAL – IMAGE */}
+        {/* RIGHT VISUAL - IMAGE */}
         <div
           className={`flex-1 flex justify-center lg:justify-end mt-8 lg:mt-0 transition-all duration-1000 delay-300 ease-out ${
             isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
@@ -143,7 +142,7 @@ export default function Hero() {
             <div className="relative" style={{ animation: "bounce-gentle 3s ease-in-out infinite" }}>
               <Image
                 src="/images/hero.png"
-                alt="Accounting and finance outsourcing illustration"
+                alt="Outsourced accounting and finance services illustration"
                 width={800}
                 height={700}
                 className="w-full h-auto rounded-2xl object-cover"

@@ -1,7 +1,6 @@
 "use client"
 
 import Navbar from "@/components/Navbar"
-import Hero from "@/components/hero"
 import ClientShowcase from "@/components/ClientsShowcase"
 import { GrowthScenarios } from "@/components/growth-scenarios"
 import { ServicesSection } from "@/components/ServicesSection"
@@ -13,7 +12,6 @@ import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting
 import Footer from "@/components/footer"
 import { CTASection } from "@/components/cta-section"
 import SectionDivider from "@/components/SectionDivider"
-import VslSection from "@/components/VSL"
 import HeroSection from "@/components/LP-Hero"
 
 import Image from "next/image"

@@ -6,15 +6,15 @@ import { StarsBackground } from "@/components/ui/stars-background"
 import Image from "next/image"
 
 const features = [
-  { icon: "/icons/fast.svg", title: "Fast Onboarding", description: "We get your finance function up and running within days.", num: "01" },
-  { icon: "/icons/team.svg", title: "Qualified Team", description: "Work with ICAP qualified accountants and ERP experts.", num: "02" },
-  { icon: "/icons/safe.svg", title: "Secure & Compliant", description: "Strict confidentiality and robust security protocols.", num: "03" },
-  { icon: "/icons/design.svg", title: "ERP Setup & Accuracy", description: "Clean ledgers, mapped workflows, and proper controls.", num: "04" },
-  { icon: "/icons/analytics.svg", title: "Audit Ready. Always.", description: "IFRS compliant and audit prepped from Day 1.", num: "05" },
-  { icon: "/icons/money.svg", title: "Guaranteed Cost Savings", description: "Cut up to 50% of finance overhead, no compromise.", num: "06" },
-  { icon: "/icons/scalable.svg", title: "Scalable Teams", description: "Start with one resource or scale a full finance team.", num: "07" },
-  { icon: "/icons/support.svg", title: "Ongoing Support", description: "Reporting, queries, and escalations handled quickly.", num: "08" },
-  { icon: "/icons/flexible.svg", title: "Built Around You", description: "Custom workflows and reports for your industry.", num: "09" },
+  { icon: "/icons/fast.svg", title: "Fast Onboarding", description: "We get your finance function up and running within days, not months.", num: "01" },
+  { icon: "/icons/team.svg", title: "Senior Level Expertise", description: "Work with experienced accountants and auditors, not juniors learning on your account.", num: "02" },
+  { icon: "/icons/safe.svg", title: "Secure and Compliant", description: "Strict confidentiality protocols and enterprise grade security for all your data.", num: "03" },
+  { icon: "/icons/design.svg", title: "Clean Systems and Controls", description: "Proper ledgers, mapped workflows, and strong internal controls from day one.", num: "04" },
+  { icon: "/icons/analytics.svg", title: "Audit Ready Always", description: "IFRS compliant financials and audit ready records, maintained year round.", num: "05" },
+  { icon: "/icons/money.svg", title: "Significant Cost Savings", description: "Reduce finance overhead by up to 50 percent without compromising on quality.", num: "06" },
+  { icon: "/icons/scalable.svg", title: "Scalable Support", description: "Start with one service or scale to a full outsourced finance and audit team.", num: "07" },
+  { icon: "/icons/support.svg", title: "Ongoing Support", description: "Reporting, queries, and escalations handled quickly by your dedicated team.", num: "08" },
+  { icon: "/icons/flexible.svg", title: "Built Around You", description: "Custom workflows, reports, and processes tailored to your industry and needs.", num: "09" },
 ]
 
 function FeatureCard({ feature, index, isVisible }: { feature: typeof features[0]; index: number; isVisible: boolean }) {
@@ -88,7 +88,7 @@ export function ShootingStarsAndStarsBackgroundDemo() {
           </span>
         </div>
 
-        {/* Headline (Syne required syntax, slightly reduced) */}
+        {/* Headline - H2 for SEO */}
         <h2
           className={`mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white mb-5 transition-all duration-700 delay-100 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -112,6 +112,7 @@ export function ShootingStarsAndStarsBackgroundDemo() {
               />
             </svg>
           </span>
+          {" "}for Outsourced Finance Services
         </h2>
 
         {/* Subheadline */}
@@ -120,7 +121,7 @@ export function ShootingStarsAndStarsBackgroundDemo() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Clear reports. Compliant systems. Massive savings, guaranteed.
+          Senior level expertise. BKR International standards. Significant cost savings, guaranteed.
         </p>
       </div>
 

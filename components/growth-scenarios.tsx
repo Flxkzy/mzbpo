@@ -29,33 +29,33 @@ interface GrowthScenariosProps {
 }
 
 // ============================================
-// DEFAULT DATA - BOOKKEEPING
+// DEFAULT DATA - GENERAL (ALL SERVICES)
 // ============================================
 
 const DEFAULT_SCENARIOS: Scenario[] = [
   {
-    category: "Expanding Teams",
-    question: "We're growing fast, but cash feels tight. Can we afford to hire without breaking cash flow?",
+    category: "Scaling Operations",
+    question: "We are growing fast but our finance and back office cannot keep up. How do we scale without losing control?",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop",
-    alt: "Expanding Teams",
+    alt: "Scaling business operations with outsourced finance support",
   },
   {
-    category: "Securing Capital",
-    question: "Investors want clean numbers. Are our books and reports strong enough to raise capital?",
+    category: "Audit Readiness",
+    question: "External auditors are coming and we are not sure our controls and records will hold up. How do we get audit ready?",
     image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop",
-    alt: "Securing Capital",
+    alt: "Internal audit and compliance services",
   },
   {
-    category: "Optimizing for Profitability",
-    question: "Revenue is up 40% but profits aren't. Where are we bleeding money?",
+    category: "Cost Optimization",
+    question: "We are spending too much on finance overhead but cannot afford to compromise on quality. What are our options?",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop",
-    alt: "Profitability",
+    alt: "Cost effective accounting outsourcing",
   },
   {
-    category: "Planning Your Exit",
-    question: "We want to sell in two years. Are our books clean enough for due diligence?",
+    category: "Global Compliance",
+    question: "We operate across multiple regions and need compliant payroll and reporting everywhere. Who can handle this?",
     image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop",
-    alt: "Exit Strategy",
+    alt: "Global payroll and compliance services",
   },
 ]
 
@@ -64,28 +64,28 @@ const DEFAULT_SCENARIOS: Scenario[] = [
 // ============================================
 
 export function GrowthScenarios({
-  // Header defaults (bookkeeping)
+  // Header defaults (general, all services)
   headline = (
     <>
-      Whether you're handling hundreds of transactions or thousands,
-      <span style={{ color: "hsl(158 47% 58%)" }}> we support scalable businesses.</span>
+      Accounting and Audit Outsourcing for Every Stage of Growth,
+      <span style={{ color: "hsl(158 47% 58%)" }}> We Support Scalable Businesses.</span>
     </>
   ),
-  subheadline = "As volume increases, clarity shouldn't disappear. We structure your finance so growth doesn't break reporting, controls, or visibility.",
+  subheadline = "As your business grows, complexity increases. We provide the outsourced finance, audit, and payroll support that scales with you, without the overhead of building it all in house.",
   
   // Section title
-  sectionTitle = "Growth scenarios we support",
+  sectionTitle = "Challenges We Help You Solve",
   
   // Scenarios
   scenarios = DEFAULT_SCENARIOS,
   
   // Summary
-  summaryText = "These questions can't be answered with basic bookkeeping. They require clean data, strong controls, and a finance system that holds up as you grow. That's exactly what we build for our clients.",
+  summaryText = "These challenges require more than basic bookkeeping. They need clean data, strong controls, independent audit oversight, and reliable payroll processing. That is exactly what we deliver for our clients.",
 }: GrowthScenariosProps) {
   return (
     <section className="w-full py-12 md:py-24 px-4 md:px-8 font-[var(--font-poppins)]">
       <div className="container mx-auto max-w-6xl">
-        {/* Main Header */}
+        {/* Main Header - H2 for SEO */}
         <div className="max-w-4xl mb-12 md:mb-20">
           <h2 className="mt-6 font-[family-name:var(--font-syne)] text-2xl sm:text-3xl md:text-4xl font-bold text-brand-white">
             {headline}
@@ -99,7 +99,7 @@ export function GrowthScenarios({
           </p>
         </div>
 
-        {/* Subheading */}
+        {/* Subheading - H3 */}
         <h3
           className="mt-6 font-[family-name:var(--font-syne)] text-xl md:text-2xl font-bold mb-8 md:mb-12 text-white border-b pb-4"
           style={{ borderColor: "rgba(255, 255, 255, 0.1)" }}

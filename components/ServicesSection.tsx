@@ -32,66 +32,66 @@ interface ServicesSectionProps {
 }
 
 // ============================================
-// DEFAULT DATA - BOOKKEEPING
+// DEFAULT DATA - GENERAL (ALL SERVICES)
 // ============================================
 
 const DEFAULT_SERVICES: Service[] = [
   {
     icon: <BookOpen className="w-6 h-6" />,
-    title: "Bookkeeping & Accounting Outsourcing",
-    description: "Comprehensive bookkeeping services with accurate financial records and reporting",
+    title: "Bookkeeping and Accounting Outsourcing",
+    description: "Professional bookkeeping services with accurate financial records and monthly reporting",
     details: {
       tagline: "Focus on growth. We handle the finance operations.",
       paragraphs: [
-        "We manage your books end to end with clean data, tight controls, and reliable monthly closes without the overhead of an in-house team.",
-        "From daily entries and reconciliations to reporting and month-end close, we operate as a structured finance system that scales with your transaction volume and complexity.",
+        "Our outsourced bookkeeping services manage your books end to end with clean data, tight controls, and reliable monthly closes, without the overhead of an in house finance team.",
+        "From daily entries and reconciliations to financial reporting and month end close, we operate as a structured finance system that scales with your transaction volume and complexity.",
       ],
       bullets: [
-        "Real-time, decision-ready reporting",
-        "Seamless integration with your existing systems",
-        "Scalable support based on workload, not headcount",
+        "Real time, decision ready financial reporting",
+        "Seamless integration with your existing accounting systems",
+        "Scalable bookkeeping support based on workload, not headcount",
       ],
-      cta: "Get full financial clarity without full-time cost.",
+      cta: "Get full financial clarity without full time cost.",
     },
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
   },
   {
     icon: <Users className="w-6 h-6" />,
-    title: "Payroll Processing",
-    description: "End to end payroll management with compliance and timely processing.",
+    title: "Payroll Processing Services",
+    description: "End to end payroll outsourcing with compliance and timely processing",
     details: {
       tagline: "Accurate, compliant payroll delivered on time, every cycle.",
       paragraphs: [
-        "We take the complexity out of payroll by managing everything from salary calculations and tax deductions to payslip generation and compliance filings. Our payroll solutions are tailored to your structure, whether you run a lean team or a large workforce.",
-        "You get reliable, confidential payroll support on time, every time.",
+        "Our payroll outsourcing services take the complexity out of payroll by managing everything from salary calculations and tax deductions to payslip generation and compliance filings. Our payroll solutions are tailored to your structure, whether you run a lean team or a large workforce.",
+        "You get reliable, confidential payroll processing on time, every time.",
       ],
       bullets: [
-        "Monthly and biweekly payroll cycles",
-        "Customized reports and employee summaries",
+        "Monthly and biweekly payroll processing cycles",
+        "Customized payroll reports and employee summaries",
         "Secure employee payslip distribution",
-        "Integration with your accounting systems",
+        "Integration with your accounting and HR systems",
       ],
-      cta: "Let us handle the backend so you can focus on your people.",
+      cta: "Let us handle the payroll backend so you can focus on your people.",
     },
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
   },
   {
     icon: <FileCheck className="w-6 h-6" />,
-    title: "Internal Audit & Compliance",
-    description: "Continuous internal audit support to ensure accuracy, compliance, and control",
+    title: "Internal Audit and Compliance Services",
+    description: "Independent internal audit support to ensure accuracy, compliance, and control",
     details: {
       tagline: "Complete confidence in your numbers, controls, and compliance.",
       paragraphs: [
-        "Our internal audit support ensures your books are accurate, compliant, and always ready for external audits and tax filings.",
-        "By reviewing transactions, controls, and processes on an ongoing basis, we help prevent leakages, detect irregularities early, and reduce fraud risk.",
+        "Our internal audit services ensure your books are accurate, compliant, and always ready for external audits and regulatory filings.",
+        "By reviewing transactions, testing controls, and monitoring processes on an ongoing basis, we help prevent leakages, detect irregularities early, and reduce fraud risk.",
       ],
       bullets: [
         "Regulatory and statutory compliance assurance",
         "External audit ready financial statements",
         "Tax filing ready and reconciled financials",
         "Detection and prevention of leakages and misstatements",
-        "Improved accuracy and reliability of books of accounts",
-        "Early identification of frauds, weaknesses, and control gaps",
+        "Improved accuracy and reliability of financial records",
+        "Early identification of control gaps and weaknesses",
       ],
       cta: "Gain full assurance over your books, controls, and compliance.",
     },
@@ -100,15 +100,15 @@ const DEFAULT_SERVICES: Service[] = [
   {
     icon: <Briefcase className="w-6 h-6" />,
     title: "Back Office Support for Accounting Firms",
-    description: "Lower your payroll burden without compromising quality or control",
+    description: "Outsourced accounting support to help accounting firms scale without overhead",
     details: {
-      tagline: "Reduce payroll stress. Increase margins. Scale without overhead.",
+      tagline: "Reduce payroll costs. Increase margins. Scale without overhead.",
       paragraphs: [
-        "Running an accounting firm shouldn't mean absorbing heavy payroll costs every month. In-house teams are expensive, rigid, and difficult to scale.",
-        "With our Pakistan-based back office, you get qualified accounting professionals at a fraction of local costs, allowing you to retain more profits while maintaining full control over delivery and quality.",
+        "Running an accounting firm should not mean absorbing heavy payroll costs every month. In house teams are expensive, rigid, and difficult to scale.",
+        "With our outsourced back office support, you get qualified accounting professionals at a fraction of local costs, allowing you to retain more profits while maintaining full control over delivery and quality.",
       ],
       bullets: [
-        "Dedicated offshore team aligned to your firm's workflows",
+        "Dedicated offshore team aligned to your firm workflows",
         "Significant reduction in monthly payroll and overhead costs",
         "Scalable staffing without long term hiring commitments",
         "Time zone coverage for faster turnaround and continuity",
@@ -121,8 +121,8 @@ const DEFAULT_SERVICES: Service[] = [
   },
   {
     icon: <Settings className="w-6 h-6" />,
-    title: "ERP Implementation & Management",
-    description: "Seamless ERP solutions to streamline your business operations and financial processes.",
+    title: "ERP Implementation and Management",
+    description: "Expert ERP solutions to streamline your business operations and financial processes",
     details: {
       tagline: "Streamline your operations with the right systems implemented the right way.",
       paragraphs: [
@@ -149,13 +149,13 @@ const DEFAULT_SERVICES: Service[] = [
 
 export function ServicesSection({
   // Header defaults
-  badgeText = "Services",
+  badgeText = "Our Services",
   headline = (
     <>
-      Clear finance services, built to scale with your business.
+      Comprehensive Finance and Accounting Outsourcing Solutions
     </>
   ),
-  subheadline = "Bookkeeping and accounting outsourcing designed to keep your data clean, your close reliable, and your operations ready for growth.",
+  subheadline = "End to end outsourced bookkeeping, internal audit, and payroll services. One trusted partner for your entire back office.",
   
   // Services default
   services = DEFAULT_SERVICES,
@@ -177,7 +177,7 @@ export function ServicesSection({
                 <span>{badgeText}</span>
               </div>
 
-              {/* Heading */}
+              {/* Heading - H2 for SEO */}
               <h2 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white">
                 {headline}
               </h2>
@@ -218,6 +218,7 @@ export function ServicesSection({
                   {services[activeTab].icon}
                 </div>
 
+                {/* Service Title - H3 for SEO */}
                 <h3 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white">
                   {services[activeTab].title}
                 </h3>
