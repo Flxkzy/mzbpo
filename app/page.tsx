@@ -1,5 +1,4 @@
-"use client"
-
+import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/hero"
 import ClientShowcase from "@/components/ClientsShowcase"
@@ -16,17 +15,12 @@ import { CTASection } from "@/components/cta-section"
 import SectionDivider from "@/components/SectionDivider"
 
 import Image from "next/image"
-import Link from "next/link"
-import { Element } from "react-scroll"
 
-// ============================================
-// SEO METADATA (add to layout.tsx or page.tsx)
-// ============================================
-// export const metadata = {
-//   title: "Finance, Accounting & Audit Outsourcing Services | MZBPO",
-//   description: "Outsourced bookkeeping, internal audit, and payroll services for growing businesses. Senior level expertise from a BKR International partner. Get a free consultation.",
-//   keywords: "outsourced accounting, bookkeeping services, internal audit, payroll outsourcing, finance outsourcing, BKR International",
-// }
+export const metadata: Metadata = {
+  title: "Finance, Accounting & Audit Outsourcing Services",
+  description:
+    "Outsourced bookkeeping, internal audit, and payroll services for growing businesses. Senior level expertise from a BKR International partner. Get a free consultation.",
+}
 
 export default function Home() {
   return (
@@ -93,36 +87,32 @@ export default function Home() {
         {/* SERVICES - H2 for SEO */}
         {/* ============================================ */}
         <section id="services">
-          <Element name="services">
-            <ServicesSection />
-          </Element>
+          <ServicesSection />
         </section>
 
         {/* ============================================ */}
         {/* PROCESS - H2 for SEO */}
         {/* ============================================ */}
-        <Element name="process">
-          <section id="process" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
-            {/* Heading */}
-            <h2 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white text-center">
-              Our <span className="text-brand-teal">Proven</span> Process for Finance and Accounting Outsourcing
-            </h2>
+        <section id="process" className="py-20 max-w-[1600px] mx-auto px-6 md:px-0">
+          {/* Heading */}
+          <h2 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white text-center">
+            Our <span className="text-brand-teal">Proven</span> Process for Finance and Accounting Outsourcing
+          </h2>
 
-            {/* Subheading */}
-            <p className="text-center py-4 md:w-1/2 mx-auto text-base md:text-lg text-white/80 font-[var(--font-poppins)]">
-              How we deliver reliable outsourced accounting and audit services for your business.
-            </p>
+          {/* Subheading */}
+          <p className="text-center py-4 md:w-1/2 mx-auto text-base md:text-lg text-white/80 font-[var(--font-poppins)]">
+            How we deliver reliable outsourced accounting and audit services for your business.
+          </p>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
-              <div className="w-full md:w-1/2">
-                <AnimatedBeamMultipleOutputDemo />
-              </div>
-              <div className="w-full md:w-1/2">
-                <BoxRevealDemo />
-              </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
+            <div className="w-full md:w-1/2">
+              <AnimatedBeamMultipleOutputDemo />
             </div>
-          </section>
-        </Element>
+            <div className="w-full md:w-1/2">
+              <BoxRevealDemo />
+            </div>
+          </div>
+        </section>
 
         <SectionDivider />
 
@@ -188,11 +178,9 @@ export default function Home() {
         {/* ============================================ */}
         {/* WHY TRUST - H2 for SEO */}
         {/* ============================================ */}
-        <Element name="guarantees">
-          <section id="guarantees">
-            <ShootingStarsAndStarsBackgroundDemo />
-          </section>
-        </Element>
+        <section id="guarantees">
+          <ShootingStarsAndStarsBackgroundDemo />
+        </section>
 
         {/* ============================================ */}
         {/* FINAL CTA - H2 for SEO */}

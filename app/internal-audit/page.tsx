@@ -4,16 +4,11 @@
 import Navbar from "@/components/Navbar"
 import HeroSection from "@/components/LP-Hero"
 import ClientShowcase from "@/components/ClientsShowcase"
-import { GrowthScenarios } from "@/components/growth-scenarios"
-import { WhatWeDoAudit } from "@/components/Whatwedoaudit"
+import { WhatWeDo, AUDIT_CONFIG } from "@/components/Whatwedoaudit"
 import { CaseStudiesAudit } from "@/components/demos/Casestudiesaudit"
 import { TestimonialsAudit } from "@/components/demos/Testimonialsaudit"
-import { AnimatedBeamMultipleOutputDemo } from "@/components/demos/animated-beam-demo"
-import BoxRevealDemo from "@/components/demos/box-reveal-demo"
-import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting-stars-demo"
 import Footer from "@/components/footer"
 import { CTASection } from "@/components/cta-section"
-import SectionDivider from "@/components/SectionDivider"
 import { FAQAudit } from "@/components/Faqaudit"
 
 import Image from "next/image"
@@ -138,7 +133,7 @@ export default function InternalAuditPage() {
         {/* ============================================ */}
         {/* WHAT WE DO - Internal Audit Deliverables */}
         {/* ============================================ */}
-        <WhatWeDoAudit />
+        <WhatWeDo {...AUDIT_CONFIG} />
 
         {/* ============================================ */}
         {/* BKR INTERNATIONAL SECTION - More Prominent for Audit */}

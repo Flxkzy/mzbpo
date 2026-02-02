@@ -1,6 +1,7 @@
 "use client"
 
-import { ArrowRight, MessageCircle } from "lucide-react"
+import { ArrowRight, Mail } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa"
 
 interface CTASectionProps {
   headline?: string
@@ -58,13 +59,16 @@ export function CTASection({
           </a>
 
           {/* WhatsApp Link */}
-          <a
-            href="https://wa.me/yourwhatsappnumber"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-brand-teal transition-colors font-[var(--font-poppins)] text-sm"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>Or message us on WhatsApp</span>
-          </a>
+{/* WhatsApp Link */}
+<a
+  href="https://wa.me/923235298686"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 text-white/60 hover:text-brand-teal transition-colors font-[var(--font-poppins)] text-sm"
+>
+  <FaWhatsapp className="w-4 h-4" />
+  <span>Or WhatsApp us directly</span>
+</a>
         </div>
 
         {/* Trust text */}

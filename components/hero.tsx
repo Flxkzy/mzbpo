@@ -141,7 +141,7 @@ export default function Hero() {
             {/* Image with bounce animation */}
             <div className="relative" style={{ animation: "bounce-gentle 3s ease-in-out infinite" }}>
               <Image
-                src="/images/hero.png"
+                src="/images/hero.avif"
                 alt="Outsourced accounting and finance services illustration"
                 width={800}
                 height={700}

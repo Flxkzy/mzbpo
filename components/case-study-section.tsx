@@ -171,9 +171,9 @@ export function CaseStudies() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 md:mb-10">
           <div className="max-w-2xl">
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3 text-brand-teal font-[var(--font-poppins)]">
+            <span className="block text-xs font-bold uppercase tracking-widest mb-3 text-brand-teal font-[var(--font-poppins)]">
               Case Studies
-            </h4>
+            </span>
 
             {/* Heading: use required Syne font syntax, reduced size */}
             <h2 className="mt-6 font-[family-name:var(--font-syne)] text-2xl sm:text-3xl md:text-4xl font-bold text-brand-white">

@@ -7,8 +7,19 @@ import {
   ClipboardList, 
   AlertCircle,
   CheckCircle2,
-  ArrowRight
+  ArrowRight,
+  BookOpen,
+  Calculator,
+  PieChart,
+  TrendingUp,
+  FileSpreadsheet,
+  Users,
+  LucideIcon
 } from "lucide-react"
+
+// ============================================
+// TYPES
+// ============================================
 
 interface Deliverable {
   icon: React.ReactNode
@@ -17,7 +28,27 @@ interface Deliverable {
   includes: string[]
 }
 
-const deliverables: Deliverable[] = [
+interface WhatWeDoProps {
+  // Header
+  badge?: string
+  headline?: React.ReactNode
+  subheadline?: string
+  
+  // Deliverables
+  deliverables?: Deliverable[]
+  
+  // Bottom CTA Box
+  ctaHeadline?: string
+  ctaDescription?: string
+  ctaButtonText?: string
+  ctaButtonLink?: string
+}
+
+// ============================================
+// DEFAULT DATA - INTERNAL AUDIT
+// ============================================
+
+const AUDIT_DELIVERABLES: Deliverable[] = [
   {
     icon: <FileSearch className="w-6 h-6" />,
     title: "Transaction Reviews",
@@ -32,7 +63,7 @@ const deliverables: Deliverable[] = [
   {
     icon: <ShieldCheck className="w-6 h-6" />,
     title: "Control Testing",
-    description: "We don't just document controls. We test them against Saudi regulatory requirements.",
+    description: "We do not just document controls. We test them against regulatory requirements.",
     includes: [
       "Control design assessment",
       "Operating effectiveness testing",
@@ -42,19 +73,19 @@ const deliverables: Deliverable[] = [
   },
   {
     icon: <AlertCircle className="w-6 h-6" />,
-    title: "ZATCA Compliance",
-    description: "Make sure your processes meet Zakat, Tax and Customs Authority standards.",
+    title: "Regulatory Compliance",
+    description: "Make sure your processes meet local and international regulatory standards.",
     includes: [
       "VAT control verification",
       "Regulatory compliance assessment",
       "Documentation completeness review",
-      "Pre-review preparation support"
+      "Pre review preparation support"
     ]
   },
   {
     icon: <FileText className="w-6 h-6" />,
     title: "Independent Reporting",
-    description: "Clear reports on where you stand. What's working. What needs attention.",
+    description: "Clear reports on where you stand. What is working. What needs attention.",
     includes: [
       "Executive summary with key findings",
       "Detailed gap analysis",
@@ -69,14 +100,14 @@ const deliverables: Deliverable[] = [
     includes: [
       "Year round preparation",
       "Documentation review",
-      "Pre-audit testing",
+      "Pre audit testing",
       "External auditor liaison"
     ]
   },
   {
     icon: <CheckCircle2 className="w-6 h-6" />,
     title: "Ongoing Oversight",
-    description: "Continuous monitoring so gaps don't have time to compound.",
+    description: "Continuous monitoring so gaps do not have time to compound.",
     includes: [
       "Quarterly testing cycles",
       "Continuous monitoring",
@@ -86,7 +117,103 @@ const deliverables: Deliverable[] = [
   },
 ]
 
-export function WhatWeDoAudit() {
+// ============================================
+// BOOKKEEPING DELIVERABLES
+// ============================================
+
+const BOOKKEEPING_DELIVERABLES: Deliverable[] = [
+  {
+    icon: <BookOpen className="w-6 h-6" />,
+    title: "Daily Transaction Recording",
+    description: "Every transaction recorded accurately, categorized correctly, and posted on time.",
+    includes: [
+      "Accounts payable and receivable management",
+      "Expense categorization and coding",
+      "Revenue recognition and tracking",
+      "Journal entries and adjustments"
+    ]
+  },
+  {
+    icon: <Calculator className="w-6 h-6" />,
+    title: "Bank Reconciliations",
+    description: "Your bank accounts reconciled regularly so nothing slips through the cracks.",
+    includes: [
+      "Daily or weekly bank reconciliations",
+      "Credit card statement matching",
+      "Discrepancy identification and resolution",
+      "Cash flow tracking"
+    ]
+  },
+  {
+    icon: <FileSpreadsheet className="w-6 h-6" />,
+    title: "Monthly Financial Statements",
+    description: "Clean, accurate reports delivered on schedule so you can make decisions with confidence.",
+    includes: [
+      "Profit and loss statement",
+      "Balance sheet preparation",
+      "Cash flow statement",
+      "Custom management reports"
+    ]
+  },
+  {
+    icon: <PieChart className="w-6 h-6" />,
+    title: "Month End Close",
+    description: "Complete month end process handled end to end, delivered by the 5th every month.",
+    includes: [
+      "Accruals and prepayments",
+      "Depreciation calculations",
+      "Account reconciliations",
+      "Final review and adjustments"
+    ]
+  },
+  {
+    icon: <TrendingUp className="w-6 h-6" />,
+    title: "Financial Analysis",
+    description: "Insights beyond the numbers so you understand what is actually happening in your business.",
+    includes: [
+      "Variance analysis and commentary",
+      "Budget vs actual reporting",
+      "Key metrics and KPI tracking",
+      "Trend identification"
+    ]
+  },
+  {
+    icon: <Users className="w-6 h-6" />,
+    title: "Dedicated Team Support",
+    description: "A team that knows your business, your systems, and your preferences.",
+    includes: [
+      "Assigned senior accountant",
+      "Consistent team members",
+      "Direct communication channel",
+      "Regular check ins and updates"
+    ]
+  },
+]
+
+// ============================================
+// MAIN COMPONENT
+// ============================================
+
+export function WhatWeDo({
+  // Header defaults (Internal Audit)
+  badge = "What's Included",
+  headline = (
+    <>
+      Everything You Need for
+      <span className="block text-brand-teal">Independent Internal Audit</span>
+    </>
+  ),
+  subheadline = "We plug into your business as your internal audit function. Here is exactly what you get.",
+  
+  // Deliverables default
+  deliverables = AUDIT_DELIVERABLES,
+  
+  // Bottom CTA defaults
+  ctaHeadline = "Senior Level Expertise Without the Senior Level Salary",
+  ctaDescription = "You get a complete internal audit function backed by BKR International standards. All without hiring a full time team or building internal capabilities from scratch.",
+  ctaButtonText = "See How It Works for Your Business",
+  ctaButtonLink = "/meeting",
+}: WhatWeDoProps) {
   return (
     <section className="py-20 md:py-28 px-4 font-[var(--font-poppins)]" style={{ backgroundColor: "hsl(0 0% 96%)" }}>
       <div className="max-w-6xl mx-auto">
@@ -94,16 +221,15 @@ export function WhatWeDoAudit() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-navy/10 text-brand-navy text-xs font-semibold uppercase tracking-wider mb-4">
-            What's Included
+            {badge}
           </span>
           
           <h2 className="font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-navy leading-tight">
-            Everything You Need for
-            <span className="block text-brand-teal">Independent Internal Audit</span>
+            {headline}
           </h2>
           
           <p className="mt-4 text-base md:text-lg text-brand-navy/60 max-w-2xl mx-auto">
-            We plug into your business as your internal audit function. Here's exactly what you get.
+            {subheadline}
           </p>
         </div>
 
@@ -146,17 +272,16 @@ export function WhatWeDoAudit() {
         <div className="mt-12 rounded-2xl p-8 md:p-10 text-center" style={{ backgroundColor: "hsl(232 45% 19%)" }}>
           <div className="max-w-3xl mx-auto">
             <h3 className="font-[family-name:var(--font-syne)] text-2xl md:text-3xl font-bold text-white mb-4">
-              Senior Level Expertise Without the Senior Level Salary
+              {ctaHeadline}
             </h3>
             <p className="text-white/70 mb-6 leading-relaxed">
-              You get a complete internal audit function backed by BKR International standards. 
-              All without hiring a full time team or building internal capabilities from scratch.
+              {ctaDescription}
             </p>
             <a
-              href="/meeting"
+              href={ctaButtonLink}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-teal text-brand-navy font-semibold transition-all duration-300 hover:bg-brand-teal/90"
             >
-              See How It Works for Your Business
+              {ctaButtonText}
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -166,3 +291,42 @@ export function WhatWeDoAudit() {
     </section>
   )
 }
+
+// ============================================
+// EXPORT PRESET CONFIGS
+// ============================================
+
+export const AUDIT_CONFIG = {
+  badge: "What's Included",
+  headline: (
+    <>
+      Everything You Need for
+      <span className="block text-brand-teal">Independent Internal Audit</span>
+    </>
+  ),
+  subheadline: "We plug into your business as your internal audit function. Here is exactly what you get.",
+  deliverables: AUDIT_DELIVERABLES,
+  ctaHeadline: "Senior Level Expertise Without the Senior Level Salary",
+  ctaDescription: "You get a complete internal audit function backed by BKR International standards. All without hiring a full time team or building internal capabilities from scratch.",
+  ctaButtonText: "See How It Works for Your Business",
+  ctaButtonLink: "/meeting",
+}
+
+export const BOOKKEEPING_CONFIG = {
+  badge: "What's Included",
+  headline: (
+    <>
+      Everything You Need for
+      <span className="block text-brand-teal">Professional Bookkeeping</span>
+    </>
+  ),
+  subheadline: "We become your dedicated finance back office. Here is exactly what you get.",
+  deliverables: BOOKKEEPING_DELIVERABLES,
+  ctaHeadline: "A Full Finance Team at a Fraction of the Cost",
+  ctaDescription: "You get dedicated bookkeeping professionals backed by a QCR rated audit firm and BKR International standards. Same quality as Big Four, 50% less cost, setup in 48 hours.",
+  ctaButtonText: "See What You Would Save",
+  ctaButtonLink: "/meeting",
+}
+
+// Export deliverables for custom usage
+export { AUDIT_DELIVERABLES, BOOKKEEPING_DELIVERABLES }

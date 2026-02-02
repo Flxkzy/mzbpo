@@ -1,16 +1,24 @@
 // components/Navbar.tsx
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
+import Link from "next/link"
+import { ArrowUpRight, ChevronDown } from "lucide-react"
 import { usePathname } from "next/navigation"
 
 const navItems = [
   { label: "Why Us", href: "#why-us" },
-  { label: "Services", href: "#services" },
   { label: "Case Studies", href: "#case-studies" },
   { label: "About", href: "#about" },
+]
+
+const serviceItems = [
+  { label: "Back Office Support", href: "/services/back-office-support" },
+  { label: "Bookkeeping and Accounting", href: "/services/bookkeeping-accounting" },
+  { label: "ERP Implementation", href: "/services/erp-implementation" },
+  { label: "Internal Audit and Compliance", href: "/services/internal-audit-compliance" },
+  { label: "Payroll Processing", href: "/services/payroll-processing" },
 ]
 
 export default function Navbar() {
@@ -19,6 +27,10 @@ export default function Navbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
+  const servicesRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10)
@@ -33,9 +45,21 @@ export default function Navbar() {
     }
   }, [isMenuOpen])
 
+  useEffect(() => {
+    const onClickOutside = (e: MouseEvent) => {
+      if (!servicesRef.current) return
+      if (!servicesRef.current.contains(e.target as Node)) setIsServicesOpen(false)
+    }
+    document.addEventListener("mousedown", onClickOutside)
+    return () => document.removeEventListener("mousedown", onClickOutside)
+  }, [])
+
+  useEffect(() => {
+    if (!isMenuOpen) setIsMobileServicesOpen(false)
+  }, [isMenuOpen])
+
   const resolveHref = (href: string) => {
     if (isHome) return href
-    // on other pages (eg /meeting) route to home + anchor
     return `/${href}`
   }
 
@@ -59,8 +83,7 @@ export default function Navbar() {
         >
           {/* LOGO GROUP */}
           <div className="relative z-10 flex items-center gap-4 sm:gap-6">
-            {/* Main Logo (MZBPO) */}
-            <a href="/" className="block">
+            <Link href="/" className="block">
               <Image
                 src="/logo/mzbpo.svg"
                 alt="MZBPO"
@@ -72,15 +95,13 @@ export default function Navbar() {
                 `}
                 priority
               />
-            </a>
+            </Link>
 
-            {/* Vertical Divider */}
             <div className={`w-[1px] bg-white/20 transition-all duration-500 ${isScrolled ? "h-6" : "h-8"}`} />
 
-            {/* Affiliate Logo (BKR) - Increased Size */}
             <div className="block">
               <Image
-                src="/logo/bkr.png" 
+                src="/logo/bkr.png"
                 alt="BKR International"
                 width={140}
                 height={55}
@@ -94,6 +115,85 @@ export default function Navbar() {
 
           {/* DESKTOP NAV */}
           <nav className="hidden lg:flex items-center gap-12">
+{/* Services dropdown */}
+<div ref={servicesRef} className="relative">
+  <button
+    type="button"
+    onClick={() => setIsServicesOpen((v) => !v)}
+    className="
+      relative text-[13px] font-medium tracking-wide
+      text-brand-white/70 hover:text-brand-white
+      transition-colors duration-300
+      after:absolute after:bottom-[-4px] after:left-0
+      after:h-[1px] after:w-0 after:bg-brand-teal
+      after:transition-all after:duration-300
+      hover:after:w-full
+      inline-flex items-center gap-2
+    "
+    aria-haspopup="menu"
+    aria-expanded={isServicesOpen}
+  >
+    Services
+    <ChevronDown
+      size={14}
+      className={`transition-transform duration-300 ${isServicesOpen ? "rotate-180" : "rotate-0"}`}
+    />
+  </button>
+
+  <div
+    className={`
+      absolute left-0 top-[calc(100%+14px)]
+      w-[320px] rounded-2xl overflow-hidden
+      border border-white/10 bg-brand-navy/95 backdrop-blur-2xl
+      shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+      transition-all duration-300
+      ${isServicesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}
+    `}
+    role="menu"
+  >
+    <div className="p-2">
+      {serviceItems.map((s) => (
+        <Link
+          key={s.href}
+          href={s.href}
+          className="
+            flex items-center justify-between
+            px-4 py-3 rounded-xl
+            text-[13px] font-medium
+            text-brand-white/80 hover:text-brand-white
+            hover:bg-white/[0.06]
+            transition-colors
+          "
+          role="menuitem"
+          onClick={() => setIsServicesOpen(false)}
+        >
+          <span>{s.label}</span>
+          <ArrowUpRight size={14} className="text-brand-white/25" />
+        </Link>
+      ))}
+
+      <div className="my-2 h-[1px] bg-white/10" />
+
+      <a
+        href={isHome ? "#services" : "/#services"}
+        className="
+          flex items-center justify-between
+          px-4 py-3 rounded-xl
+          text-[13px] font-medium
+          text-brand-white/70 hover:text-brand-teal
+          hover:bg-white/[0.06]
+          transition-colors
+        "
+        role="menuitem"
+        onClick={() => setIsServicesOpen(false)}
+      >
+        <span>View services overview</span>
+        <ArrowUpRight size={14} className="text-brand-white/25" />
+      </a>
+    </div>
+  </div>
+</div>
+
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -185,6 +285,66 @@ export default function Navbar() {
         <div className="relative h-full flex flex-col px-8 pt-28 pb-10">
           <nav className="flex-1">
             <ul className="space-y-1">
+              {/* Services accordion */}
+              <li
+                className={`
+                  transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+                  ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}
+                `}
+                style={{ transitionDelay: isMenuOpen ? "100ms" : "0ms" }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setIsMobileServicesOpen((v) => !v)}
+                  className="
+                    group w-full flex items-center justify-between
+                    py-4 border-b border-brand-white/[0.06]
+                    transition-colors duration-300
+                  "
+                  aria-expanded={isMobileServicesOpen}
+                >
+                  <span className="text-[28px] sm:text-[32px] font-light text-brand-white/90 group-hover:text-brand-teal transition-colors duration-300">
+                    Services
+                  </span>
+                  <ChevronDown
+                    size={18}
+                    className={`
+                      text-brand-white/20 group-hover:text-brand-teal
+                      transition-all duration-300
+                      ${isMobileServicesOpen ? "rotate-180" : "rotate-0"}
+                    `}
+                  />
+                </button>
+
+                <div
+                  className={`
+                    overflow-hidden transition-all duration-500
+                    ${isMobileServicesOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"}
+                  `}
+                >
+                  <div className="pt-3 pb-4 space-y-1">
+                    {serviceItems.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="
+                          flex items-center justify-between
+                          py-3 px-2 rounded-xl
+                          text-brand-white/70 hover:text-brand-white
+                          hover:bg-white/[0.06]
+                          transition-colors
+                        "
+                      >
+                        <span className="text-[14px]">{s.label}</span>
+                        <ArrowUpRight size={16} className="text-brand-white/20" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </li>
+
+              {/* Other links */}
               {navItems.map((item, index) => (
                 <li
                   key={item.label}
@@ -192,7 +352,7 @@ export default function Navbar() {
                     transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
                     ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}
                   `}
-                  style={{ transitionDelay: isMenuOpen ? `${100 + index * 60}ms` : "0ms" }}
+                  style={{ transitionDelay: isMenuOpen ? `${160 + index * 60}ms` : "0ms" }}
                 >
                   <a
                     href={resolveHref(item.href)}
@@ -226,7 +386,7 @@ export default function Navbar() {
               transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
               ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}
             `}
-            style={{ transitionDelay: isMenuOpen ? "450ms" : "0ms" }}
+            style={{ transitionDelay: isMenuOpen ? "520ms" : "0ms" }}
           >
             <a
               href="/meeting"
@@ -245,8 +405,8 @@ export default function Navbar() {
             </a>
 
             <div className="flex items-center justify-between text-[11px] text-brand-white/30 tracking-wider">
-              <span>mzcopakistan@gmail.com</span>
-              <span>© 2025</span>
+              <span>operations@mzbpo.com</span>
+              <span>© 2026</span>
             </div>
           </div>
         </div>

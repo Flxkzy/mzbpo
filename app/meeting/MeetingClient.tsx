@@ -94,8 +94,9 @@ export default function MeetingClient() {
             {/* LEFT */}
             <div className="w-full md:w-[44%]">
               <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
-                Let’s Talk About{" "}
-                <span className="text-brand-teal italic">Financial Control</span>
+                Book Your Free{" "}
+                <span className="text-brand-teal italic">Outsourced Accounting</span>{" "}
+                Consultation
               </h1>
 
               <p className="text-base md:text-lg text-white/80 pt-4 leading-relaxed">

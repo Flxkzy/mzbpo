@@ -2,17 +2,15 @@
 
 import Navbar from "@/components/Navbar"
 import ClientShowcase from "@/components/ClientsShowcase"
-import { GrowthScenarios } from "@/components/growth-scenarios"
-import { ServicesSection } from "@/components/ServicesSection"
 import { CaseStudies } from "@/components/case-study-section"
 import { Testimonials } from "@/components/testimonials"
 import { AnimatedBeamMultipleOutputDemo } from "@/components/demos/animated-beam-demo"
 import BoxRevealDemo from "@/components/demos/box-reveal-demo"
-import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting-stars-demo"
 import Footer from "@/components/footer"
 import { CTASection } from "@/components/cta-section"
-import SectionDivider from "@/components/SectionDivider"
 import HeroSection from "@/components/LP-Hero"
+import { FAQBookkeeping } from "@/components/demos/faqbook"
+import { WhatWeDo, BOOKKEEPING_CONFIG } from "@/components/Whatwedoaudit"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -43,7 +41,9 @@ export default function Home() {
         {/* SOCIAL PROOF */}
         <ClientShowcase />
 
-        <ServicesSection/>
+        <WhatWeDo {...BOOKKEEPING_CONFIG} />
+
+
 
         {/* ABOUT / CREDIBILITY */}
 <section id="about" className="py-20 px-4 md:px-6">
@@ -121,21 +121,7 @@ export default function Home() {
     </div>
   </section>
 </Element>
-
-<SectionDivider />
-
-        {/* WHY US (GrowthScenarios) */}
-        <section id="why-us" className="py-20">
-          <GrowthScenarios />
-        </section>
-
-        {/* GUARANTEES / TRUST */}
-        <Element name="guarantees">
-          <section id="guarantees">
-            <ShootingStarsAndStarsBackgroundDemo />
-          </section>
-        </Element>
-
+        <FAQBookkeeping/>
         {/* FINAL CTA */}
         <CTASection />
 

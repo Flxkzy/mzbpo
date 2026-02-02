@@ -42,34 +42,35 @@ interface HeroSectionProps {
 
 export default function HeroSection({
   // Eyebrow defaults
-  eyebrow = "From a QCR-Rated Audit Firm | Serving Saudi Businesses Remotely",
+  eyebrow = "Exclusively For Businesses...",
   
   // Stars defaults
   showStars = true,
-  starsSubtext = "Trusted by growing businesses across Saudi Arabia, UAE and UK",
+  starsSubtext = "Trusted by leading companies worldwide",
   
   // Headline default (bookkeeping)
   headline = (
     <>
-      Reduce Your Accounting Costs by{" "}
-      <span className="text-[rgba(98,198,161,1)]">Up to 50%</span>
-      <br className="hidden sm:block" />
-      While Staying Compliant with Saudi VAT and IFRS
+      Get{" "}
+      <span className="text-[rgba(98,198,161,1)]">
+        Professional Bookkeeping, Monthly Reporting, and Audit Ready Financials
+      </span>{" "}
+      For Your Business, So Every Dollar Is Accounted For and You Never Scramble at Month End Again
     </>
   ),
   
   // Subheadline default
-  subheadline = "Get clean, reliable financial reports every month without building an expensive in house finance team.",
+  subheadline = "Stop overpaying local firms or dealing with constant staff turnover. Get dedicated bookkeeping professionals from senior level experts (Backed by BKR International, The World's 5th Largest Accounting Association) with a significantly more cost efficient delivery model.",
   
   // Primary CTA defaults
   primaryCtaText = "Schedule A Call",
   primaryCtaLink = "/meeting",
   
   // CTA subtext
-  ctaSubtext = "Confidential. No obligation.",
+  ctaSubtext = "Confidential. No obligation. Setup in 48 hours.",
   
   // VSL defaults
-  vslTitle = "See How Saudi Companies Handle Accounting Without In House Teams",
+  vslTitle = "See How Smart Businesses Handle Their Books Without The Overhead",
   vslVideoUrl = "https://www.youtube.com/embed/MKXORaRiSqo",
   showVsl = true,
 }: HeroSectionProps) {

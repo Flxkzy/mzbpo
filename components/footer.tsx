@@ -12,7 +12,7 @@ const footerNav = [
 ]
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/hammafarid/", icon: Linkedin },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/mzbpo", icon: Linkedin },
   { label: "Instagram", href: "https://instagram.com/MZBPO", icon: Instagram },
   { label: "Facebook", href: "https://www.facebook.com/mzcopakistan", icon: Facebook },
 ]
@@ -122,10 +122,10 @@ export default function Footer() {
               <ul className="mt-4 space-y-3">
                 <li>
                   <a
-                    href="mailto:mzcopakistan@gmail.com"
+                    href="mailto:operations@mzbpo.com"
                     className="text-sm text-brand-white/70 hover:text-brand-white transition-colors duration-300"
                   >
-                    mzcopakistan@gmail.com
+                    operations@mzbpo.com
                   </a>
                 </li>
                 <li>
@@ -173,7 +173,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <p className="text-xs text-brand-white/40 font-[var(--font-poppins)]">
-            © 2025 MZBPO. All Rights Reserved.
+            © 2026 MZBPO. All Rights Reserved.
           </p>
 
           <p className="text-xs text-brand-white/30 font-[var(--font-poppins)]">

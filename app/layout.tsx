@@ -44,12 +44,14 @@ export const metadata: Metadata = {
     description:
       "Professional outsourced bookkeeping and accounting services for growing businesses. Clean books, clear numbers, and confident decisions with MZBPO.",
     siteName: "MZBPO",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "MZBPO - Outsourced Bookkeeping and Accounting Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Outsourced Bookkeeping and Accounting Services | MZBPO",
     description:
       "Professional outsourced bookkeeping and accounting services for growing businesses. Clean books, clear numbers, and confident decisions with MZBPO.",
+    images: ["/images/og-image.jpg"],
   },
 }
 
@@ -114,19 +116,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
 
         {/* Organization Schema */}
-        <Script
-          id="mzbpo-org-ldjson"
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "MZBPO",
               url: "https://www.mzbpo.com",
+              logo: "https://www.mzbpo.com/logo/logo.webp",
               description:
                 "Outsourced bookkeeping and accounting services for growing businesses.",
-              sameAs: ["https://www.linkedin.com/company/mzbpo"],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "operations@mzbpo.com",
+                contactType: "customer service",
+              },
+              sameAs: [
+                "https://www.linkedin.com/company/mzbpo",
+                "https://www.instagram.com/MZBPO",
+                "https://www.facebook.com/mzcopakistan",
+              ],
             }),
           }}
         />

@@ -1,8 +1,10 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
-import { BookOpen, Users, FileCheck, Settings, Sparkles, Briefcase, Shield, ClipboardCheck, Search, FileText } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { BookOpen, Users, FileCheck, Settings, Sparkles, Briefcase, Shield, ClipboardCheck, Search, FileText, ArrowRight, Check } from "lucide-react"
 
 // ============================================
 // TYPES
@@ -19,20 +21,18 @@ interface Service {
     cta: string
   }
   image: string
+  href?: string
 }
 
 interface ServicesSectionProps {
-  // Header
   badgeText?: string
   headline?: React.ReactNode
   subheadline?: string
-  
-  // Services array
   services?: Service[]
 }
 
 // ============================================
-// DEFAULT DATA - GENERAL (ALL SERVICES)
+// DEFAULT DATA
 // ============================================
 
 const DEFAULT_SERVICES: Service[] = [
@@ -54,6 +54,7 @@ const DEFAULT_SERVICES: Service[] = [
       cta: "Get full financial clarity without full time cost.",
     },
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+    href: "/services/bookkeeping-accounting",
   },
   {
     icon: <Users className="w-6 h-6" />,
@@ -62,7 +63,7 @@ const DEFAULT_SERVICES: Service[] = [
     details: {
       tagline: "Accurate, compliant payroll delivered on time, every cycle.",
       paragraphs: [
-        "Our payroll outsourcing services take the complexity out of payroll by managing everything from salary calculations and tax deductions to payslip generation and compliance filings. Our payroll solutions are tailored to your structure, whether you run a lean team or a large workforce.",
+        "Our payroll outsourcing services take the complexity out of payroll by managing everything from salary calculations and tax deductions to payslip generation and compliance filings.",
         "You get reliable, confidential payroll processing on time, every time.",
       ],
       bullets: [
@@ -74,6 +75,7 @@ const DEFAULT_SERVICES: Service[] = [
       cta: "Let us handle the payroll backend so you can focus on your people.",
     },
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
+    href: "/services/payroll-processing",
   },
   {
     icon: <FileCheck className="w-6 h-6" />,
@@ -96,6 +98,7 @@ const DEFAULT_SERVICES: Service[] = [
       cta: "Gain full assurance over your books, controls, and compliance.",
     },
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    href: "/services/internal-audit-compliance",
   },
   {
     icon: <Briefcase className="w-6 h-6" />,
@@ -118,6 +121,7 @@ const DEFAULT_SERVICES: Service[] = [
       cta: "Build a cost efficient back office and protect your margins.",
     },
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop",
+    href: "/services/back-office-support",
   },
   {
     icon: <Settings className="w-6 h-6" />,
@@ -140,15 +144,87 @@ const DEFAULT_SERVICES: Service[] = [
       cta: "Build a system that grows with your business.",
     },
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    href: "/services/erp-implementation",
   },
 ]
+
+// ============================================
+// SERVICE CARD
+// ============================================
+
+function ServiceCard({
+  service,
+  index,
+  isVisible,
+}: {
+  service: Service
+  index: number
+  isVisible: boolean
+}) {
+  const num = String(index + 1).padStart(2, "0")
+  const CardWrapper = service.href ? Link : "div"
+  const wrapperProps = service.href ? { href: service.href } : {}
+
+  return (
+    <CardWrapper
+      {...(wrapperProps as any)}
+      className={`group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-brand-teal/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+      style={{ transitionDelay: `${100 + index * 100}ms` }}
+    >
+      {/* Image */}
+      <div className="relative h-48 sm:h-52 overflow-hidden bg-gray-100">
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+        <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm shadow-sm">
+          <span className="text-brand-navy text-xs font-bold font-[var(--font-poppins)]">{num}</span>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-6">
+        <div className="w-10 h-10 rounded-xl bg-brand-teal/10 border border-brand-teal/20 flex items-center justify-center text-brand-teal mb-4">
+          {service.icon}
+        </div>
+
+        <h3 className="font-[family-name:var(--font-syne)] text-lg font-bold text-brand-navy mb-2 group-hover:text-brand-teal transition-colors duration-300 leading-tight">
+          {service.title}
+        </h3>
+
+        <p className="text-gray-500 text-sm leading-relaxed font-[var(--font-poppins)] mb-5">
+          {service.description}
+        </p>
+
+        <ul className="space-y-2 mb-6 flex-1">
+          {service.details.bullets.slice(0, 3).map((bullet, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-sm text-gray-600 font-[var(--font-poppins)]">
+              <Check className="w-4 h-4 text-brand-teal flex-shrink-0 mt-0.5" />
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-2 text-brand-teal text-sm font-semibold font-[var(--font-poppins)] group-hover:gap-3 transition-all duration-300 mt-auto">
+          <span>Learn more</span>
+          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </div>
+      </div>
+    </CardWrapper>
+  )
+}
 
 // ============================================
 // MAIN COMPONENT
 // ============================================
 
 export function ServicesSection({
-  // Header defaults
   badgeText = "Our Services",
   headline = (
     <>
@@ -156,119 +232,110 @@ export function ServicesSection({
     </>
   ),
   subheadline = "End to end outsourced bookkeeping, internal audit, and payroll services. One trusted partner for your entire back office.",
-  
-  // Services default
   services = DEFAULT_SERVICES,
 }: ServicesSectionProps) {
-  const [activeTab, setActiveTab] = useState(0)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true)
+      },
+      { threshold: 0.05 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section className="py-16 px-4 bg-gray-50 font-[var(--font-poppins)]">
-      <div className="max-w-7xl mx-auto">
-        <div className="rounded-3xl p-6 md:p-12 lg:p-16 shadow-2xl" style={{ backgroundColor: "hsl(232 45% 19%)" }}>
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8 md:mb-12">
-            <div className="space-y-4 lg:max-w-2xl">
-              {/* Badge */}
-              <div
-                className="inline-flex items-center gap-2 text-sm font-medium font-[var(--font-poppins)]"
-                style={{ color: "hsl(158 47% 58%)" }}
-              >
-                <Sparkles className="w-4 h-4" />
-                <span>{badgeText}</span>
-              </div>
+    <section
+      ref={sectionRef}
+      className="relative py-20 md:py-28 px-4 overflow-hidden font-[var(--font-poppins)] bg-white"
+    >
+      {/* Subtle dot pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, hsl(232 45% 19%) 0.5px, transparent 0)",
+          backgroundSize: "32px 32px",
+        }}
+      />
 
-              {/* Heading - H2 for SEO */}
-              <h2 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white">
-                {headline}
-              </h2>
-
-              {/* Subheadline */}
-              <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed uppercase tracking-wide font-[var(--font-poppins)]">
-                {subheadline}
-              </p>
-            </div>
+      <div className="relative max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+          <div
+            className={`inline-flex items-center gap-2 text-sm font-medium text-brand-teal mb-6 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <Sparkles className="w-4 h-4" />
+            <span className="uppercase tracking-wider text-xs font-semibold">{badgeText}</span>
           </div>
 
-          {/* Tabs */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap gap-3 mb-8 md:mb-12 font-[var(--font-poppins)]">
-            {services.map((service, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className="group relative px-4 md:px-6 py-3 md:py-3.5 rounded-2xl font-semibold text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105 w-full lg:w-auto font-[var(--font-poppins)]"
-                style={{
-                  backgroundColor: activeTab === index ? "hsl(158 47% 58%)" : "transparent",
-                  color: activeTab === index ? "hsl(232 45% 19%)" : "hsl(158 47% 58%)",
-                  border: activeTab === index ? "none" : "2px solid hsl(158 47% 58% / 0.3)",
-                }}
-              >
-                <span className="flex items-center justify-center lg:justify-start gap-2">
-                  <span className="flex-shrink-0">{service.icon}</span>
-                  <span className="text-left truncate">{service.title}</span>
-                </span>
-              </button>
+          <h2
+            className={`font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-navy mb-5 transition-all duration-700 delay-100 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            {headline}
+          </h2>
+
+          <p
+            className={`text-gray-500 text-base md:text-lg leading-relaxed transition-all duration-700 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            {subheadline}
+          </p>
+        </div>
+
+        {/* Card grid - top 3 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+          {services.slice(0, 3).map((service, index) => (
+            <ServiceCard
+              key={index}
+              service={service}
+              index={index}
+              isVisible={isVisible}
+            />
+          ))}
+        </div>
+
+        {/* Second row - 2 wider cards */}
+        {services.length > 3 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7 mt-6 lg:mt-7">
+            {services.slice(3).map((service, index) => (
+              <ServiceCard
+                key={index + 3}
+                service={service}
+                index={index + 3}
+                isVisible={isVisible}
+              />
             ))}
           </div>
+        )}
 
-          {/* Active Service Content */}
-          <div className="rounded-3xl p-6 md:p-8 lg:p-12 transition-all duration-500" style={{ backgroundColor: "hsl(232 45% 15%)" }}>
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-              <div className="space-y-4 md:space-y-6">
-                <div className="inline-flex items-center gap-2" style={{ color: "hsl(158 47% 58%)" }}>
-                  {services[activeTab].icon}
-                </div>
-
-                {/* Service Title - H3 for SEO */}
-                <h3 className="mt-6 font-[family-name:var(--font-syne)] text-3xl sm:text-4xl md:text-5xl font-bold text-brand-white">
-                  {services[activeTab].title}
-                </h3>
-
-                <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed uppercase tracking-wide font-[var(--font-poppins)]">
-                  {services[activeTab].details.tagline}
-                </p>
-
-                <div className="space-y-4 pt-4 font-[var(--font-poppins)]">
-                  {services[activeTab].details.paragraphs.map((paragraph, idx) => (
-                    <p key={idx} className="text-sm md:text-base text-white/70 leading-relaxed font-[var(--font-poppins)]">
-                      {paragraph}
-                    </p>
-                  ))}
-
-                  <ul className="space-y-3 pt-4 font-[var(--font-poppins)]">
-                    {services[activeTab].details.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm md:text-base text-white/80 font-[var(--font-poppins)]">
-                        <span
-                          className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: "hsl(158 47% 58%)" }}
-                        />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <p className="text-sm md:text-base text-white/90 font-semibold pt-4 italic font-[var(--font-poppins)]">
-                    {services[activeTab].details.cta}
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative order-first lg:order-last">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video lg:aspect-square">
-                  <img
-                    src={services[activeTab].image || "/placeholder.svg"}
-                    alt={services[activeTab].title}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  />
-                  <div
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      background: "linear-gradient(135deg, hsl(158 47% 58%) 0%, transparent 100%)",
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Bottom CTA */}
+        <div
+          className={`mt-16 md:mt-20 text-center transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+          style={{ transitionDelay: "800ms" }}
+        >
+          <p className="text-gray-400 text-sm mb-6">
+            Not sure which service fits? Let us help.
+          </p>
+          <a
+            href="/meeting"
+            className="group relative inline-flex items-center gap-2.5 bg-brand-teal text-brand-navy font-semibold text-base px-8 py-4 rounded-full overflow-hidden shadow-lg shadow-brand-teal/20 transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--brand-teal)/0.3)] hover:scale-[1.03]"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
+            <span className="relative">Get a Free Consultation</span>
+            <ArrowRight className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
         </div>
       </div>
     </section>

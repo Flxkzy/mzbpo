@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/LP", "/internal-audit"],
       },
     ],
     sitemap: "https://www.mzbpo.com/sitemap.xml",

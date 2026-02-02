@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -178,9 +179,11 @@ export function Testimonials() {
                   <div className="flex items-center gap-4">
                     <div className="relative">
                       <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-brand-teal/30">
-                        <img
+                        <Image
                           src={testimonials[activeIndex].image}
                           alt={testimonials[activeIndex].name}
+                          width={56}
+                          height={56}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -239,9 +242,11 @@ export function Testimonials() {
                   <div className={`w-12 h-12 rounded-full overflow-hidden flex-shrink-0 ring-2 ${
                     activeIndex === index ? "ring-brand-teal" : "ring-gray-200"
                   }`}>
-                    <img
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
+                      width={48}
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>
