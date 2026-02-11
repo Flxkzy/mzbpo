@@ -103,8 +103,7 @@ export default function InternalAuditPage() {
             subheadline="Stop Relying On Your Finance Team To Audit Themselves. Get Independent Oversight From Senior-Level Experts (Backed By BKR International, The World's 5th Largest Accounting Association)"
             primaryCtaText="Schedule A Call"
             primaryCtaLink="/meeting"
-            vslTitle="See How We Help Saudi Companies Get Audit Ready"
-            vslVideoUrl="https://www.youtube.com/embed/YOUR_INTERNAL_AUDIT_VSL_ID"
+            showVsl={false}
           />
         </section>
 

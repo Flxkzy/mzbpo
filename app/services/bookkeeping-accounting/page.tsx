@@ -164,6 +164,30 @@ export default function BookkeepingAccountingPage() {
             </div>
           </div>
         </section>
+
+        {/* Related Articles */}
+        <section className="py-20 px-6 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-[family-name:var(--font-syne)] text-2xl font-bold text-brand-navy mb-8 text-center">Related Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <Link href="/blog/outsourced-bookkeeping-cost" className="group p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-md hover:border-brand-teal/20 transition-all duration-300">
+                <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-brand-navy mb-2 group-hover:text-brand-teal transition-colors">How Much Does Outsourced Bookkeeping Cost?</h3>
+                <p className="text-gray-500 text-sm font-[var(--font-poppins)] mb-3">Complete pricing guide with cost ranges and factors.</p>
+                <span className="text-brand-teal text-xs font-semibold font-[var(--font-poppins)] inline-flex items-center gap-1 group-hover:gap-2 transition-all">Read article <ArrowRight className="w-3 h-3" /></span>
+              </Link>
+              <Link href="/blog/in-house-vs-outsourced-accounting" className="group p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-md hover:border-brand-teal/20 transition-all duration-300">
+                <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-brand-navy mb-2 group-hover:text-brand-teal transition-colors">In-House vs Outsourced Accounting</h3>
+                <p className="text-gray-500 text-sm font-[var(--font-poppins)] mb-3">Compare costs and benefits of each model.</p>
+                <span className="text-brand-teal text-xs font-semibold font-[var(--font-poppins)] inline-flex items-center gap-1 group-hover:gap-2 transition-all">Read article <ArrowRight className="w-3 h-3" /></span>
+              </Link>
+              <Link href="/blog/month-end-close-checklist" className="group p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-md hover:border-brand-teal/20 transition-all duration-300">
+                <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-brand-navy mb-2 group-hover:text-brand-teal transition-colors">Month-End Close Checklist</h3>
+                <p className="text-gray-500 text-sm font-[var(--font-poppins)] mb-3">Best practices for accurate monthly reporting.</p>
+                <span className="text-brand-teal text-xs font-semibold font-[var(--font-poppins)] inline-flex items-center gap-1 group-hover:gap-2 transition-all">Read article <ArrowRight className="w-3 h-3" /></span>
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", name: "Outsourced Bookkeeping and Accounting Services", description: "Professional outsourced bookkeeping and accounting services for growing businesses. Clean books, accurate reporting, and monthly closes.", provider: { "@type": "Organization", name: "MZBPO", url: "https://www.mzbpo.com" }, url: "https://www.mzbpo.com/services/bookkeeping-accounting" }) }} />

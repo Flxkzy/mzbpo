@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-10">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-brand-white/40 font-[var(--font-poppins)]">
                 Explore
@@ -112,6 +112,46 @@ export default function Footer() {
                     </a>
                   </li>
                 ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-brand-white/40 font-[var(--font-poppins)]">
+                Resources
+              </p>
+              <ul className="mt-4 space-y-3">
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-sm text-brand-white/70 hover:text-brand-white transition-colors duration-300"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/in-house-vs-outsourced-accounting"
+                    className="text-sm text-brand-white/70 hover:text-brand-white transition-colors duration-300"
+                  >
+                    In-House vs Outsourced
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/outsourced-bookkeeping-cost"
+                    className="text-sm text-brand-white/70 hover:text-brand-white transition-colors duration-300"
+                  >
+                    Bookkeeping Pricing Guide
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/month-end-close-checklist"
+                    className="text-sm text-brand-white/70 hover:text-brand-white transition-colors duration-300"
+                  >
+                    Month-End Checklist
+                  </Link>
+                </li>
               </ul>
             </div>
 

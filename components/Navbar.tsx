@@ -11,6 +11,7 @@ const navItems = [
   { label: "Why Us", href: "#why-us" },
   { label: "Case Studies", href: "#case-studies" },
   { label: "About", href: "#about" },
+  { label: "Blog", href: "/blog", isExternal: true },
 ]
 
 const serviceItems = [
@@ -194,23 +195,41 @@ export default function Navbar() {
   </div>
 </div>
 
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={resolveHref(item.href)}
-                className="
-                  relative text-[13px] font-medium tracking-wide
-                  text-brand-white/70 hover:text-brand-white
-                  transition-colors duration-300
-                  after:absolute after:bottom-[-4px] after:left-0
-                  after:h-[1px] after:w-0 after:bg-brand-teal
-                  after:transition-all after:duration-300
-                  hover:after:w-full
-                "
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.isExternal ? (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="
+                    relative text-[13px] font-medium tracking-wide
+                    text-brand-white/70 hover:text-brand-white
+                    transition-colors duration-300
+                    after:absolute after:bottom-[-4px] after:left-0
+                    after:h-[1px] after:w-0 after:bg-brand-teal
+                    after:transition-all after:duration-300
+                    hover:after:w-full
+                  "
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={resolveHref(item.href)}
+                  className="
+                    relative text-[13px] font-medium tracking-wide
+                    text-brand-white/70 hover:text-brand-white
+                    transition-colors duration-300
+                    after:absolute after:bottom-[-4px] after:left-0
+                    after:h-[1px] after:w-0 after:bg-brand-teal
+                    after:transition-all after:duration-300
+                    hover:after:w-full
+                  "
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </nav>
 
           {/* DESKTOP CTA */}
@@ -354,27 +373,51 @@ export default function Navbar() {
                   `}
                   style={{ transitionDelay: isMenuOpen ? `${160 + index * 60}ms` : "0ms" }}
                 >
-                  <a
-                    href={resolveHref(item.href)}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="
-                      group flex items-center justify-between
-                      py-4 border-b border-brand-white/[0.06]
-                      transition-colors duration-300
-                    "
-                  >
-                    <span className="text-[28px] sm:text-[32px] font-light text-brand-white/90 group-hover:text-brand-teal transition-colors duration-300">
-                      {item.label}
-                    </span>
-                    <ArrowUpRight
-                      size={18}
+                  {item.isExternal ? (
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
                       className="
-                        text-brand-white/20 group-hover:text-brand-teal
-                        transition-all duration-300
-                        group-hover:translate-x-0.5 group-hover:-translate-y-0.5
+                        group flex items-center justify-between
+                        py-4 border-b border-brand-white/[0.06]
+                        transition-colors duration-300
                       "
-                    />
-                  </a>
+                    >
+                      <span className="text-[28px] sm:text-[32px] font-light text-brand-white/90 group-hover:text-brand-teal transition-colors duration-300">
+                        {item.label}
+                      </span>
+                      <ArrowUpRight
+                        size={18}
+                        className="
+                          text-brand-white/20 group-hover:text-brand-teal
+                          transition-all duration-300
+                          group-hover:translate-x-0.5 group-hover:-translate-y-0.5
+                        "
+                      />
+                    </Link>
+                  ) : (
+                    <a
+                      href={resolveHref(item.href)}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="
+                        group flex items-center justify-between
+                        py-4 border-b border-brand-white/[0.06]
+                        transition-colors duration-300
+                      "
+                    >
+                      <span className="text-[28px] sm:text-[32px] font-light text-brand-white/90 group-hover:text-brand-teal transition-colors duration-300">
+                        {item.label}
+                      </span>
+                      <ArrowUpRight
+                        size={18}
+                        className="
+                          text-brand-white/20 group-hover:text-brand-teal
+                          transition-all duration-300
+                          group-hover:translate-x-0.5 group-hover:-translate-y-0.5
+                        "
+                      />
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

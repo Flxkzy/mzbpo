@@ -11,11 +11,11 @@ interface FAQ {
 const faqs: FAQ[] = [
   {
     question: "We're not big enough for internal audit. Isn't this for large enterprises?",
-    answer: "Internal audit isn't about size—it's about complexity and risk. If you're growing, handling more transactions, and have more people touching finances, you need oversight. The gaps that form at your stage compound quickly. Fixing them now is easier and cheaper than fixing them after your external auditor flags them or ZATCA comes asking questions.",
+    answer: "Internal audit isn't about size, it's about complexity and risk. If you're growing, handling more transactions, and have more people touching finances, you need oversight. The gaps that form at your stage compound quickly. Fixing them now is easier and cheaper than fixing them after your external auditor flags them or ZATCA comes asking questions.",
   },
   {
     question: "We already have an external auditor. Why do we need internal audit too?",
-    answer: "External auditors verify your financials once a year—after the fact. They confirm what happened, not what's happening. Internal audit tests your controls throughout the year, catches issues early, and makes sure you're audit-ready before external auditors arrive. They're complementary, not redundant. In fact, strong internal audit makes your external audit faster and cheaper.",
+    answer: "External auditors verify your financials once a year, after the fact. They confirm what happened, not what's happening. Internal audit tests your controls throughout the year, catches issues early, and makes sure you're audit-ready before external auditors arrive. They're complementary, not redundant. In fact, strong internal audit makes your external audit faster and cheaper.",
   },
   {
     question: "Can't our finance team handle internal controls?",
@@ -23,19 +23,19 @@ const faqs: FAQ[] = [
   },
   {
     question: "What does this actually cost?",
-    answer: "It depends on your transaction volume, number of entities, and complexity. But in most cases, it's significantly less than hiring even one full-time internal auditor—and you get a team of senior-level expertise, not a single hire learning on the job. We'll scope it properly on the intro call and give you a clear number.",
+    answer: "It depends on your transaction volume, number of entities, and complexity. But in most cases, it's significantly less than hiring even one full time internal auditor, and you get a team of senior-level expertise, not a single hire learning on the job. We'll scope it properly on the intro call and give you a clear number.",
   },
   {
-    question: "How long until we're audit-ready?",
-    answer: "For most companies, we can complete an initial internal audit and get you to audit-ready status within 6-8 weeks. After that, it's ongoing oversight to maintain that readiness. The first engagement identifies the gaps; the ongoing work makes sure they stay closed.",
+    question: "How long until we're audit ready?",
+    answer: "For most companies, we can complete an initial internal audit and get you to audit ready status within 6-8 weeks. After that, it's ongoing oversight to maintain that readiness. The first engagement identifies the gaps; the ongoing work makes sure they stay closed.",
   },
   {
     question: "What if you find serious problems?",
-    answer: "That's exactly why you hire us—to find problems before someone else does. We report what we find clearly and help you prioritize fixes based on risk. Finding a control gap with us is infinitely better than having your external auditor flag it, ZATCA discover it, or—worst case—finding out through actual financial loss.",
+    answer: "That's exactly why you hire us, to find problems before someone else does. We report what we find clearly and help you prioritize fixes based on risk. Finding a control gap with us is infinitely better than having your external auditor flag it, ZATCA discover it, or, worst case, finding out through actual financial loss.",
   },
   {
-    question: "How is this different from a one-time audit?",
-    answer: "A one-time audit gives you a snapshot. But controls degrade, people change, processes evolve. Ongoing internal audit means continuous oversight—quarterly testing, regular reviews, real-time reporting. You're not just audit-ready once; you stay audit-ready.",
+    question: "How is this different from a one time audit?",
+    answer: "A one-time audit gives you a snapshot. But controls degrade, people change, processes evolve. Ongoing internal audit means continuous oversight, quarterly testing, regular reviews, real-time reporting. You're not just audit ready once; you stay audit-ready.",
   },
   {
     question: "Do you work with companies outside Saudi Arabia?",
