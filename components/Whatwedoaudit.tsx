@@ -5,7 +5,6 @@ import {
   ShieldCheck, 
   FileText, 
   ClipboardList, 
-  AlertCircle,
   CheckCircle2,
   ArrowRight,
   BookOpen,
@@ -14,7 +13,7 @@ import {
   TrendingUp,
   FileSpreadsheet,
   Users,
-  LucideIcon
+
 } from "lucide-react"
 
 // ============================================
@@ -69,17 +68,6 @@ const AUDIT_DELIVERABLES: Deliverable[] = [
       "Operating effectiveness testing",
       "Gap identification and reporting",
       "Remediation recommendations"
-    ]
-  },
-  {
-    icon: <AlertCircle className="w-6 h-6" />,
-    title: "Regulatory Compliance",
-    description: "Make sure your processes meet local and international regulatory standards.",
-    includes: [
-      "VAT control verification",
-      "Regulatory compliance assessment",
-      "Documentation completeness review",
-      "Pre review preparation support"
     ]
   },
   {

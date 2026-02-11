@@ -43,26 +43,26 @@ const caseStudies: CaseStudy[] = [
       { label: "Audit findings", value: "Zero" },
     ],
   },
-  {
-    id: 2,
-    title: "The ZATCA Compliance Sprint",
-    companyType: "Digital Agency",
-    companyName: "Digital Agency",
-    companyColor: "hsl(158 47% 58%)",
-    logoImage: "/logo/rhemcopy.svg",
-    challenge:
-      "ZATCA announced a compliance review with 30 days notice. The company had no confidence their VAT controls were compliant. Documentation was scattered and incomplete. Leadership was preparing for the worst.",
-    solution:
-      "Rapid internal audit focused on ZATCA requirements. Mapped all VAT processes, tested controls against regulatory standards, identified documentation gaps, and prepared comprehensive compliance files with full audit trails.",
-    result:
-      "Passed ZATCA review with no penalties. Established ongoing compliance monitoring. Finance team now has clear procedures for maintaining compliance.",
-    resultAuthor: "Founder",
-    resultRole: "CEO",
-    metrics: [
-      { label: "Days to ready", value: "21" },
-      { label: "Penalties", value: "Zero" },
-    ],
-  },
+{
+  id: 2,
+  title: "The Scaling Without Chaos Story",
+  companyType: "Email Marketing Agency",
+  companyName: "RHEM COPY",
+  companyColor: "hsl(262 52% 60%)",
+  logoImage: "/logo/rhemcopy.svg",
+  challenge:
+    "Client growth was strong, but internally the agency was struggling with inconsistent billing logic, unclear cost tracking, and rising reconciliation issues. Profitability varied month to month despite stable retainers. Leadership lacked clear financial visibility as the team expanded.",
+  solution:
+    "Performed an internal audit of revenue recognition, client billing workflows, contractor payments, and expense allocations. Traced how retainers, performance fees, and tool costs flowed through the accounting system. Identified timing distortions, misclassifications, and approval gaps affecting reporting accuracy.",
+  result:
+    "Established structured billing controls, standardized cost attribution, and reconciliation checkpoints. Margin visibility improved and monthly financials became predictable. Management gained confidence to scale operations without financial uncertainty.",
+  resultAuthor: "Founder",
+  resultRole: "Agency Owner",
+  metrics: [
+    { label: "Margin Variance", value: "Stabilized" },
+    { label: "Financial Visibility", value: "Restored" },
+  ],
+},
   {
     id: 3,
     title: "The Multi Entity Consolidation",
