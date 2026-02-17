@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Learn about BKR International, one of the world's top 10 accounting associations, and how MZBPO's membership delivers global standards to your business.",
     url: "https://www.mzbpo.com/blog/what-is-bkr-international",
     type: "article",
-    publishedTime: "2026-02-11T00:00:00.000Z",
+    publishedTime: "2025-11-03T00:00:00.000Z",
     authors: ["MZBPO"],
     images: [
       {
@@ -199,7 +199,7 @@ export default function BlogPost() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>February 11, 2026</span>
+                  <span>November 3, 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
@@ -831,8 +831,8 @@ export default function BlogPost() {
               "Learn about BKR International, one of the world's top 10 accounting associations, and how MZBPO's membership delivers global standards to your business.",
             image:
               "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?w=1200&h=630&fit=crop",
-            datePublished: "2026-02-11T00:00:00.000Z",
-            dateModified: "2026-02-11T00:00:00.000Z",
+            datePublished: "2025-11-03T00:00:00.000Z",
+            dateModified: "2025-11-03T00:00:00.000Z",
             author: {
               "@type": "Organization",
               name: "MZBPO",

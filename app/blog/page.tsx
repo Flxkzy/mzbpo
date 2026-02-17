@@ -19,17 +19,131 @@ export const metadata: Metadata = {
 }
 
 const featuredPost = {
-  title: "In-House vs Outsourced Accounting: Complete Cost Comparison",
+  title: "10 Signs Your Business Should Outsource Accounting in 2026",
   excerpt:
-    "A detailed analysis comparing the true costs of building an in-house accounting team versus partnering with an outsourced provider. Includes salary data, hidden costs, and decision framework.",
-  href: "/blog/in-house-vs-outsourced-accounting",
-  image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=600&fit=crop",
-  category: "Accounting Insights",
-  date: "February 11, 2026",
-  readTime: "12 min read",
+    "Growing businesses reach a tipping point where DIY accounting becomes dangerous. Discover the key indicators that it's time to bring in professional help and how outsourcing can transform your financial operations.",
+  href: "/blog/signs-to-outsource-accounting",
+  image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop",
+  category: "Strategy",
+  date: "February 17, 2026",
+  readTime: "11 min read",
 }
 
 const posts = [
+  // New posts - Country Guides
+  {
+    title: "Outsourced Accounting Services in the USA: Complete Guide 2026",
+    excerpt:
+      "Everything US businesses need to know about outsourced accounting: costs, compliance, GAAP requirements, and how to choose the right provider.",
+    href: "/blog/outsourced-accounting-usa",
+    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
+    category: "Country Guide",
+    date: "January 5, 2026",
+    readTime: "14 min read",
+  },
+  {
+    title: "Outsourced Bookkeeping Services in the UK: Pricing, Benefits & How to Choose",
+    excerpt:
+      "Navigate UK bookkeeping outsourcing with confidence. Covers MTD compliance, HMRC requirements, GBP pricing, and provider selection.",
+    href: "/blog/outsourced-bookkeeping-uk",
+    image: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=600&h=400&fit=crop",
+    category: "Country Guide",
+    date: "January 14, 2026",
+    readTime: "13 min read",
+  },
+  {
+    title: "Bookkeeping Outsourcing for Australian Businesses: Complete Guide",
+    excerpt:
+      "A comprehensive guide for Australian businesses considering outsourced bookkeeping. Covers BAS, GST, superannuation, and ATO compliance.",
+    href: "/blog/bookkeeping-outsourcing-australia",
+    image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=600&h=400&fit=crop",
+    category: "Country Guide",
+    date: "January 22, 2026",
+    readTime: "12 min read",
+  },
+  {
+    title: "How to Choose an Outsourced Accounting Firm in Canada",
+    excerpt:
+      "Navigate Canadian accounting outsourcing with CRA compliance, GST/HST filings, provincial differences, and bilingual considerations covered.",
+    href: "/blog/outsourced-accounting-canada",
+    image: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&h=400&fit=crop",
+    category: "Country Guide",
+    date: "January 30, 2026",
+    readTime: "12 min read",
+  },
+  // New posts - Industry Guides
+  {
+    title: "Bookkeeping for Ecommerce: Managing Multi-Channel Finances",
+    excerpt:
+      "Master ecommerce accounting across Shopify, Amazon, and more. Covers inventory methods, sales tax nexus, and multi-channel reconciliation.",
+    href: "/blog/bookkeeping-for-ecommerce",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+    category: "Industry Guide",
+    date: "February 3, 2026",
+    readTime: "14 min read",
+  },
+  {
+    title: "Accounting for SaaS Companies: Revenue Recognition & Key Metrics",
+    excerpt:
+      "Navigate ASC 606 revenue recognition, track the right SaaS metrics, and build investor-ready financial reporting for your software company.",
+    href: "/blog/accounting-for-saas-companies",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    category: "Industry Guide",
+    date: "February 6, 2026",
+    readTime: "13 min read",
+  },
+  {
+    title: "Outsourced Accounting for Law Firms: Trust Accounts & Compliance",
+    excerpt:
+      "Specialized accounting guidance for law firms covering IOLTA management, trust account compliance, and legal-specific financial reporting.",
+    href: "/blog/outsourced-accounting-law-firms",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop",
+    category: "Industry Guide",
+    date: "February 9, 2026",
+    readTime: "12 min read",
+  },
+  {
+    title: "Accounting for Startups: When to Hire vs Outsource Your Finances",
+    excerpt:
+      "From entity selection to investor-ready financials, learn what startups need at every stage and when outsourcing makes more sense than hiring.",
+    href: "/blog/accounting-for-startups",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop",
+    category: "Industry Guide",
+    date: "February 12, 2026",
+    readTime: "13 min read",
+  },
+  // New posts - Evergreen
+  {
+    title: "GAAP vs IFRS: Key Differences Every International Business Should Know",
+    excerpt:
+      "A comprehensive comparison of US GAAP and IFRS standards, covering revenue recognition, inventory, leases, and which countries use what.",
+    href: "/blog/gaap-vs-ifrs",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&h=400&fit=crop",
+    category: "Accounting Standards",
+    date: "February 14, 2026",
+    readTime: "15 min read",
+  },
+  // Existing posts
+  {
+    title: "In-House vs Outsourced Accounting: Complete Cost Comparison",
+    excerpt:
+      "A detailed analysis comparing the true costs of building an in-house accounting team versus partnering with an outsourced provider.",
+    href: "/blog/in-house-vs-outsourced-accounting",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop",
+    category: "Accounting Insights",
+    date: "October 15, 2025",
+    readTime: "12 min read",
+  },
+  {
+    title: "How Much Does Outsourced Bookkeeping Cost in 2026?",
+    excerpt:
+      "A complete breakdown of pricing models, typical cost ranges, and what factors affect your monthly fee. Includes ROI calculator.",
+    href: "/blog/outsourced-bookkeeping-cost",
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=600&h=400&fit=crop",
+    category: "Pricing",
+    date: "December 8, 2025",
+    readTime: "10 min read",
+  },
   {
     title: "What is BKR International? How Our Global Network Benefits Your Business",
     excerpt:
@@ -37,7 +151,7 @@ const posts = [
     href: "/blog/what-is-bkr-international",
     image: "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?w=600&h=400&fit=crop",
     category: "About MZBPO",
-    date: "February 11, 2026",
+    date: "November 3, 2025",
     readTime: "8 min read",
   },
   {
@@ -47,18 +161,8 @@ const posts = [
     href: "/blog/month-end-close-checklist",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     category: "Bookkeeping",
-    date: "February 11, 2026",
+    date: "November 20, 2025",
     readTime: "15 min read",
-  },
-  {
-    title: "How Much Does Outsourced Bookkeeping Cost in 2026?",
-    excerpt:
-      "A complete breakdown of pricing models, typical cost ranges, and what factors affect your monthly fee. Includes ROI calculator.",
-    href: "/blog/outsourced-bookkeeping-cost",
-    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=600&h=400&fit=crop",
-    category: "Pricing",
-    date: "February 11, 2026",
-    readTime: "10 min read",
   },
   {
     title: "Internal Controls for Small Business: A Fraud Prevention Guide",
@@ -67,9 +171,10 @@ const posts = [
     href: "/blog/internal-controls-small-business",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
     category: "Internal Audit",
-    date: "February 11, 2026",
+    date: "December 22, 2025",
     readTime: "12 min read",
   },
+  // Coming soon posts
   {
     title: "SAP Business One vs Odoo vs NetSuite: ERP Comparison for SMBs",
     excerpt:
@@ -90,27 +195,21 @@ const posts = [
     date: "Coming Soon",
     readTime: "7 min read",
   },
-  {
-    title: "When Should Your Business Outsource Accounting?",
-    excerpt:
-      "Key signs that indicate it's time to consider outsourcing your accounting function. A decision framework for business owners.",
-    href: "/blog/when-to-outsource-accounting",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop",
-    category: "Strategy",
-    date: "Coming Soon",
-    readTime: "6 min read",
-  },
 ]
 
 const categories = [
-  { name: "All Posts", count: 8, active: true },
+  { name: "All Posts", count: 18, active: true },
+  { name: "Country Guide", count: 4 },
+  { name: "Industry Guide", count: 4 },
+  { name: "Accounting Standards", count: 1 },
   { name: "Accounting Insights", count: 1 },
-  { name: "About MZBPO", count: 1 },
-  { name: "Bookkeeping", count: 2 },
-  { name: "Internal Audit", count: 2 },
+  { name: "Strategy", count: 1 },
   { name: "Pricing", count: 1 },
-  { name: "Payroll", count: 1 },
+  { name: "Bookkeeping", count: 1 },
+  { name: "Internal Audit", count: 1 },
+  { name: "About MZBPO", count: 1 },
   { name: "ERP", count: 1 },
+  { name: "Payroll", count: 1 },
 ]
 
 export default function BlogPage() {

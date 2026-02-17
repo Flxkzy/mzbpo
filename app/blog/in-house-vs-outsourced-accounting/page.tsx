@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "Compare in-house accounting vs outsourced accounting services. Detailed cost analysis, pros and cons, and guidance on choosing the right model for your business.",
     url: "https://www.mzbpo.com/blog/in-house-vs-outsourced-accounting",
     type: "article",
-    publishedTime: "2026-02-11T00:00:00.000Z",
+    publishedTime: "2025-10-15T00:00:00.000Z",
     authors: ["MZBPO"],
     images: [
       {
@@ -141,7 +141,7 @@ export default function BlogPost() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>February 11, 2026</span>
+                  <span>October 15, 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
@@ -932,8 +932,8 @@ export default function BlogPost() {
               "Compare in-house accounting vs outsourced accounting services. Detailed cost analysis, pros and cons, and guidance on choosing the right model for your business.",
             image:
               "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=630&fit=crop",
-            datePublished: "2026-02-11T00:00:00.000Z",
-            dateModified: "2026-02-11T00:00:00.000Z",
+            datePublished: "2025-10-15T00:00:00.000Z",
+            dateModified: "2025-10-15T00:00:00.000Z",
             author: {
               "@type": "Organization",
               name: "MZBPO",

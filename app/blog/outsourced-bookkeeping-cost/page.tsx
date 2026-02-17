@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Understand outsourced bookkeeping pricing models, cost ranges, and what factors affect your monthly fee.",
     url: "https://www.mzbpo.com/blog/outsourced-bookkeeping-cost",
     type: "article",
-    publishedTime: "2026-02-11T00:00:00.000Z",
+    publishedTime: "2025-12-08T00:00:00.000Z",
     authors: ["MZBPO"],
     images: [
       {
@@ -239,7 +239,7 @@ export default function BlogPost() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>February 11, 2026</span>
+                  <span>December 8, 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
@@ -993,8 +993,8 @@ export default function BlogPost() {
               "Understand outsourced bookkeeping pricing models, cost ranges, and what factors affect your monthly fee.",
             image:
               "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&h=630&fit=crop",
-            datePublished: "2026-02-11T00:00:00.000Z",
-            dateModified: "2026-02-11T00:00:00.000Z",
+            datePublished: "2025-12-08T00:00:00.000Z",
+            dateModified: "2025-12-08T00:00:00.000Z",
             author: {
               "@type": "Organization",
               name: "MZBPO",

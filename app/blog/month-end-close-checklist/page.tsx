@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "A comprehensive month-end close checklist with step-by-step procedures, best practices, and tips to streamline your financial close process.",
     url: "https://www.mzbpo.com/blog/month-end-close-checklist",
     type: "article",
-    publishedTime: "2026-02-11T00:00:00.000Z",
+    publishedTime: "2025-11-20T00:00:00.000Z",
     authors: ["MZBPO"],
     images: [
       {
@@ -317,7 +317,7 @@ export default function BlogPost() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>February 11, 2026</span>
+                  <span>November 20, 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
@@ -1057,8 +1057,8 @@ export default function BlogPost() {
               "A comprehensive month-end close checklist with step-by-step procedures, best practices, and tips to streamline your financial close process.",
             image:
               "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop",
-            datePublished: "2026-02-11T00:00:00.000Z",
-            dateModified: "2026-02-11T00:00:00.000Z",
+            datePublished: "2025-11-20T00:00:00.000Z",
+            dateModified: "2025-11-20T00:00:00.000Z",
             author: {
               "@type": "Organization",
               name: "MZBPO",

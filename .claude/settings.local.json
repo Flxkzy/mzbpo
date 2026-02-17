@@ -4,7 +4,8 @@
       "Bash(dir:*)",
       "Bash(npx next build)",
       "WebSearch",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(wc:*)"
     ]
   }
 }

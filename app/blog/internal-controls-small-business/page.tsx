@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       "Essential internal controls every small business needs to prevent fraud and protect assets.",
     url: "https://www.mzbpo.com/blog/internal-controls-small-business",
     type: "article",
-    publishedTime: "2026-02-11T00:00:00.000Z",
+    publishedTime: "2025-12-22T00:00:00.000Z",
     authors: ["MZBPO"],
     images: [
       {
@@ -230,7 +230,7 @@ export default function BlogPost() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>February 11, 2026</span>
+                  <span>December 22, 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
@@ -974,8 +974,8 @@ export default function BlogPost() {
               "Essential internal controls every small business needs to prevent fraud, protect assets, and ensure accurate financial reporting.",
             image:
               "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop",
-            datePublished: "2026-02-11T00:00:00.000Z",
-            dateModified: "2026-02-11T00:00:00.000Z",
+            datePublished: "2025-12-22T00:00:00.000Z",
+            dateModified: "2025-12-22T00:00:00.000Z",
             author: {
               "@type": "Organization",
               name: "MZBPO",
