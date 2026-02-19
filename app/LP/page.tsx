@@ -14,12 +14,23 @@ import { WhatWeDo, BOOKKEEPING_CONFIG } from "@/components/Whatwedoaudit"
 
 import Image from "next/image"
 import Link from "next/link"
+import Script from "next/script"
 import { Element } from "react-scroll"
 import { FaLinkedin } from "react-icons/fa"
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-brand-navy text-white overflow-x-hidden">
+      {/* Preconnect to Calendly so DNS + TLS handshake is done before user clicks */}
+      <link rel="preconnect" href="https://assets.calendly.com" />
+      <link rel="preconnect" href="https://calendly.com" />
+
+      {/* Preload Calendly widget script in the background (idle priority) */}
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="lazyOnload"
+      />
+
       {/* Background Grid */}
       <div
         className="fixed inset-0 pointer-events-none z-0"
@@ -42,9 +53,7 @@ export default function Home() {
         <ClientShowcase />
 
         <WhatWeDo {...BOOKKEEPING_CONFIG} />
-
-
-
+        
         {/* ABOUT / CREDIBILITY */}
 <section id="about" className="py-20 px-4 md:px-6">
   <div className="max-w-5xl mx-auto">

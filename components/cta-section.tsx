@@ -2,6 +2,7 @@
 
 import { ArrowRight, Mail } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
+import Link from "next/link"
 
 interface CTASectionProps {
   headline?: string
@@ -47,7 +48,7 @@ export function CTASection({
 
         {/* CTA Button */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
+          <Link
             href={ctaLink}
             onClick={() => trackLead(trackingContentName)}
             className="group relative inline-flex items-center gap-2.5 bg-brand-teal text-brand-navy font-sans font-semibold text-base sm:text-lg px-8 py-4 rounded-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--brand-teal)/0.35)] hover:scale-[1.02]"
@@ -56,7 +57,7 @@ export function CTASection({
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
             <span className="relative">{ctaText}</span>
             <ArrowRight className="relative w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          </Link>
 
           {/* WhatsApp Link */}
 {/* WhatsApp Link */}

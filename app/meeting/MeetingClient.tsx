@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import Footer from "@/components/footer"
 import Navbar from "@/components/Navbar"
 import { useCalendlyEventListener } from "react-calendly"
+import { Star, ShieldCheck, Clock, Users } from "lucide-react"
 
 const checkItemVariants = {
   hidden: { opacity: 0, x: -24 },
@@ -85,31 +86,52 @@ export default function MeetingClient() {
   })
 
   return (
-    <div className="min-h-screen flex flex-col bg-brand-navy text-brand-white font-[var(--font-poppins)]">
+    <div className="min-h-screen flex flex-col bg-brand-navy text-brand-white">
       <Navbar />
 
       <main className="flex-1 pt-20 md:pt-28 lg:pt-32">
         <div className="mx-auto max-w-6xl px-6 md:px-6 pt-8 md:pt-12">
-          <div className="flex flex-col md:flex-row md:items-start gap-10 lg:gap-12">
-            {/* LEFT */}
+          <div className="flex flex-col md:flex-row md:items-start gap-10 lg:gap-14">
+            {/* LEFT — Value prop + social proof */}
             <div className="w-full md:w-[44%]">
-              <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
+              {/* Urgency badge */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="inline-flex items-center gap-2 mb-5 py-2 px-4 rounded-full bg-brand-teal/10 border border-brand-teal/30"
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-teal" />
+                </span>
+                <span className="font-[var(--font-poppins)] text-sm font-medium text-brand-teal">
+                  Limited spots available this week
+                </span>
+              </motion.div>
+
+              <h1 className="font-[family-name:var(--font-syne)] text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
                 Book Your Free{" "}
-                <span className="text-brand-teal italic">Outsourced Accounting</span>{" "}
-                Consultation
+                <span className="text-brand-teal italic">Strategy</span>{" "}
+                Call
               </h1>
 
-              <p className="text-base md:text-lg text-white/80 pt-4 leading-relaxed">
-                At <span className="font-semibold text-white">MZBPO</span>, we help growth focused businesses reduce
-                finance overhead by up to{" "}
-                <span className="text-brand-teal font-medium">50%</span>.
+              <p className="font-[var(--font-poppins)] text-base md:text-lg text-white/80 pt-4 leading-relaxed">
+                In 30 minutes, we&apos;ll review your current finance setup and show you exactly how to{" "}
+                <span className="text-brand-teal font-semibold">cut costs by up to 50%</span>{" "}
+                without sacrificing accuracy.
+              </p>
+
+              {/* What you'll get from this call */}
+              <p className="font-[family-name:var(--font-syne)] text-lg font-semibold text-white mt-8 mb-3">
+                What you&apos;ll walk away with:
               </p>
 
               {[
-                { title: "Bookkeeping & Accounting Outsourcing", description: "Clean books, clear numbers, audit ready reporting." },
-                { title: "Payroll Processing", description: "Managed payroll with deductions and compliance." },
-                { title: "ERP Implementation & Automation", description: "Move off spreadsheets into structured systems." },
-                { title: "Audit Support & Compliance", description: "IFRS reporting and statutory compliance." },
+                { title: "Custom cost savings breakdown", description: "See exactly how much you'd save vs. your current setup." },
+                { title: "Gap analysis of your books", description: "We'll identify where errors and inefficiencies are hiding." },
+                { title: "Clear outsourcing roadmap", description: "A step by step plan to transition without disruption." },
+                { title: "No obligation, no pressure", description: "If we're not the right fit, we'll tell you." },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -120,22 +142,57 @@ export default function MeetingClient() {
                   className="flex gap-x-3 py-3"
                 >
                   <PiCheckCircle className="text-brand-teal text-xl flex-shrink-0 mt-1" />
-                  <div>
+                  <div className="font-[var(--font-poppins)]">
                     <h3 className="font-semibold text-white">{item.title}</h3>
-                    <p className="text-white/70">{item.description}</p>
+                    <p className="text-white/60 text-sm">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
+
+              {/* Trust row */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="mt-8 pt-6 border-t border-white/10"
+              >
+                <div className="flex flex-wrap gap-x-6 gap-y-3 font-[var(--font-poppins)]">
+                  <div className="flex items-center gap-2 text-sm text-white/60">
+                    <Clock className="w-4 h-4 text-brand-teal" />
+                    <span>30 min call</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-white/60">
+                    <ShieldCheck className="w-4 h-4 text-brand-teal" />
+                    <span>100% confidential</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-white/60">
+                    <Users className="w-4 h-4 text-brand-teal" />
+                    <span>Senior experts only</span>
+                  </div>
+                </div>
+
+                {/* Star rating */}
+                <div className="flex items-center gap-2 mt-4">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="font-[var(--font-poppins)] text-sm text-white/50">
+                    Trusted by businesses across the US, UK & UAE
+                  </span>
+                </div>
+              </motion.div>
             </div>
 
-            {/* RIGHT */}
+            {/* RIGHT — Calendly */}
             <div className="w-full md:flex-1 pb-10">
               <div className="bg-brand-white text-brand-navy rounded-2xl shadow-soft p-4 md:p-6">
                 <Calendly eventId={eventId} fbp={fbp} fbc={fbc} />
               </div>
 
-              <p className="text-xs text-white/55 mt-4">
-                By booking, you agree to be contacted by MZBPO.
+              <p className="font-[var(--font-poppins)] text-xs text-white/55 mt-4 text-center">
+                By booking, you agree to be contacted by MZBPO. No spam, ever.
               </p>
             </div>
           </div>
