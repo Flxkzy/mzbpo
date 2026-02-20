@@ -174,25 +174,24 @@ const posts = [
     date: "December 22, 2025",
     readTime: "12 min read",
   },
-  // Coming soon posts
   {
     title: "SAP Business One vs Odoo vs NetSuite: ERP Comparison for SMBs",
     excerpt:
-      "Comparing the top ERP platforms for small and medium businesses. Features, pricing, and implementation considerations.",
+      "Comparing the top ERP platforms for small and medium businesses. Features, pricing, and implementation considerations for 2026.",
     href: "/blog/erp-comparison-sap-odoo-netsuite",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     category: "ERP",
-    date: "Coming Soon",
+    date: "February 19, 2026",
     readTime: "15 min read",
   },
   {
     title: "The True Cost of Payroll Errors (and How to Avoid Them)",
     excerpt:
-      "Payroll mistakes cost more than you think. Learn the hidden costs and how to prevent common payroll errors.",
+      "Payroll mistakes cost more than you think. Learn the hidden costs, IRS penalties, and proven steps to prevent common payroll errors.",
     href: "/blog/payroll-errors-cost",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop",
     category: "Payroll",
-    date: "Coming Soon",
+    date: "February 21, 2026",
     readTime: "7 min read",
   },
 ]
