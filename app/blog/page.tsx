@@ -123,6 +123,57 @@ const posts = [
     date: "February 14, 2026",
     readTime: "15 min read",
   },
+  // New posts - Batch 3
+  {
+    title: "Xero vs QuickBooks vs Sage: Which Accounting Software in 2026?",
+    excerpt:
+      "A data-driven, side-by-side comparison of the three most popular accounting platforms — with recommendations for every business type, size, and location.",
+    href: "/blog/xero-vs-quickbooks-vs-sage",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    category: "Software Comparison",
+    date: "March 3, 2026",
+    readTime: "14 min read",
+  },
+  {
+    title: "Cash Flow Management Guide for Growing Businesses (2026)",
+    excerpt:
+      "82% of failed businesses cite cash flow problems as the cause. Learn how to forecast cash flow, fix gaps, optimize working capital, and build financial resilience.",
+    href: "/blog/cash-flow-management-guide",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop",
+    category: "Finance Guide",
+    date: "March 6, 2026",
+    readTime: "15 min read",
+  },
+  {
+    title: "Healthcare Accounting: Compliance, Billing & Outsourcing Guide",
+    excerpt:
+      "Complete guide to healthcare accounting — HIPAA compliance, insurance reimbursements, revenue cycle management, and outsourcing for medical practices.",
+    href: "/blog/healthcare-accounting",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop",
+    category: "Industry Guide",
+    date: "March 9, 2026",
+    readTime: "16 min read",
+  },
+  {
+    title: "AI in Accounting: How Automation is Changing Outsourced Services",
+    excerpt:
+      "AI is already transforming transaction coding, reconciliation, fraud detection, and cash flow forecasting. Here's what it means for your business in 2026.",
+    href: "/blog/ai-in-accounting",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    category: "Technology",
+    date: "March 12, 2026",
+    readTime: "13 min read",
+  },
+  {
+    title: "Accounts Payable Best Practices: Automation & Fraud Prevention",
+    excerpt:
+      "AP fraud costs businesses an average of $100K per incident. Learn the best practices for AP automation, three-way matching, vendor controls, and fraud prevention.",
+    href: "/blog/accounts-payable-best-practices",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+    category: "Operations",
+    date: "March 15, 2026",
+    readTime: "14 min read",
+  },
   // Existing posts
   {
     title: "In-House vs Outsourced Accounting: Complete Cost Comparison",
@@ -197,9 +248,13 @@ const posts = [
 ]
 
 const categories = [
-  { name: "All Posts", count: 18, active: true },
+  { name: "All Posts", count: 23, active: true },
   { name: "Country Guide", count: 4 },
-  { name: "Industry Guide", count: 4 },
+  { name: "Industry Guide", count: 5 },
+  { name: "Software Comparison", count: 2 },
+  { name: "Finance Guide", count: 1 },
+  { name: "Technology", count: 1 },
+  { name: "Operations", count: 1 },
   { name: "Accounting Standards", count: 1 },
   { name: "Accounting Insights", count: 1 },
   { name: "Strategy", count: 1 },
