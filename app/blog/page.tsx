@@ -155,16 +155,6 @@ const posts = [
     readTime: "16 min read",
   },
   {
-    title: "AI in Accounting: How Automation is Changing Outsourced Services",
-    excerpt:
-      "AI is already transforming transaction coding, reconciliation, fraud detection, and cash flow forecasting. Here's what it means for your business in 2026.",
-    href: "/blog/ai-in-accounting",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-    category: "Technology",
-    date: "March 12, 2026",
-    readTime: "13 min read",
-  },
-  {
     title: "Accounts Payable Best Practices: Automation & Fraud Prevention",
     excerpt:
       "AP fraud costs businesses an average of $100K per incident. Learn the best practices for AP automation, three-way matching, vendor controls, and fraud prevention.",
@@ -248,12 +238,11 @@ const posts = [
 ]
 
 const categories = [
-  { name: "All Posts", count: 23, active: true },
+  { name: "All Posts", count: 22, active: true },
   { name: "Country Guide", count: 4 },
   { name: "Industry Guide", count: 5 },
   { name: "Software Comparison", count: 2 },
   { name: "Finance Guide", count: 1 },
-  { name: "Technology", count: 1 },
   { name: "Operations", count: 1 },
   { name: "Accounting Standards", count: 1 },
   { name: "Accounting Insights", count: 1 },

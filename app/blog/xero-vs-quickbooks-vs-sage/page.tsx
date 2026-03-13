@@ -160,10 +160,10 @@ const relatedPosts = [
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop",
   },
   {
-    title: "AI in Accounting: How Automation is Changing Outsourced Services",
-    href: "/blog/ai-in-accounting",
-    description: "How AI is transforming bookkeeping, reconciliation, and financial forecasting.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop",
+    title: "Accounts Payable Best Practices: Automation & Fraud Prevention",
+    href: "/blog/accounts-payable-best-practices",
+    description: "Proven AP management best practices to protect cash flow and prevent fraud.",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
   },
   {
     title: "Outsourced Accounting Services in the USA",

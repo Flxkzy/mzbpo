@@ -140,10 +140,10 @@ const relatedPosts = [
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop",
   },
   {
-    title: "AI in Accounting: How Automation is Changing Outsourced Services",
-    href: "/blog/ai-in-accounting",
-    description: "How AI is transforming bookkeeping, reconciliation, and financial forecasting.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop",
+    title: "Xero vs QuickBooks vs Sage: Which Software in 2026?",
+    href: "/blog/xero-vs-quickbooks-vs-sage",
+    description: "Side-by-side comparison of the three most popular accounting platforms.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
   },
   {
     title: "Internal Controls for Small Business",
