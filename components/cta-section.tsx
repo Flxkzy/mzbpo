@@ -62,7 +62,7 @@ export function CTASection({
           {/* WhatsApp Link */}
 {/* WhatsApp Link */}
 <a
-  href="https://wa.me/923235298686"
+  href="https://wa.me/923265666653"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex items-center gap-2 text-white/60 hover:text-brand-teal transition-colors font-[var(--font-poppins)] text-sm"

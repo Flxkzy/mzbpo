@@ -6,7 +6,8 @@
       "WebSearch",
       "Bash(npm run build:*)",
       "Bash(wc:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(for dir:*)"
     ]
   }
 }
