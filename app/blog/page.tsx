@@ -30,6 +30,67 @@ const featuredPost = {
 }
 
 const posts = [
+  // Latest posts
+  {
+    title: "Real Estate Accounting: A Complete Guide for Investors, Agents & Property Managers",
+    excerpt:
+      "Real estate is one of the most tax-advantaged asset classes in the world — if your books are right. Chart of accounts, depreciation, 1031 exchanges, and trust accounts explained.",
+    href: "/blog/real-estate-accounting",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    category: "Industry Guide",
+    date: "April 22, 2026",
+    readTime: "15 min read",
+  },
+  {
+    title: "Construction Accounting: Job Costing, WIP Reports & Compliance",
+    excerpt:
+      "Construction is the only industry where you can be profitable on paper and bankrupt in cash. A practical guide to job costing, WIP reporting, retainage, and the compliance traps contractors miss.",
+    href: "/blog/construction-accounting",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop",
+    category: "Industry Guide",
+    date: "April 15, 2026",
+    readTime: "14 min read",
+  },
+  {
+    title: "Virtual CFO Services: When Your Business Needs a Fractional CFO",
+    excerpt:
+      "A full-time CFO costs $400K+ loaded. A virtual CFO delivers 80% of the value at 20% of the cost. What they do, what they charge, and when you need one.",
+    href: "/blog/virtual-cfo-services",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop",
+    category: "CFO Services",
+    date: "April 8, 2026",
+    readTime: "14 min read",
+  },
+  {
+    title: "Catch-Up Bookkeeping: How to Get Your Books Back on Track",
+    excerpt:
+      "Months or years behind? A practical guide to catch-up bookkeeping — what it costs, how long it takes, and the 7-step process to clean up your books fast.",
+    href: "/blog/catch-up-bookkeeping",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop",
+    category: "Bookkeeping Recovery",
+    date: "March 22, 2026",
+    readTime: "13 min read",
+  },
+  {
+    title: "How to Read Financial Statements: A Complete Guide for Business Owners",
+    excerpt:
+      "Income statement, balance sheet, cash flow statement — explained line by line. Includes 10 ratios every owner should track and red flags to watch.",
+    href: "/blog/how-to-read-financial-statements",
+    image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&h=400&fit=crop",
+    category: "Finance Fundamentals",
+    date: "December 14, 2025",
+    readTime: "15 min read",
+  },
+  {
+    title: "Small Business Tax Deductions: 75 Write-Offs You Can't Miss in 2026",
+    excerpt:
+      "The most complete list of small business tax deductions for 2026. 75+ write-offs across home office, vehicle, travel, payroll, retirement, and more.",
+    href: "/blog/small-business-tax-deductions",
+    image: "https://images.unsplash.com/photo-1554224155-1696413565d3?w=600&h=400&fit=crop",
+    category: "Tax Guide",
+    date: "November 12, 2025",
+    readTime: "16 min read",
+  },
   // New posts - Country Guides
   {
     title: "Outsourced Accounting Services in the USA: Complete Guide 2026",
@@ -238,10 +299,14 @@ const posts = [
 ]
 
 const categories = [
-  { name: "All Posts", count: 22, active: true },
+  { name: "All Posts", count: 28, active: true },
   { name: "Country Guide", count: 4 },
-  { name: "Industry Guide", count: 5 },
+  { name: "Industry Guide", count: 7 },
   { name: "Software Comparison", count: 2 },
+  { name: "Tax Guide", count: 1 },
+  { name: "CFO Services", count: 1 },
+  { name: "Finance Fundamentals", count: 1 },
+  { name: "Bookkeeping Recovery", count: 1 },
   { name: "Finance Guide", count: 1 },
   { name: "Operations", count: 1 },
   { name: "Accounting Standards", count: 1 },

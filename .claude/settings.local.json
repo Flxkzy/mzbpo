@@ -7,7 +7,11 @@
       "Bash(npm run build:*)",
       "Bash(wc:*)",
       "mcp__ide__getDiagnostics",
-      "Bash(for dir:*)"
+      "Bash(for dir:*)",
+      "Bash(mkdir -p \"E:/downloads/website making/digital-marketing/app/blog/construction-accounting\")",
+      "Bash(mkdir -p \"E:/downloads/website making/digital-marketing/app/blog/real-estate-accounting\")",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)"
     ]
   }
 }

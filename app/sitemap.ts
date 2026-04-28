@@ -153,5 +153,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    // New blog posts - Latest batch
+    {
+      url: `${baseUrl}/blog/small-business-tax-deductions`,
+      lastModified: new Date("2025-11-12"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/how-to-read-financial-statements`,
+      lastModified: new Date("2025-12-14"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/catch-up-bookkeeping`,
+      lastModified: new Date("2026-03-22"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/virtual-cfo-services`,
+      lastModified: new Date("2026-04-08"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/construction-accounting`,
+      lastModified: new Date("2026-04-15"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/real-estate-accounting`,
+      lastModified: new Date("2026-04-22"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ]
 }
